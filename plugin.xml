@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated m4jdsl -->
+      <package
+            uri="http://m4jdsl/1.0"
+            class="m4jdsl.M4jdslPackage"
+            genModel="model/m4jdsl.genmodel"/>
+   </extension>
+
+</plugin>
