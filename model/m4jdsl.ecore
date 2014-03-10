@@ -62,6 +62,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitState" lowerBound="1"
+        eType="#//BehaviorModelExitState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
+        eType="#//MarkovState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -69,24 +73,24 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="mustBeValidProbability" value="&#xA;            probability >= 0.0 and probability &lt;= 1.0"/>
-      <details key="mustBeEqualThinkTimeTypes" value="&#xA;            Transition.allInstances()->&#xA;                forAll(t1,t2|t1.thinkTime->oclType() = t2.thinkTime->oclType())"/>
+      <details key="mustBeEqualThinkTimeTypes" value="&#xA;            Transition.allInstances()->&#xA;                forAll(t1,t2|t1.thinkTime.oclType() = t2.thinkTime.oclType())"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
-        eType="#//MarkovState"/>
+        eType="#//BehaviorModelState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="thinkTime" lowerBound="1"
         eType="#//ThinkTime" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MarkovState">
+  <eClassifiers xsi:type="ecore:EClass" name="MarkovState" eSuperTypes="#//BehaviorModelState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="mustBeValidProbabilitySum mustBeMarkovStatesWithUniqueServices mustBeOutgoingTransitionsWithUniqueTargetStates mustBeOutgoingTransitionsCorrespondingToSessionLayer"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeValidProbabilitySum" value="&#xA;            outgoingTransitions.probability->sum() = 1.0 or&#xA;            SessionLayerEFSM.allInstances()->exists(s|&#xA;                s.exitState.service = service)"/>
+      <details key="mustBeValidProbabilitySum" value="&#xA;            outgoingTransitions.probability->sum() = 1.0"/>
       <details key="mustBeMarkovStatesWithUniqueServices" value="&#xA;            MarkovState.allInstances()->&#xA;                forAll(s1,s2|s1 &lt;> s2 implies s1.service &lt;> s2.service)"/>
       <details key="mustBeOutgoingTransitionsWithUniqueTargetStates" value="&#xA;            outgoingTransitions->&#xA;                forAll(t1,t2|t1 &lt;> t2 implies t1.targetState &lt;> t2.targetState)"/>
-      <details key="mustBeOutgoingTransitionsCorrespondingToSessionLayer" value="&#xA;            ApplicationState.allInstances()->exists(as|&#xA;                service = as.service and&#xA;                outgoingTransitions->forAll(t|&#xA;                    as.outgoingTransitions->exists(at|&#xA;                        at.targetState.service = t.targetState.service)))"/>
+      <details key="mustBeOutgoingTransitionsCorrespondingToSessionLayer" value="&#xA;            outgoingTransitions->forAll(t|&#xA;                ApplicationState.allInstances()->exists(as|&#xA;                    service = as.service and as.outgoingTransitions->exists(at|&#xA;                    (t.targetState.oclIsTypeOf(BehaviorModelExitState) and&#xA;                    at.targetState.oclIsTypeOf(ApplicationExitState)) or&#xA;                    (t.targetState.oclIsTypeOf(MarkovState) and&#xA;                     at.targetState.oclIsTypeOf(ApplicationState) and&#xA;                     at.targetState.oclAsType(ApplicationState).service =&#xA;                     t.targetState.oclAsType(MarkovState).service)&#xA;                    )))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
         eType="#//Transition" containment="true"/>
@@ -103,7 +107,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ApplicationState">
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationState" eSuperTypes="#//SessionLayerEFSMState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="mustBeUniqueOutgoingTransitionTargetStates mustBeExitStateWithoutTransitions"/>
     </eAnnotations>
@@ -119,29 +123,24 @@
         eType="#//ApplicationTransition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HTTPRequest" eSuperTypes="#//Request">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeUniquePropertyNames mustBeUniqueParameterNames"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeUniquePropertyNames" value="&#xA;         properties->forAll(p1,p2 | p1 &lt;> p2 implies p1.key &lt;> p2.key)"/>
-      <details key="mustBeUniqueParameterNames" value="&#xA;        parameters-> forAll(p1,p2 | p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTTPRequest" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaRequest" eSuperTypes="#//Request"/>
   <eClassifiers xsi:type="ecore:EClass" name="Request" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeUniqueNames"/>
+      <details key="constraints" value="mustBeUniqueNames mustBeUniquePropertyNames mustBeUniqueParameterNames"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="mustBeUniqueNames" value="&#xA;            Request.allInstances()->&#xA;                forAll(r1,r2|r1 &lt;> r2 implies r1.eId &lt;> r2.eId)"/>
+      <details key="mustBeUniquePropertyNames" value="&#xA;         properties->forAll(p1,p2 | p1 &lt;> p2 implies p1.key &lt;> p2.key)"/>
+      <details key="mustBeUniqueParameterNames" value="&#xA;        parameters-> forAll(p1,p2 | p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assertions" upperBound="-1"
         eType="#//Assertion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProtocolState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -181,18 +180,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SessionLayerEFSM">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeStateListIncludingInitialStateAndExitState mustBeApplicationStatesWithUniqueServices"/>
+      <details key="constraints" value="mustBeStateListIncludingInitialState mustBeApplicationStatesWithUniqueServices"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeStateListIncludingInitialStateAndExitState" value="&#xA;            states->includesAll(Set{initialState, exitState})"/>
-      <details key="mustBeApplicationStatesWithUniqueServices" value="&#xA;            states->forAll(s1,s2|s1 &lt;> s2 implies s1.service &lt;> s2.service)"/>
+      <details key="mustBeStateListIncludingInitialState" value="&#xA;            applicationStates->includesAll(Set{initialState})"/>
+      <details key="mustBeApplicationStatesWithUniqueServices" value="&#xA;            applicationStates->forAll(s1,s2|s1 &lt;> s2 implies s1.service &lt;> s2.service)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationStates" lowerBound="1"
         upperBound="-1" eType="#//ApplicationState" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
         eType="#//ApplicationState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exitState" lowerBound="1"
-        eType="#//ApplicationState"/>
+        eType="#//ApplicationExitState" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantWorkloadIntensity" eSuperTypes="#//WorkloadIntensity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -206,11 +205,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationTransition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
-        eType="#//ApplicationState"/>
+        eType="#//SessionLayerEFSMState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//ThinkTime">
+  <eClassifiers xsi:type="ecore:EClass" name="NormallyDistributedThinkTime" eSuperTypes="#//ThinkTime">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="mustBeValidThinkTimeValues"/>
     </eAnnotations>
@@ -234,4 +233,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThinkTime" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationExitState" eSuperTypes="#//SessionLayerEFSMState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NAME" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="$"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SessionLayerEFSMState" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorModelExitState" eSuperTypes="#//BehaviorModelState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NAME" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="$"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorModelState" abstract="true"/>
 </ecore:EPackage>
