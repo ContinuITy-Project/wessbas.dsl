@@ -17,40 +17,25 @@
         <service
             name="Login"/>
         <protocolDetails
-            initialState="PS_Login"
-            exitState="PS_Welcome">
-          <states
-              eId="PS_Login">
+            initialState="PS_welcome">
+          <protocolStates
+              eId="PS_login">
             <request
                 xsi:type="m4jdsl:HTTPRequest"
-                eId="login.shtml">
-              <properties
-                  key="HTTPSampler.domain"
-                  value="net.sf.markov4jmrter.m4dsl"/>
-              <properties
-                  key="HTTPSampler.port"
-                  value="8080"/>
-              <properties
-                  key="HTTPSampler.path"
-                  value="login.shtml"/>
-            </request>
-          </states>
-          <states
-              eId="PS_Welcome">
+                eId="login.shtml"/>
+            <outgoingTransitions
+                targetState="PS_welcome"/>
+          </protocolStates>
+          <protocolStates
+              eId="PS_welcome">
             <request
                 xsi:type="m4jdsl:HTTPRequest"
-                eId="welcome.shtml">
-              <properties
-                  key="HTTPSampler.domain"
-                  value="net.sf.markov4jmrter.m4dsl"/>
-              <properties
-                  key="HTTPSampler.port"
-                  value="8080"/>
-              <properties
-                  key="HTTPSampler.path"
-                  value="welcome.shtml"/>
-            </request>
-          </states>
+                eId="welcome.shtml"/>
+            <outgoingTransitions
+                targetState="PS_loginExit"/>
+          </protocolStates>
+          <exitState
+              eId="PS_loginExit"/>
         </protocolDetails>
         <outgoingTransitions
             targetState="//@applicationModel/@sessionLayerEFSM/@applicationStates.1"/>
@@ -60,47 +45,33 @@
         <service
             name="Logout"/>
         <protocolDetails
-            initialState="PS_Logout"
-            exitState="PS_ByeBye">
-          <states
-              eId="PS_Logout">
+            initialState="PS_byebye">
+          <protocolStates
+              eId="PS_logout">
             <request
                 xsi:type="m4jdsl:HTTPRequest"
-                eId="logout.shtml">
-              <properties
-                  key="HTTPSampler.domain"
-                  value="net.sf.markov4jmrter.m4dsl"/>
-              <properties
-                  key="HTTPSampler.port"
-                  value="8080"/>
-              <properties
-                  key="HTTPSampler.path"
-                  value="logout.shtml"/>
-            </request>
-          </states>
-          <states
-              eId="PS_ByeBye">
+                eId="logout.shtml"/>
+            <outgoingTransitions
+                targetState="PS_byebye"/>
+          </protocolStates>
+          <protocolStates
+              eId="PS_byebye">
             <request
                 xsi:type="m4jdsl:HTTPRequest"
-                eId="byebye.shtml">
-              <properties
-                  key="HTTPSampler.domain"
-                  value="net.sf.markov4jmrter.m4dsl"/>
-              <properties
-                  key="HTTPSampler.port"
-                  value="8080"/>
-              <properties
-                  key="HTTPSampler.path"
-                  value="byebye.shtml"/>
-            </request>
-          </states>
+                eId="byebye.shtml"/>
+            <outgoingTransitions
+                targetState="PS_outputExit"/>
+          </protocolStates>
+          <exitState
+              eId="PS_outputExit"/>
         </protocolDetails>
         <outgoingTransitions
             targetState="//@applicationModel/@sessionLayerEFSM/@exitState"/>
         <outgoingTransitions
             targetState="//@applicationModel/@sessionLayerEFSM/@applicationStates.0"/>
       </applicationStates>
-      <exitState/>
+      <exitState
+          eId="$"/>
     </sessionLayerEFSM>
   </applicationModel>
   <behaviorMix>
@@ -109,41 +80,41 @@
         value="1.0"/>
   </behaviorMix>
   <behaviorModels
-      name="BM1"
-      filename="userbehavior.csv"
+      name="User Behavior"
+      filename="behaviormodel.csv"
       initialState="//@behaviorModels.0/@markovStates.0">
     <markovStates
-        service="//@applicationModel/@sessionLayerEFSM/@applicationStates.0/@service"
-        eId="MS_Login">
+        eId="MS_Login"
+        service="//@applicationModel/@sessionLayerEFSM/@applicationStates.0/@service">
       <outgoingTransitions
           targetState="//@behaviorModels.0/@markovStates.1"
           probability="1.0">
+        <thinkTime
+            xsi:type="m4jdsl:NormallyDistributedThinkTime"
+            mean="8.0"
+            deviation="3.0"/>
+      </outgoingTransitions>
+    </markovStates>
+    <markovStates
+        eId="MS_Logout"
+        service="//@applicationModel/@sessionLayerEFSM/@applicationStates.1/@service">
+      <outgoingTransitions
+          targetState="//@behaviorModels.0/@exitState"
+          probability="1.0">
+        <thinkTime
+            xsi:type="m4jdsl:NormallyDistributedThinkTime"
+            mean="7.0"
+            deviation="2.0"/>
+      </outgoingTransitions>
+      <outgoingTransitions
+          targetState="//@behaviorModels.0/@markovStates.0">
         <thinkTime
             xsi:type="m4jdsl:NormallyDistributedThinkTime"
             mean="5.0"
             deviation="2.5"/>
       </outgoingTransitions>
     </markovStates>
-    <markovStates
-        service="//@applicationModel/@sessionLayerEFSM/@applicationStates.1/@service"
-        eId="MS_Logout">
-      <outgoingTransitions
-          targetState="//@behaviorModels.0/@exitState"
-          probability="0.8">
-        <thinkTime
-            xsi:type="m4jdsl:NormallyDistributedThinkTime"
-            mean="3.0"
-            deviation="1.0"/>
-      </outgoingTransitions>
-      <outgoingTransitions
-          targetState="//@behaviorModels.0/@markovStates.0"
-          probability="0.2">
-        <thinkTime
-            xsi:type="m4jdsl:NormallyDistributedThinkTime"
-            mean="12.0"
-            deviation="4.0"/>
-      </outgoingTransitions>
-    </markovStates>
-    <exitState/>
+    <exitState
+        eId="$"/>
   </behaviorModels>
 </m4jdsl:WorkloadModel>
