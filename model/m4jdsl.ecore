@@ -43,7 +43,7 @@
       <details key="constraints" value="mustBeNonnegativeFrequency"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeNonnegativeFrequency" value="&#xA;            value >= 0.0"/>
+      <details key="mustBeNonnegativeFrequency" value="&#xA;            value >= 0.0 and value &lt;= 1.0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorModel" lowerBound="1"
         eType="#//BehaviorModel"/>
@@ -92,7 +92,7 @@
       <details key="mustBeValidProbabilitySum" value="&#xA;            outgoingTransitions.probability->sum() = 1.0"/>
       <details key="mustBeMarkovStatesWithUniqueServices" value="&#xA;            MarkovState.allInstances()->&#xA;                forAll(s1,s2|s1 &lt;> s2 implies s1.service &lt;> s2.service)"/>
       <details key="mustBeOutgoingTransitionsWithUniqueTargetStates" value="&#xA;            outgoingTransitions->&#xA;                forAll(t1,t2|t1 &lt;> t2 implies t1.targetState &lt;> t2.targetState)"/>
-      <details key="mustBeOutgoingTransitionsCorrespondingToSessionLayer" value="&#xA;            ApplicationState.allInstances()->exists(as| service = as.service and&#xA;                 as.outgoingTransitions->forAll(at|&#xA;                    outgoingTransitions->exists(t|&#xA;                        (at.targetState.oclIsTypeOf(ApplicationExitState) and&#xA;                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or&#xA;                       ((t.targetState.oclIsTypeOf(MarkovState) and&#xA;                         at.targetState.oclIsTypeOf(ApplicationState) and&#xA;                         at.targetState.oclAsType(ApplicationState).service =&#xA;                         t.targetState.oclAsType(MarkovState).service)))) and&#xA;&#xA;                outgoingTransitions->forAll(t|&#xA;                    as.outgoingTransitions->exists(at|&#xA;                        (at.targetState.oclIsTypeOf(ApplicationExitState) and&#xA;                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or&#xA;                       ((t.targetState.oclIsTypeOf(MarkovState) and&#xA;                         at.targetState.oclIsTypeOf(ApplicationState) and&#xA;                         at.targetState.oclAsType(ApplicationState).service =&#xA;                         t.targetState.oclAsType(MarkovState).service)))))"/>
+      <details key="mustBeOutgoingTransitionsCorrespondingToSessionLayer" value="&#xA;            ApplicationState.allInstances()->exists(as|service = as.service and&#xA;                outgoingTransitions->forAll(t|&#xA;                    as.outgoingTransitions->exists(at|&#xA;                        (at.targetState.oclIsTypeOf(ApplicationExitState) and&#xA;                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or&#xA;                       ((t.targetState.oclIsTypeOf(MarkovState) and&#xA;                         at.targetState.oclIsTypeOf(ApplicationState) and&#xA;                         at.targetState.oclAsType(ApplicationState).service =&#xA;                         t.targetState.oclAsType(MarkovState).service)))))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
         eType="#//Transition" containment="true"/>
@@ -126,11 +126,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="JavaRequest" eSuperTypes="#//Request"/>
   <eClassifiers xsi:type="ecore:EClass" name="Request" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeUniqueNames mustBeUniquePropertyNames mustBeUniqueParameterNames"/>
+      <details key="constraints" value="mustBeUniquePropertyKeys mustBeUniqueParameterNames"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeUniqueNames" value="&#xA;            Request.allInstances()->&#xA;                forAll(r1,r2|r1 &lt;> r2 implies r1.eId &lt;> r2.eId)"/>
-      <details key="mustBeUniquePropertyNames" value="&#xA;         properties->forAll(p1,p2 | p1 &lt;> p2 implies p1.key &lt;> p2.key)"/>
+      <details key="mustBeUniquePropertyKeys" value="&#xA;         properties->forAll(p1,p2 | p1 &lt;> p2 implies p1.key &lt;> p2.key)"/>
       <details key="mustBeUniqueParameterNames" value="&#xA;        parameters-> forAll(p1,p2 | p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
