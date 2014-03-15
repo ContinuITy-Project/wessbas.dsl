@@ -71,11 +71,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeValidProbability mustBeEqualThinkTimeTypes"/>
+      <details key="constraints" value="mustBeValidProbability mustBeThinkTimesOfSameType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="mustBeValidProbability" value="&#xA;            probability >= 0.0 and probability &lt;= 1.0"/>
-      <details key="mustBeEqualThinkTimeTypes" value="&#xA;            Transition.allInstances()->&#xA;                forAll(t1,t2|t1.thinkTime.oclType() = t2.thinkTime.oclType())"/>
+      <details key="mustBeThinkTimesOfSameType" value="&#xA;            Transition.allInstances()->&#xA;                forAll(t1,t2|t1.thinkTime.oclType() = t2.thinkTime.oclType())"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
         eType="#//BehaviorModelState"/>
@@ -126,11 +126,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="JavaRequest" eSuperTypes="#//Request"/>
   <eClassifiers xsi:type="ecore:EClass" name="Request" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="mustBeUniquePropertyKeys mustBeUniqueParameterNames"/>
+      <details key="constraints" value="mustBeUniquePropertyKeys mustBeUniqueParameterNames mustBeRequestsOfSameType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="mustBeUniquePropertyKeys" value="&#xA;         properties->forAll(p1,p2 | p1 &lt;> p2 implies p1.key &lt;> p2.key)"/>
-      <details key="mustBeUniqueParameterNames" value="&#xA;        parameters-> forAll(p1,p2 | p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
+      <details key="mustBeUniqueParameterNames" value="&#xA;        parameters->forAll(p1,p2 | p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
+      <details key="mustBeRequestsOfSameType" value="&#xA;        Request.allInstances()->forAll(r1,r2 | r1.oclType() = r2.oclType())"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assertions" upperBound="-1"

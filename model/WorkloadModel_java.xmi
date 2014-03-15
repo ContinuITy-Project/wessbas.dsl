@@ -5,20 +5,20 @@
     <sessionLayerEFSM initialState="//@applicationModel/@sessionLayerEFSM/@applicationStates.0">
       <applicationStates eId="AS_Login">
         <service name="Login"/>
-        <protocolDetails initialState="PS_welcome">
+        <protocolDetails initialState="PS_login">
           <protocolStates eId="PS_login">
-            <request xsi:type="m4jdsl:HTTPRequest" eId="login.shtml">
-              <properties key="HTTPSampler.domain" value="127.0.0.1"/>
-              <properties key="HTTPSampler.path" value="example/login.shtml"/>
-              <properties key="HTTPSampler.port" value="8080"/>
+            <request xsi:type="m4jdsl:JavaRequest" eId="service_login">
+              <assertions patternToTest="login"/>
+              <properties key="classname" value="JMeterTest"/>
+              <parameters name="service" value="login"/>
             </request>
             <outgoingTransitions targetState="PS_welcome"/>
           </protocolStates>
           <protocolStates eId="PS_welcome">
-            <request xsi:type="m4jdsl:HTTPRequest" eId="welcome.shtml">
-              <properties key="HTTPSampler.domain" value="127.0.0.1"/>
-              <properties key="HTTPSampler.path" value="example/welcome.shtml"/>
-              <properties key="HTTPSampler.port" value="8080"/>
+            <request xsi:type="m4jdsl:JavaRequest" eId="service_welcome">
+              <assertions patternToTest="welcome"/>
+              <properties key="classname" value="JMeterTest"/>
+              <parameters name="service" value="welcome"/>
             </request>
             <outgoingTransitions targetState="PS_loginExit"/>
           </protocolStates>
@@ -28,20 +28,20 @@
       </applicationStates>
       <applicationStates eId="AS_Logout">
         <service name="Logout"/>
-        <protocolDetails initialState="PS_byebye">
+        <protocolDetails initialState="PS_logout">
           <protocolStates eId="PS_logout">
-            <request xsi:type="m4jdsl:HTTPRequest" eId="logout.shtml">
-              <properties key="HTTPSampler.domain" value="127.0.0.1"/>
-              <properties key="HTTPSampler.path" value="example/logout.shtml"/>
-              <properties key="HTTPSampler.port" value="8080"/>
+            <request xsi:type="m4jdsl:JavaRequest" eId="service_logout">
+              <assertions patternToTest="logout"/>
+              <properties key="classname" value="JMeterTest"/>
+              <parameters name="service" value="logout"/>
             </request>
             <outgoingTransitions targetState="PS_byebye"/>
           </protocolStates>
           <protocolStates eId="PS_byebye">
-            <request xsi:type="m4jdsl:HTTPRequest" eId="byebye.shtml">
-              <properties key="HTTPSampler.domain" value="127.0.0.1"/>
-              <properties key="HTTPSampler.path" value="example/byebye.shtml"/>
-              <properties key="HTTPSampler.port" value="8080"/>
+            <request xsi:type="m4jdsl:JavaRequest" eId="service_byebye">
+              <assertions patternToTest="byebye"/>
+              <properties key="classname" value="JMeterTest"/>
+              <parameters name="service" value="byebye"/>
             </request>
             <outgoingTransitions targetState="PS_logoutExit"/>
           </protocolStates>
