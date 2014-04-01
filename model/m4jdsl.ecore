@@ -243,4 +243,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BeanShellRequest" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JUnitRequest" eSuperTypes="#//Request"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SOAPRequest" eSuperTypes="#//Request"/>
 </ecore:EPackage>
