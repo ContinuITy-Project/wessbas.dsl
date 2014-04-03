@@ -680,7 +680,7 @@ public class M4jdslValidator extends EObjectValidator {
         "            not service.oclIsUndefined() implies \n" +
         "            ApplicationState.allInstances()->exists(as|service = as.service and\n" +
         "                outgoingTransitions->forAll(t|\n" +
-        "                    as.outgoingTransitions->exists(at|\n" +
+        "                    not t.targetState.oclIsUndefined() implies as.outgoingTransitions->exists(at|\n" +
         "                        (at.targetState.oclIsTypeOf(ApplicationExitState) and\n" +
         "                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or\n" +
         "                       ((t.targetState.oclIsTypeOf(MarkovState) and\n" +
