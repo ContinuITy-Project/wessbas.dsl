@@ -7,18 +7,14 @@
         <service name="Login"/>
         <protocolDetails initialState="PS_login">
           <protocolStates eId="PS_login">
-            <request xsi:type="m4jdsl:JavaRequest" eId="service_login">
+            <request xsi:type="m4jdsl:JUnitRequest" eId="service_login">
               <assertions patternToTest="login"/>
-              <properties key="classname" value="JMeterTest"/>
-              <parameters name="service" value="login"/>
             </request>
             <outgoingTransitions targetState="PS_welcome"/>
           </protocolStates>
           <protocolStates eId="PS_welcome">
-            <request xsi:type="m4jdsl:JavaRequest" eId="service_welcome">
+            <request xsi:type="m4jdsl:JUnitRequest" eId="service_welcome">
               <assertions patternToTest="welcome"/>
-              <properties key="classname" value="JMeterTest"/>
-              <parameters name="service" value="welcome"/>
             </request>
             <outgoingTransitions targetState="PS_loginExit"/>
           </protocolStates>
@@ -30,18 +26,14 @@
         <service name="Logout"/>
         <protocolDetails initialState="PS_logout">
           <protocolStates eId="PS_logout">
-            <request xsi:type="m4jdsl:JavaRequest" eId="service_logout">
+            <request xsi:type="m4jdsl:JUnitRequest" eId="service_logout">
               <assertions patternToTest="logout"/>
-              <properties key="classname" value="JMeterTest"/>
-              <parameters name="service" value="logout"/>
             </request>
             <outgoingTransitions targetState="PS_byebye"/>
           </protocolStates>
           <protocolStates eId="PS_byebye">
-            <request xsi:type="m4jdsl:JavaRequest" eId="service_byebye">
+            <request xsi:type="m4jdsl:JUnitRequest" eId="service_byebye">
               <assertions patternToTest="byebye"/>
-              <properties key="classname" value="JMeterTest"/>
-              <parameters name="service" value="byebye"/>
             </request>
             <outgoingTransitions targetState="PS_logoutExit"/>
           </protocolStates>

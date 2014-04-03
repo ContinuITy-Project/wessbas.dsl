@@ -2,7 +2,7 @@
 <m4jdsl:WorkloadModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m4jdsl="http://m4jdsl/1.0" xsi:schemaLocation="http://m4jdsl/1.0 m4jdsl.ecore">
   <workloadIntensity xsi:type="m4jdsl:ConstantWorkloadIntensity" formula="1" numberOfSessions="1"/>
   <applicationModel>
-    <sessionLayerEFSM initialState="//@applicationModel/@sessionLayerEFSM/@applicationStates.0">
+    <sessionLayerEFSM initialState="AS_Login">
       <applicationStates eId="AS_Login">
         <service name="Login"/>
         <protocolDetails initialState="PS_login">
@@ -26,7 +26,7 @@
           </protocolStates>
           <exitState eId="PS_loginExit"/>
         </protocolDetails>
-        <outgoingTransitions targetState="//@applicationModel/@sessionLayerEFSM/@applicationStates.1"/>
+        <outgoingTransitions targetState="AS_Logout"/>
       </applicationStates>
       <applicationStates eId="AS_Logout">
         <service name="Logout"/>
@@ -51,29 +51,29 @@
           </protocolStates>
           <exitState eId="PS_logoutExit"/>
         </protocolDetails>
-        <outgoingTransitions targetState="//@applicationModel/@sessionLayerEFSM/@exitState"/>
-        <outgoingTransitions targetState="//@applicationModel/@sessionLayerEFSM/@applicationStates.0"/>
+        <outgoingTransitions targetState="AM_$"/>
+        <outgoingTransitions targetState="AS_Login"/>
       </applicationStates>
-      <exitState eId="$"/>
+      <exitState eId="AM_$"/>
     </sessionLayerEFSM>
   </applicationModel>
   <behaviorMix>
     <relativeFrequencies behaviorModel="//@behaviorModels.0" value="1.0"/>
   </behaviorMix>
-  <behaviorModels name="User Behavior" filename="behaviormodel.csv" initialState="//@behaviorModels.0/@markovStates.0">
+  <behaviorModels name="User Behavior" filename="behaviormodel.csv" initialState="MS_Login">
     <markovStates eId="MS_Login" service="//@applicationModel/@sessionLayerEFSM/@applicationStates.0/@service">
-      <outgoingTransitions targetState="//@behaviorModels.0/@markovStates.1" probability="1.0">
+      <outgoingTransitions targetState="MS_Logout" probability="1.0">
         <thinkTime xsi:type="m4jdsl:NormallyDistributedThinkTime" mean="8.0" deviation="3.0"/>
       </outgoingTransitions>
     </markovStates>
     <markovStates eId="MS_Logout" service="//@applicationModel/@sessionLayerEFSM/@applicationStates.1/@service">
-      <outgoingTransitions targetState="//@behaviorModels.0/@exitState" probability="0.8">
+      <outgoingTransitions targetState="BM1_$" probability="0.8">
         <thinkTime xsi:type="m4jdsl:NormallyDistributedThinkTime" mean="7.0" deviation="2.0"/>
       </outgoingTransitions>
-      <outgoingTransitions targetState="//@behaviorModels.0/@markovStates.0" probability="0.2">
+      <outgoingTransitions targetState="MS_Login" probability="0.2">
         <thinkTime xsi:type="m4jdsl:NormallyDistributedThinkTime" mean="5.0" deviation="2.5"/>
       </outgoingTransitions>
     </markovStates>
-    <exitState eId="$"/>
+    <exitState eId="BM1_$"/>
   </behaviorModels>
 </m4jdsl:WorkloadModel>
