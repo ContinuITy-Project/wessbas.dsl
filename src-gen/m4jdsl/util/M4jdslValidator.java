@@ -331,6 +331,7 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validate_EveryKeyUnique(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeUniqueNames(behaviorModel, diagnostics, context);
+        if (result || diagnostics != null) result &= validateBehaviorModel_mustBeUniqueFilenames(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeBehaviorModelWithMarkovStatesForAllServices(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeInitialStateWhichIsIncludedInMarkovStatesList(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeBehaviorModelWithoutForeignTargetStates(behaviorModel, diagnostics, context);
@@ -344,8 +345,7 @@ public class M4jdslValidator extends EObjectValidator {
      * @generated
      */
     protected static final String BEHAVIOR_MODEL__MUST_BE_UNIQUE_NAMES__EEXPRESSION = "\n" +
-        "            BehaviorModel.allInstances()->\n" +
-        "                forAll(b1,b2|\n" +
+        "            BehaviorModel.allInstances()->forAll(b1,b2|\n" +
         "                 (b1 <> b2 and not(b1.name.oclIsUndefined() or b2.name.oclIsUndefined()))\n" +
         "                     implies b1.name <> b2.name\n" +
         "                )";
@@ -366,6 +366,38 @@ public class M4jdslValidator extends EObjectValidator {
                  "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
                  "mustBeUniqueNames",
                  BEHAVIOR_MODEL__MUST_BE_UNIQUE_NAMES__EEXPRESSION,
+                 Diagnostic.ERROR,
+                 DIAGNOSTIC_SOURCE,
+                 0);
+    }
+
+    /**
+     * The cached validation expression for the mustBeUniqueFilenames constraint of '<em>Behavior Model</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected static final String BEHAVIOR_MODEL__MUST_BE_UNIQUE_FILENAMES__EEXPRESSION = "\n" +
+        "            BehaviorModel.allInstances()->forAll(b1,b2 |\n" +
+        "                (b1 <> b2 and not(b1.filename.oclIsUndefined() or b2.filename.oclIsUndefined()))\n" +
+        "                    implies b1.filename <> b2.filename)";
+
+    /**
+     * Validates the mustBeUniqueFilenames constraint of '<em>Behavior Model</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateBehaviorModel_mustBeUniqueFilenames(BehaviorModel behaviorModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return
+            validate
+                (M4jdslPackage.Literals.BEHAVIOR_MODEL,
+                 behaviorModel,
+                 diagnostics,
+                 context,
+                 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+                 "mustBeUniqueFilenames",
+                 BEHAVIOR_MODEL__MUST_BE_UNIQUE_FILENAMES__EEXPRESSION,
                  Diagnostic.ERROR,
                  DIAGNOSTIC_SOURCE,
                  0);

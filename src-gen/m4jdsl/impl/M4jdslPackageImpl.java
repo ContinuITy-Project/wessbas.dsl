@@ -1489,7 +1489,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
           (behaviorModelEClass, 
            source, 
            new String[] {
-             "constraints", "mustBeUniqueNames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates"
+             "constraints", "mustBeUniqueNames mustBeUniqueFilenames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates"
            });			
         addAnnotation
           (transitionEClass, 
@@ -1578,7 +1578,8 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
           (behaviorModelEClass, 
            source, 
            new String[] {
-             "mustBeUniqueNames", "\n            BehaviorModel.allInstances()->\n                forAll(b1,b2|\n                 (b1 <> b2 and not(b1.name.oclIsUndefined() or b2.name.oclIsUndefined()))\n                     implies b1.name <> b2.name\n                )",
+             "mustBeUniqueNames", "\n            BehaviorModel.allInstances()->forAll(b1,b2|\n                 (b1 <> b2 and not(b1.name.oclIsUndefined() or b2.name.oclIsUndefined()))\n                     implies b1.name <> b2.name\n                )",
+             "mustBeUniqueFilenames", "\n            BehaviorModel.allInstances()->forAll(b1,b2 |\n                (b1 <> b2 and not(b1.filename.oclIsUndefined() or b2.filename.oclIsUndefined()))\n                    implies b1.filename <> b2.filename)",
              "mustBeBehaviorModelWithMarkovStatesForAllServices", "\n            Service.allInstances()->\n                forAll(s|markovStates->exists(m|m.service = s))",
              "mustBeInitialStateWhichIsIncludedInMarkovStatesList", "\n            not initialState.oclIsUndefined() implies markovStates->includes(initialState)",
              "mustBeBehaviorModelWithoutForeignTargetStates", "\n            markovStates->forAll(s| \n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (markovStates->includes(t.targetState)\n                    or t.targetState = exitState)))"
