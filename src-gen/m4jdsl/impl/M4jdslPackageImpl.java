@@ -37,7 +37,6 @@ import m4jdsl.ThinkTime;
 import m4jdsl.Transition;
 import m4jdsl.WorkloadIntensity;
 import m4jdsl.WorkloadModel;
-
 import m4jdsl.util.M4jdslValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -45,8 +44,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -314,7 +313,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
     /**
      * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-     * 
+     *
      * <p>This method is used to initialize {@link M4jdslPackage#eINSTANCE} when that field is accessed.
      * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
      * <!-- begin-user-doc -->
@@ -340,9 +339,10 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
         // Register package validator
         EValidator.Registry.INSTANCE.put
-            (theM4jdslPackage, 
+            (theM4jdslPackage,
              new EValidator.Descriptor() {
-                 public EValidator getEValidator() {
+                 @Override
+                public EValidator getEValidator() {
                      return M4jdslValidator.INSTANCE;
                  }
              });
@@ -350,7 +350,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
         // Mark meta-data to indicate it can't be changed
         theM4jdslPackage.freeze();
 
-  
+
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(M4jdslPackage.eNS_URI, theM4jdslPackage);
         return theM4jdslPackage;
@@ -361,6 +361,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getWorkloadIntensity() {
         return workloadIntensityEClass;
     }
@@ -370,6 +371,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getWorkloadIntensity_Formula() {
         return (EAttribute)workloadIntensityEClass.getEStructuralFeatures().get(0);
     }
@@ -379,6 +381,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getWorkloadModel() {
         return workloadModelEClass;
     }
@@ -388,6 +391,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getWorkloadModel_WorkloadIntensity() {
         return (EReference)workloadModelEClass.getEStructuralFeatures().get(0);
     }
@@ -397,6 +401,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getWorkloadModel_ApplicationModel() {
         return (EReference)workloadModelEClass.getEStructuralFeatures().get(1);
     }
@@ -406,6 +411,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getWorkloadModel_BehaviorMix() {
         return (EReference)workloadModelEClass.getEStructuralFeatures().get(2);
     }
@@ -415,6 +421,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getWorkloadModel_BehaviorModels() {
         return (EReference)workloadModelEClass.getEStructuralFeatures().get(3);
     }
@@ -424,6 +431,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getApplicationModel() {
         return applicationModelEClass;
     }
@@ -433,6 +441,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getApplicationModel_SessionLayerEFSM() {
         return (EReference)applicationModelEClass.getEStructuralFeatures().get(0);
     }
@@ -442,6 +451,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getBehaviorMix() {
         return behaviorMixEClass;
     }
@@ -451,6 +461,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getBehaviorMix_RelativeFrequencies() {
         return (EReference)behaviorMixEClass.getEStructuralFeatures().get(0);
     }
@@ -460,6 +471,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getRelativeFrequency() {
         return relativeFrequencyEClass;
     }
@@ -469,6 +481,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getRelativeFrequency_BehaviorModel() {
         return (EReference)relativeFrequencyEClass.getEStructuralFeatures().get(0);
     }
@@ -478,6 +491,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getRelativeFrequency_Value() {
         return (EAttribute)relativeFrequencyEClass.getEStructuralFeatures().get(1);
     }
@@ -487,6 +501,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getBehaviorModel() {
         return behaviorModelEClass;
     }
@@ -496,6 +511,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getBehaviorModel_MarkovStates() {
         return (EReference)behaviorModelEClass.getEStructuralFeatures().get(0);
     }
@@ -505,6 +521,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getBehaviorModel_Name() {
         return (EAttribute)behaviorModelEClass.getEStructuralFeatures().get(1);
     }
@@ -514,6 +531,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getBehaviorModel_Filename() {
         return (EAttribute)behaviorModelEClass.getEStructuralFeatures().get(2);
     }
@@ -523,6 +541,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getBehaviorModel_ExitState() {
         return (EReference)behaviorModelEClass.getEStructuralFeatures().get(3);
     }
@@ -532,6 +551,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getBehaviorModel_InitialState() {
         return (EReference)behaviorModelEClass.getEStructuralFeatures().get(4);
     }
@@ -541,6 +561,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getTransition() {
         return transitionEClass;
     }
@@ -550,6 +571,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getTransition_TargetState() {
         return (EReference)transitionEClass.getEStructuralFeatures().get(0);
     }
@@ -559,6 +581,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getTransition_Probability() {
         return (EAttribute)transitionEClass.getEStructuralFeatures().get(1);
     }
@@ -568,6 +591,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getTransition_ThinkTime() {
         return (EReference)transitionEClass.getEStructuralFeatures().get(2);
     }
@@ -577,6 +601,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getMarkovState() {
         return markovStateEClass;
     }
@@ -586,6 +611,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getMarkovState_OutgoingTransitions() {
         return (EReference)markovStateEClass.getEStructuralFeatures().get(0);
     }
@@ -595,6 +621,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getMarkovState_Service() {
         return (EReference)markovStateEClass.getEStructuralFeatures().get(1);
     }
@@ -604,6 +631,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getService() {
         return serviceEClass;
     }
@@ -613,6 +641,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getService_Name() {
         return (EAttribute)serviceEClass.getEStructuralFeatures().get(0);
     }
@@ -622,6 +651,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getApplicationState() {
         return applicationStateEClass;
     }
@@ -631,6 +661,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getApplicationState_Service() {
         return (EReference)applicationStateEClass.getEStructuralFeatures().get(0);
     }
@@ -640,6 +671,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getApplicationState_ProtocolDetails() {
         return (EReference)applicationStateEClass.getEStructuralFeatures().get(1);
     }
@@ -649,6 +681,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getApplicationState_OutgoingTransitions() {
         return (EReference)applicationStateEClass.getEStructuralFeatures().get(2);
     }
@@ -658,6 +691,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getHTTPRequest() {
         return httpRequestEClass;
     }
@@ -667,6 +701,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getJavaRequest() {
         return javaRequestEClass;
     }
@@ -676,6 +711,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getBeanShellRequest() {
         return beanShellRequestEClass;
     }
@@ -685,6 +721,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getJUnitRequest() {
         return jUnitRequestEClass;
     }
@@ -694,6 +731,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getSOAPRequest() {
         return soapRequestEClass;
     }
@@ -703,6 +741,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getRequest() {
         return requestEClass;
     }
@@ -712,6 +751,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getRequest_EId() {
         return (EAttribute)requestEClass.getEStructuralFeatures().get(0);
     }
@@ -721,6 +761,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getRequest_Assertions() {
         return (EReference)requestEClass.getEStructuralFeatures().get(1);
     }
@@ -730,6 +771,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getRequest_Properties() {
         return (EReference)requestEClass.getEStructuralFeatures().get(2);
     }
@@ -739,6 +781,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getRequest_Parameters() {
         return (EReference)requestEClass.getEStructuralFeatures().get(3);
     }
@@ -748,6 +791,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProtocolState() {
         return protocolStateEClass;
     }
@@ -757,6 +801,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolState_Request() {
         return (EReference)protocolStateEClass.getEStructuralFeatures().get(0);
     }
@@ -766,6 +811,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolState_OutgoingTransitions() {
         return (EReference)protocolStateEClass.getEStructuralFeatures().get(1);
     }
@@ -775,6 +821,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProtocolTransition() {
         return protocolTransitionEClass;
     }
@@ -784,6 +831,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getProtocolTransition_Guard() {
         return (EAttribute)protocolTransitionEClass.getEStructuralFeatures().get(0);
     }
@@ -793,6 +841,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolTransition_TargetState() {
         return (EReference)protocolTransitionEClass.getEStructuralFeatures().get(1);
     }
@@ -802,6 +851,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getProtocolTransition_Action() {
         return (EAttribute)protocolTransitionEClass.getEStructuralFeatures().get(2);
     }
@@ -811,6 +861,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProtocolLayerEFSM() {
         return protocolLayerEFSMEClass;
     }
@@ -820,6 +871,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolLayerEFSM_ProtocolStates() {
         return (EReference)protocolLayerEFSMEClass.getEStructuralFeatures().get(0);
     }
@@ -829,6 +881,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolLayerEFSM_InitialState() {
         return (EReference)protocolLayerEFSMEClass.getEStructuralFeatures().get(1);
     }
@@ -838,6 +891,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getProtocolLayerEFSM_ExitState() {
         return (EReference)protocolLayerEFSMEClass.getEStructuralFeatures().get(2);
     }
@@ -847,6 +901,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getSessionLayerEFSM() {
         return sessionLayerEFSMEClass;
     }
@@ -856,6 +911,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getSessionLayerEFSM_ApplicationStates() {
         return (EReference)sessionLayerEFSMEClass.getEStructuralFeatures().get(0);
     }
@@ -865,6 +921,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getSessionLayerEFSM_InitialState() {
         return (EReference)sessionLayerEFSMEClass.getEStructuralFeatures().get(1);
     }
@@ -874,6 +931,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getSessionLayerEFSM_ExitState() {
         return (EReference)sessionLayerEFSMEClass.getEStructuralFeatures().get(2);
     }
@@ -883,6 +941,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getConstantWorkloadIntensity() {
         return constantWorkloadIntensityEClass;
     }
@@ -892,6 +951,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getConstantWorkloadIntensity_NumberOfSessions() {
         return (EAttribute)constantWorkloadIntensityEClass.getEStructuralFeatures().get(0);
     }
@@ -901,6 +961,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getApplicationTransition() {
         return applicationTransitionEClass;
     }
@@ -910,6 +971,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EReference getApplicationTransition_TargetState() {
         return (EReference)applicationTransitionEClass.getEStructuralFeatures().get(0);
     }
@@ -919,6 +981,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getApplicationTransition_Action() {
         return (EAttribute)applicationTransitionEClass.getEStructuralFeatures().get(1);
     }
@@ -928,6 +991,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getApplicationTransition_Guard() {
         return (EAttribute)applicationTransitionEClass.getEStructuralFeatures().get(2);
     }
@@ -937,6 +1001,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getNormallyDistributedThinkTime() {
         return normallyDistributedThinkTimeEClass;
     }
@@ -946,6 +1011,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getNormallyDistributedThinkTime_Mean() {
         return (EAttribute)normallyDistributedThinkTimeEClass.getEStructuralFeatures().get(0);
     }
@@ -955,6 +1021,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getNormallyDistributedThinkTime_Deviation() {
         return (EAttribute)normallyDistributedThinkTimeEClass.getEStructuralFeatures().get(1);
     }
@@ -964,6 +1031,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProperty() {
         return propertyEClass;
     }
@@ -973,6 +1041,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getProperty_Key() {
         return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
     }
@@ -982,6 +1051,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getProperty_Value() {
         return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
     }
@@ -991,6 +1061,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getParameter() {
         return parameterEClass;
     }
@@ -1000,6 +1071,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getParameter_Name() {
         return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
     }
@@ -1009,6 +1081,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getParameter_Value() {
         return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
     }
@@ -1018,6 +1091,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getAssertion() {
         return assertionEClass;
     }
@@ -1027,6 +1101,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getAssertion_PatternToTest() {
         return (EAttribute)assertionEClass.getEStructuralFeatures().get(0);
     }
@@ -1036,6 +1111,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getThinkTime() {
         return thinkTimeEClass;
     }
@@ -1045,6 +1121,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getApplicationExitState() {
         return applicationExitStateEClass;
     }
@@ -1054,6 +1131,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getSessionLayerEFSMState() {
         return sessionLayerEFSMStateEClass;
     }
@@ -1063,6 +1141,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getSessionLayerEFSMState_EId() {
         return (EAttribute)sessionLayerEFSMStateEClass.getEStructuralFeatures().get(0);
     }
@@ -1072,6 +1151,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getBehaviorModelExitState() {
         return behaviorModelExitStateEClass;
     }
@@ -1081,6 +1161,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getBehaviorModelState() {
         return behaviorModelStateEClass;
     }
@@ -1090,6 +1171,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getBehaviorModelState_EId() {
         return (EAttribute)behaviorModelStateEClass.getEStructuralFeatures().get(0);
     }
@@ -1099,6 +1181,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProtocolExitState() {
         return protocolExitStateEClass;
     }
@@ -1108,6 +1191,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EClass getProtocolLayerEFSMState() {
         return protocolLayerEFSMStateEClass;
     }
@@ -1117,6 +1201,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EAttribute getProtocolLayerEFSMState_EId() {
         return (EAttribute)protocolLayerEFSMStateEClass.getEStructuralFeatures().get(0);
     }
@@ -1126,6 +1211,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public M4jdslFactory getM4jdslFactory() {
         return (M4jdslFactory)getEFactoryInstance();
     }
@@ -1448,13 +1534,13 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createImportAnnotations() {
-        String source = "http://www.eclipse.org/OCL/Import";		
+        String source = "http://www.eclipse.org/OCL/Import";
         addAnnotation
-          (this, 
-           source, 
+          (this,
+           source,
            new String[] {
              "ecore", "http://www.eclipse.org/emf/2002/Ecore#/"
-           });																											
+           });
     }
 
     /**
@@ -1464,93 +1550,93 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createEcoreAnnotations() {
-        String source = "http://www.eclipse.org/emf/2002/Ecore";			
+        String source = "http://www.eclipse.org/emf/2002/Ecore";
         addAnnotation
-          (this, 
-           source, 
+          (this,
+           source,
            new String[] {
              "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
              "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
              "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-           });		
+           });
         addAnnotation
-          (behaviorMixEClass, 
-           source, 
+          (behaviorMixEClass,
+           source,
            new String[] {
              "constraints", "mustBeValidFrequencySum mustBeUniqueBehaviorModels"
-           });			
+           });
         addAnnotation
-          (relativeFrequencyEClass, 
-           source, 
+          (relativeFrequencyEClass,
+           source,
            new String[] {
              "constraints", "mustBeNonnegativeFrequency"
-           });			
+           });
         addAnnotation
-          (behaviorModelEClass, 
-           source, 
+          (behaviorModelEClass,
+           source,
            new String[] {
              "constraints", "mustBeUniqueNames mustBeUniqueFilenames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates"
-           });			
+           });
         addAnnotation
-          (transitionEClass, 
-           source, 
+          (transitionEClass,
+           source,
            new String[] {
              "constraints", "mustBeValidProbability mustBeThinkTimesOfSameType"
-           });			
+           });
         addAnnotation
-          (markovStateEClass, 
-           source, 
+          (markovStateEClass,
+           source,
            new String[] {
              "constraints", "mustBeValidProbabilitySum mustBeMarkovStatesWithUniqueServices mustBeOutgoingTransitionsWithUniqueTargetStates mustBeOutgoingTransitionsCorrespondingToSessionLayer"
-           });			
+           });
         addAnnotation
-          (serviceEClass, 
-           source, 
+          (serviceEClass,
+           source,
            new String[] {
              "constraints", "mustBeUniqueNames"
-           });			
+           });
         addAnnotation
-          (applicationStateEClass, 
-           source, 
+          (applicationStateEClass,
+           source,
            new String[] {
              "constraints", "mustBeUniqueOutgoingTransitionTargetStates"
-           });			
+           });
         addAnnotation
-          (requestEClass, 
-           source, 
+          (requestEClass,
+           source,
            new String[] {
              "constraints", "mustBeUniquePropertyKeys mustBeUniqueParameterNames mustBeRequestsOfSameType"
-           });			
+           });
         addAnnotation
-          (protocolStateEClass, 
-           source, 
+          (protocolStateEClass,
+           source,
            new String[] {
              "constraints", "mustBeUniqueOutgoingTransitionTargetStates"
-           });			
+           });
         addAnnotation
-          (protocolLayerEFSMEClass, 
-           source, 
+          (protocolLayerEFSMEClass,
+           source,
            new String[] {
              "constraints", "mustBeProtocolStatesWithUniqueRequests mustBeInitialStateWhichIsIncludedInProtocolStatesList mustBeProtocolLayerEFSMWithoutForeignStates"
-           });			
+           });
         addAnnotation
-          (sessionLayerEFSMEClass, 
-           source, 
+          (sessionLayerEFSMEClass,
+           source,
            new String[] {
              "constraints", "mustBeApplicationStatesWithUniqueServices mustBeInitialStateWhichIsIncludedInApplicationStatesList"
-           });			
+           });
         addAnnotation
-          (constantWorkloadIntensityEClass, 
-           source, 
+          (constantWorkloadIntensityEClass,
+           source,
            new String[] {
              "constraints", "mustBeNonnegativeSessionNumber"
-           });			
+           });
         addAnnotation
-          (normallyDistributedThinkTimeEClass, 
-           source, 
+          (normallyDistributedThinkTimeEClass,
+           source,
            new String[] {
              "constraints", "mustBeValidThinkTimeValues"
-           });	
+           });
     }
 
     /**
@@ -1560,99 +1646,112 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createPivotAnnotations() {
-        String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";					
+        String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
         addAnnotation
-          (behaviorMixEClass, 
-           source, 
+          (behaviorMixEClass,
+           source,
            new String[] {
              "mustBeValidFrequencySum", "\n            relativeFrequencies.value->sum() = 1.0",
              "mustBeUniqueBehaviorModels", "\n            relativeFrequencies->forAll(f1,f2|\n             (f1 <> f2 and not(f1.behaviorModel.oclIsUndefined() or f2.behaviorModel.oclIsUndefined()))\n                 implies f1.behaviorModel <> f2.behaviorModel)"
-           });			
+           });
         addAnnotation
-          (relativeFrequencyEClass, 
-           source, 
+          (relativeFrequencyEClass,
+           source,
            new String[] {
              "mustBeNonnegativeFrequency", "\n            value >= 0.0 and value <= 1.0"
-           });			
+           });
         addAnnotation
-          (behaviorModelEClass, 
-           source, 
+          (behaviorModelEClass,
+           source,
            new String[] {
              "mustBeUniqueNames", "\n            BehaviorModel.allInstances()->forAll(b1,b2|\n                 (b1 <> b2 and not(b1.name.oclIsUndefined() or b2.name.oclIsUndefined()))\n                     implies b1.name <> b2.name\n                )",
              "mustBeUniqueFilenames", "\n            BehaviorModel.allInstances()->forAll(b1,b2 |\n                (b1 <> b2 and not(b1.filename.oclIsUndefined() or b2.filename.oclIsUndefined()))\n                    implies b1.filename <> b2.filename)",
              "mustBeBehaviorModelWithMarkovStatesForAllServices", "\n            Service.allInstances()->\n                forAll(s|markovStates->exists(m|m.service = s))",
              "mustBeInitialStateWhichIsIncludedInMarkovStatesList", "\n            not initialState.oclIsUndefined() implies markovStates->includes(initialState)",
              "mustBeBehaviorModelWithoutForeignTargetStates", "\n            markovStates->forAll(s| \n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (markovStates->includes(t.targetState)\n                    or t.targetState = exitState)))"
-           });			
+           });
         addAnnotation
-          (transitionEClass, 
-           source, 
+          (transitionEClass,
+           source,
            new String[] {
              "mustBeValidProbability", "\n            probability >= 0.0 and probability <= 1.0",
              "mustBeThinkTimesOfSameType", "\n            Transition.allInstances()->\n                forAll(t1,t2|\n                    not (t1.thinkTime.oclIsUndefined() or t2.thinkTime.oclIsUndefined()) implies \n                    t1.thinkTime.oclType() = t2.thinkTime.oclType()\n                )"
-           });			
+           });
         addAnnotation
-          (markovStateEClass, 
-           source, 
+          (markovStateEClass,
+           source,
            new String[] {
              "mustBeValidProbabilitySum", "\n            outgoingTransitions.probability->sum() = 1.0",
              "mustBeMarkovStatesWithUniqueServices", "\n            MarkovState.allInstances()->\n                forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                    implies s1.service <> s2.service\n                )",
              "mustBeOutgoingTransitionsWithUniqueTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )",
              "mustBeOutgoingTransitionsCorrespondingToSessionLayer", "\n            not service.oclIsUndefined() implies \n            ApplicationState.allInstances()->exists(as|service = as.service and\n                outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies as.outgoingTransitions->exists(at|\n                        (at.targetState.oclIsTypeOf(ApplicationExitState) and\n                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or\n                       ((t.targetState.oclIsTypeOf(MarkovState) and\n                         at.targetState.oclIsTypeOf(ApplicationState) and\n                         at.targetState.oclAsType(ApplicationState).service =\n                         t.targetState.oclAsType(MarkovState).service)))))"
-           });			
+           });
         addAnnotation
-          (serviceEClass, 
-           source, 
+          (serviceEClass,
+           source,
            new String[] {
              "mustBeUniqueNames", "\n    \t\tService.allInstances()->\n                forAll(s1,s2|\n                    (s1 <> s2 and not(s1.name.oclIsUndefined() or s2.name.oclIsUndefined()))\n                     implies s1.name <> s2.name\n                )"
-           });			
+           });
         addAnnotation
-          (applicationStateEClass, 
-           source, 
+          (applicationStateEClass,
+           source,
            new String[] {
              "mustBeUniqueOutgoingTransitionTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )"
-           });			
+           });
         addAnnotation
-          (requestEClass, 
-           source, 
+          (requestEClass,
+           source,
            new String[] {
              "mustBeUniquePropertyKeys", "\n         properties->forAll(p1,p2 | \n             (p1 <> p2 and not(p1.key.oclIsUndefined() or p2.key.oclIsUndefined()))\n                implies p1.key <> p2.key\n         )",
              "mustBeUniqueParameterNames", "\n        parameters->forAll(p1,p2 |\n             (p1 <> p2 and not(p1.name.oclIsUndefined() or p2.name.oclIsUndefined()))\n             implies p1.name <> p2.name\n        )",
              "mustBeRequestsOfSameType", "\n        Request.allInstances()->forAll(r1,r2 | r1.oclType() = r2.oclType())"
-           });			
+           });
         addAnnotation
-          (protocolStateEClass, 
-           source, 
+          (protocolStateEClass,
+           source,
            new String[] {
              "mustBeUniqueOutgoingTransitionTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                    (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                    implies t1.targetState <> t2.targetState\n                )"
-           });			
+           });
         addAnnotation
-          (protocolLayerEFSMEClass, 
-           source, 
+          (protocolLayerEFSMEClass,
+           source,
            new String[] {
              "mustBeProtocolStatesWithUniqueRequests", "\n            protocolStates->forAll(s1,s2|\n                (s1 <> s2 and not(s1.request.oclIsUndefined() or s2.request.oclIsUndefined()))\n                 implies s1.request <> s2.request\n            )",
              "mustBeInitialStateWhichIsIncludedInProtocolStatesList", "\n            not initialState.oclIsUndefined() implies protocolStates->includes(initialState)",
              "mustBeProtocolLayerEFSMWithoutForeignStates", "\n            protocolStates->forAll(s|\n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (protocolStates->includes(t.targetState) or t.targetState = exitState)))"
-           });			
+           });
         addAnnotation
-          (sessionLayerEFSMEClass, 
-           source, 
+          (sessionLayerEFSMEClass,
+           source,
            new String[] {
              "mustBeApplicationStatesWithUniqueServices", "\n            applicationStates->forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                 implies s1.service <> s2.service\n            )",
              "mustBeInitialStateWhichIsIncludedInApplicationStatesList", "\n            not initialState.oclIsUndefined() implies applicationStates->includes(initialState)"
-           });			
+           });
         addAnnotation
-          (constantWorkloadIntensityEClass, 
-           source, 
+          (constantWorkloadIntensityEClass,
+           source,
            new String[] {
              "mustBeNonnegativeSessionNumber", "\n           numberOfSessions >= 0"
-           });			
+           });
         addAnnotation
-          (normallyDistributedThinkTimeEClass, 
-           source, 
+          (normallyDistributedThinkTimeEClass,
+           source,
            new String[] {
              "mustBeValidThinkTimeValues", "\n            mean >= 0.0 and deviation >= 0.0 and deviation <= mean"
            });
+    }
+
+    @Override
+    protected Resource createResource(String uri) {
+
+        // this is necessary for setting the attribute
+        //
+        //   xsi:schemaLocation="http://m4jdsl/1.0 m4jdsl.ecore"
+        //
+        // in the XMI file of a serialized EMF model; the attribute will not be
+        // be stored otherwise, causing the resulting XMI file to be not
+        // readable for the Generic Form Editor;
+        return super.createResource("m4jdsl.ecore");
     }
 
 } //M4jdslPackageImpl
