@@ -19,8 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see m4jdsl.M4jdslPackage#getApplicationState()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustBeUniqueOutgoingTransitionTargetStates'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot mustBeUniqueOutgoingTransitionTargetStates='\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustBeUniqueOutgoingTransitions'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot mustBeUniqueOutgoingTransitions='\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies (t1.targetState <> t2.targetState or t1.guard <> t2.guard))'"
  * @generated
  */
 public interface ApplicationState extends SessionLayerEFSMState {

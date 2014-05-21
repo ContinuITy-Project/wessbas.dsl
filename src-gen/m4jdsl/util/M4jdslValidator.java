@@ -281,26 +281,26 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validate_UniqueID(relativeFrequency, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryKeyUnique(relativeFrequency, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(relativeFrequency, diagnostics, context);
-        if (result || diagnostics != null) result &= validateRelativeFrequency_mustBeNonnegativeFrequency(relativeFrequency, diagnostics, context);
+        if (result || diagnostics != null) result &= validateRelativeFrequency_mustBeValidFrequency(relativeFrequency, diagnostics, context);
         return result;
     }
 
     /**
-     * The cached validation expression for the mustBeNonnegativeFrequency constraint of '<em>Relative Frequency</em>'.
+     * The cached validation expression for the mustBeValidFrequency constraint of '<em>Relative Frequency</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static final String RELATIVE_FREQUENCY__MUST_BE_NONNEGATIVE_FREQUENCY__EEXPRESSION = "\n" +
+    protected static final String RELATIVE_FREQUENCY__MUST_BE_VALID_FREQUENCY__EEXPRESSION = "\n" +
         "            value >= 0.0 and value <= 1.0";
 
     /**
-     * Validates the mustBeNonnegativeFrequency constraint of '<em>Relative Frequency</em>'.
+     * Validates the mustBeValidFrequency constraint of '<em>Relative Frequency</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public boolean validateRelativeFrequency_mustBeNonnegativeFrequency(RelativeFrequency relativeFrequency, DiagnosticChain diagnostics, Map<Object, Object> context) {
+    public boolean validateRelativeFrequency_mustBeValidFrequency(RelativeFrequency relativeFrequency, DiagnosticChain diagnostics, Map<Object, Object> context) {
         return
             validate
                 (M4jdslPackage.Literals.RELATIVE_FREQUENCY,
@@ -308,8 +308,8 @@ public class M4jdslValidator extends EObjectValidator {
                  diagnostics,
                  context,
                  "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-                 "mustBeNonnegativeFrequency",
-                 RELATIVE_FREQUENCY__MUST_BE_NONNEGATIVE_FREQUENCY__EEXPRESSION,
+                 "mustBeValidFrequency",
+                 RELATIVE_FREQUENCY__MUST_BE_VALID_FREQUENCY__EEXPRESSION,
                  Diagnostic.ERROR,
                  DIAGNOSTIC_SOURCE,
                  0);
@@ -611,6 +611,7 @@ public class M4jdslValidator extends EObjectValidator {
      * @generated
      */
     protected static final String MARKOV_STATE__MUST_BE_VALID_PROBABILITY_SUM__EEXPRESSION = "\n" +
+        "            outgoingTransitions.probability->exists(p | p > 0) implies\n" +
         "            outgoingTransitions.probability->sum() = 1.0";
 
     /**
@@ -809,30 +810,29 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validate_UniqueID(applicationState, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryKeyUnique(applicationState, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(applicationState, diagnostics, context);
-        if (result || diagnostics != null) result &= validateApplicationState_mustBeUniqueOutgoingTransitionTargetStates(applicationState, diagnostics, context);
+        if (result || diagnostics != null) result &= validateApplicationState_mustBeUniqueOutgoingTransitions(applicationState, diagnostics, context);
         return result;
     }
 
     /**
-     * The cached validation expression for the mustBeUniqueOutgoingTransitionTargetStates constraint of '<em>Application State</em>'.
+     * The cached validation expression for the mustBeUniqueOutgoingTransitions constraint of '<em>Application State</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static final String APPLICATION_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITION_TARGET_STATES__EEXPRESSION = "\n" +
+    protected static final String APPLICATION_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITIONS__EEXPRESSION = "\n" +
         "            outgoingTransitions->\n" +
         "                forAll(t1,t2|\n" +
         "                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n" +
-        "                     implies t1.targetState <> t2.targetState\n" +
-        "                )";
+        "                     implies (t1.targetState <> t2.targetState or t1.guard <> t2.guard))";
 
     /**
-     * Validates the mustBeUniqueOutgoingTransitionTargetStates constraint of '<em>Application State</em>'.
+     * Validates the mustBeUniqueOutgoingTransitions constraint of '<em>Application State</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public boolean validateApplicationState_mustBeUniqueOutgoingTransitionTargetStates(ApplicationState applicationState, DiagnosticChain diagnostics, Map<Object, Object> context) {
+    public boolean validateApplicationState_mustBeUniqueOutgoingTransitions(ApplicationState applicationState, DiagnosticChain diagnostics, Map<Object, Object> context) {
         return
             validate
                 (M4jdslPackage.Literals.APPLICATION_STATE,
@@ -840,8 +840,8 @@ public class M4jdslValidator extends EObjectValidator {
                  diagnostics,
                  context,
                  "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-                 "mustBeUniqueOutgoingTransitionTargetStates",
-                 APPLICATION_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITION_TARGET_STATES__EEXPRESSION,
+                 "mustBeUniqueOutgoingTransitions",
+                 APPLICATION_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITIONS__EEXPRESSION,
                  Diagnostic.ERROR,
                  DIAGNOSTIC_SOURCE,
                  0);
@@ -1084,30 +1084,29 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validate_UniqueID(protocolState, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryKeyUnique(protocolState, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(protocolState, diagnostics, context);
-        if (result || diagnostics != null) result &= validateProtocolState_mustBeUniqueOutgoingTransitionTargetStates(protocolState, diagnostics, context);
+        if (result || diagnostics != null) result &= validateProtocolState_mustBeUniqueOutgoingTransitions(protocolState, diagnostics, context);
         return result;
     }
 
     /**
-     * The cached validation expression for the mustBeUniqueOutgoingTransitionTargetStates constraint of '<em>Protocol State</em>'.
+     * The cached validation expression for the mustBeUniqueOutgoingTransitions constraint of '<em>Protocol State</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected static final String PROTOCOL_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITION_TARGET_STATES__EEXPRESSION = "\n" +
+    protected static final String PROTOCOL_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITIONS__EEXPRESSION = "\n" +
         "            outgoingTransitions->\n" +
         "                forAll(t1,t2|\n" +
         "                    (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n" +
-        "                    implies t1.targetState <> t2.targetState\n" +
-        "                )";
+        "                    implies (t1.targetState <> t2.targetState or t1.guard <> t2.guard))";
 
     /**
-     * Validates the mustBeUniqueOutgoingTransitionTargetStates constraint of '<em>Protocol State</em>'.
+     * Validates the mustBeUniqueOutgoingTransitions constraint of '<em>Protocol State</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public boolean validateProtocolState_mustBeUniqueOutgoingTransitionTargetStates(ProtocolState protocolState, DiagnosticChain diagnostics, Map<Object, Object> context) {
+    public boolean validateProtocolState_mustBeUniqueOutgoingTransitions(ProtocolState protocolState, DiagnosticChain diagnostics, Map<Object, Object> context) {
         return
             validate
                 (M4jdslPackage.Literals.PROTOCOL_STATE,
@@ -1115,8 +1114,8 @@ public class M4jdslValidator extends EObjectValidator {
                  diagnostics,
                  context,
                  "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-                 "mustBeUniqueOutgoingTransitionTargetStates",
-                 PROTOCOL_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITION_TARGET_STATES__EEXPRESSION,
+                 "mustBeUniqueOutgoingTransitions",
+                 PROTOCOL_STATE__MUST_BE_UNIQUE_OUTGOING_TRANSITIONS__EEXPRESSION,
                  Diagnostic.ERROR,
                  DIAGNOSTIC_SOURCE,
                  0);

@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see m4jdsl.M4jdslPackage#getRelativeFrequency()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustBeNonnegativeFrequency'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot mustBeNonnegativeFrequency='\n            value >= 0.0 and value <= 1.0'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustBeValidFrequency'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot mustBeValidFrequency='\n            value >= 0.0 and value <= 1.0'"
  * @generated
  */
 public interface RelativeFrequency extends EObject {

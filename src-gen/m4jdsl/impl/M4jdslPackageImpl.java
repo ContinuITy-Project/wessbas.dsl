@@ -313,7 +313,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
     /**
      * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-     *
+     * 
      * <p>This method is used to initialize {@link M4jdslPackage#eINSTANCE} when that field is accessed.
      * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
      * <!-- begin-user-doc -->
@@ -339,10 +339,9 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
         // Register package validator
         EValidator.Registry.INSTANCE.put
-            (theM4jdslPackage,
+            (theM4jdslPackage, 
              new EValidator.Descriptor() {
-                 @Override
-                public EValidator getEValidator() {
+                 public EValidator getEValidator() {
                      return M4jdslValidator.INSTANCE;
                  }
              });
@@ -350,7 +349,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
         // Mark meta-data to indicate it can't be changed
         theM4jdslPackage.freeze();
 
-
+  
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(M4jdslPackage.eNS_URI, theM4jdslPackage);
         return theM4jdslPackage;
@@ -1534,13 +1533,13 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createImportAnnotations() {
-        String source = "http://www.eclipse.org/OCL/Import";
+        String source = "http://www.eclipse.org/OCL/Import";		
         addAnnotation
-          (this,
-           source,
+          (this, 
+           source, 
            new String[] {
              "ecore", "http://www.eclipse.org/emf/2002/Ecore#/"
-           });
+           });																											
     }
 
     /**
@@ -1550,93 +1549,93 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createEcoreAnnotations() {
-        String source = "http://www.eclipse.org/emf/2002/Ecore";
+        String source = "http://www.eclipse.org/emf/2002/Ecore";			
         addAnnotation
-          (this,
-           source,
+          (this, 
+           source, 
            new String[] {
              "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
              "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
              "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-           });
+           });		
         addAnnotation
-          (behaviorMixEClass,
-           source,
+          (behaviorMixEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeValidFrequencySum mustBeUniqueBehaviorModels"
-           });
+           });			
         addAnnotation
-          (relativeFrequencyEClass,
-           source,
+          (relativeFrequencyEClass, 
+           source, 
            new String[] {
-             "constraints", "mustBeNonnegativeFrequency"
-           });
+             "constraints", "mustBeValidFrequency"
+           });			
         addAnnotation
-          (behaviorModelEClass,
-           source,
+          (behaviorModelEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeUniqueNames mustBeUniqueFilenames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates"
-           });
+           });			
         addAnnotation
-          (transitionEClass,
-           source,
+          (transitionEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeValidProbability mustBeThinkTimesOfSameType"
-           });
+           });			
         addAnnotation
-          (markovStateEClass,
-           source,
+          (markovStateEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeValidProbabilitySum mustBeMarkovStatesWithUniqueServices mustBeOutgoingTransitionsWithUniqueTargetStates mustBeOutgoingTransitionsCorrespondingToSessionLayer"
-           });
+           });			
         addAnnotation
-          (serviceEClass,
-           source,
+          (serviceEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeUniqueNames"
-           });
+           });			
         addAnnotation
-          (applicationStateEClass,
-           source,
+          (applicationStateEClass, 
+           source, 
            new String[] {
-             "constraints", "mustBeUniqueOutgoingTransitionTargetStates"
-           });
+             "constraints", "mustBeUniqueOutgoingTransitions"
+           });			
         addAnnotation
-          (requestEClass,
-           source,
+          (requestEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeUniquePropertyKeys mustBeUniqueParameterNames mustBeRequestsOfSameType"
-           });
+           });			
         addAnnotation
-          (protocolStateEClass,
-           source,
+          (protocolStateEClass, 
+           source, 
            new String[] {
-             "constraints", "mustBeUniqueOutgoingTransitionTargetStates"
-           });
+             "constraints", "mustBeUniqueOutgoingTransitions"
+           });			
         addAnnotation
-          (protocolLayerEFSMEClass,
-           source,
+          (protocolLayerEFSMEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeProtocolStatesWithUniqueRequests mustBeInitialStateWhichIsIncludedInProtocolStatesList mustBeProtocolLayerEFSMWithoutForeignStates"
-           });
+           });			
         addAnnotation
-          (sessionLayerEFSMEClass,
-           source,
+          (sessionLayerEFSMEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeApplicationStatesWithUniqueServices mustBeInitialStateWhichIsIncludedInApplicationStatesList"
-           });
+           });			
         addAnnotation
-          (constantWorkloadIntensityEClass,
-           source,
+          (constantWorkloadIntensityEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeNonnegativeSessionNumber"
-           });
+           });			
         addAnnotation
-          (normallyDistributedThinkTimeEClass,
-           source,
+          (normallyDistributedThinkTimeEClass, 
+           source, 
            new String[] {
              "constraints", "mustBeValidThinkTimeValues"
-           });
+           });	
     }
 
     /**
@@ -1646,96 +1645,96 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
      * @generated
      */
     protected void createPivotAnnotations() {
-        String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+        String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";					
         addAnnotation
-          (behaviorMixEClass,
-           source,
+          (behaviorMixEClass, 
+           source, 
            new String[] {
              "mustBeValidFrequencySum", "\n            relativeFrequencies.value->sum() = 1.0",
              "mustBeUniqueBehaviorModels", "\n            relativeFrequencies->forAll(f1,f2|\n             (f1 <> f2 and not(f1.behaviorModel.oclIsUndefined() or f2.behaviorModel.oclIsUndefined()))\n                 implies f1.behaviorModel <> f2.behaviorModel)"
-           });
+           });			
         addAnnotation
-          (relativeFrequencyEClass,
-           source,
+          (relativeFrequencyEClass, 
+           source, 
            new String[] {
-             "mustBeNonnegativeFrequency", "\n            value >= 0.0 and value <= 1.0"
-           });
+             "mustBeValidFrequency", "\n            value >= 0.0 and value <= 1.0"
+           });			
         addAnnotation
-          (behaviorModelEClass,
-           source,
+          (behaviorModelEClass, 
+           source, 
            new String[] {
              "mustBeUniqueNames", "\n            BehaviorModel.allInstances()->forAll(b1,b2|\n                 (b1 <> b2 and not(b1.name.oclIsUndefined() or b2.name.oclIsUndefined()))\n                     implies b1.name <> b2.name\n                )",
              "mustBeUniqueFilenames", "\n            BehaviorModel.allInstances()->forAll(b1,b2 |\n                (b1 <> b2 and not(b1.filename.oclIsUndefined() or b2.filename.oclIsUndefined()))\n                    implies b1.filename <> b2.filename)",
              "mustBeBehaviorModelWithMarkovStatesForAllServices", "\n            Service.allInstances()->\n                forAll(s|markovStates->exists(m|m.service = s))",
              "mustBeInitialStateWhichIsIncludedInMarkovStatesList", "\n            not initialState.oclIsUndefined() implies markovStates->includes(initialState)",
              "mustBeBehaviorModelWithoutForeignTargetStates", "\n            markovStates->forAll(s| \n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (markovStates->includes(t.targetState)\n                    or t.targetState = exitState)))"
-           });
+           });			
         addAnnotation
-          (transitionEClass,
-           source,
+          (transitionEClass, 
+           source, 
            new String[] {
              "mustBeValidProbability", "\n            probability >= 0.0 and probability <= 1.0",
              "mustBeThinkTimesOfSameType", "\n            Transition.allInstances()->\n                forAll(t1,t2|\n                    not (t1.thinkTime.oclIsUndefined() or t2.thinkTime.oclIsUndefined()) implies \n                    t1.thinkTime.oclType() = t2.thinkTime.oclType()\n                )"
-           });
+           });			
         addAnnotation
-          (markovStateEClass,
-           source,
+          (markovStateEClass, 
+           source, 
            new String[] {
-             "mustBeValidProbabilitySum", "\n            outgoingTransitions.probability->sum() = 1.0",
+             "mustBeValidProbabilitySum", "\n            outgoingTransitions.probability->exists(p | p > 0) implies\n            outgoingTransitions.probability->sum() = 1.0",
              "mustBeMarkovStatesWithUniqueServices", "\n            MarkovState.allInstances()->\n                forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                    implies s1.service <> s2.service\n                )",
              "mustBeOutgoingTransitionsWithUniqueTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )",
              "mustBeOutgoingTransitionsCorrespondingToSessionLayer", "\n            not service.oclIsUndefined() implies \n            ApplicationState.allInstances()->exists(as|service = as.service and\n                outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies as.outgoingTransitions->exists(at|\n                        (at.targetState.oclIsTypeOf(ApplicationExitState) and\n                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or\n                       ((t.targetState.oclIsTypeOf(MarkovState) and\n                         at.targetState.oclIsTypeOf(ApplicationState) and\n                         at.targetState.oclAsType(ApplicationState).service =\n                         t.targetState.oclAsType(MarkovState).service)))))"
-           });
+           });			
         addAnnotation
-          (serviceEClass,
-           source,
+          (serviceEClass, 
+           source, 
            new String[] {
              "mustBeUniqueNames", "\n    \t\tService.allInstances()->\n                forAll(s1,s2|\n                    (s1 <> s2 and not(s1.name.oclIsUndefined() or s2.name.oclIsUndefined()))\n                     implies s1.name <> s2.name\n                )"
-           });
+           });			
         addAnnotation
-          (applicationStateEClass,
-           source,
+          (applicationStateEClass, 
+           source, 
            new String[] {
-             "mustBeUniqueOutgoingTransitionTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )"
-           });
+             "mustBeUniqueOutgoingTransitions", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies (t1.targetState <> t2.targetState or t1.guard <> t2.guard))"
+           });			
         addAnnotation
-          (requestEClass,
-           source,
+          (requestEClass, 
+           source, 
            new String[] {
              "mustBeUniquePropertyKeys", "\n         properties->forAll(p1,p2 | \n             (p1 <> p2 and not(p1.key.oclIsUndefined() or p2.key.oclIsUndefined()))\n                implies p1.key <> p2.key\n         )",
              "mustBeUniqueParameterNames", "\n        parameters->forAll(p1,p2 |\n             (p1 <> p2 and not(p1.name.oclIsUndefined() or p2.name.oclIsUndefined()))\n             implies p1.name <> p2.name\n        )",
              "mustBeRequestsOfSameType", "\n        Request.allInstances()->forAll(r1,r2 | r1.oclType() = r2.oclType())"
-           });
+           });			
         addAnnotation
-          (protocolStateEClass,
-           source,
+          (protocolStateEClass, 
+           source, 
            new String[] {
-             "mustBeUniqueOutgoingTransitionTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                    (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                    implies t1.targetState <> t2.targetState\n                )"
-           });
+             "mustBeUniqueOutgoingTransitions", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                    (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                    implies (t1.targetState <> t2.targetState or t1.guard <> t2.guard))"
+           });			
         addAnnotation
-          (protocolLayerEFSMEClass,
-           source,
+          (protocolLayerEFSMEClass, 
+           source, 
            new String[] {
              "mustBeProtocolStatesWithUniqueRequests", "\n            protocolStates->forAll(s1,s2|\n                (s1 <> s2 and not(s1.request.oclIsUndefined() or s2.request.oclIsUndefined()))\n                 implies s1.request <> s2.request\n            )",
              "mustBeInitialStateWhichIsIncludedInProtocolStatesList", "\n            not initialState.oclIsUndefined() implies protocolStates->includes(initialState)",
              "mustBeProtocolLayerEFSMWithoutForeignStates", "\n            protocolStates->forAll(s|\n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (protocolStates->includes(t.targetState) or t.targetState = exitState)))"
-           });
+           });			
         addAnnotation
-          (sessionLayerEFSMEClass,
-           source,
+          (sessionLayerEFSMEClass, 
+           source, 
            new String[] {
              "mustBeApplicationStatesWithUniqueServices", "\n            applicationStates->forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                 implies s1.service <> s2.service\n            )",
              "mustBeInitialStateWhichIsIncludedInApplicationStatesList", "\n            not initialState.oclIsUndefined() implies applicationStates->includes(initialState)"
-           });
+           });			
         addAnnotation
-          (constantWorkloadIntensityEClass,
-           source,
+          (constantWorkloadIntensityEClass, 
+           source, 
            new String[] {
              "mustBeNonnegativeSessionNumber", "\n           numberOfSessions >= 0"
-           });
+           });			
         addAnnotation
-          (normallyDistributedThinkTimeEClass,
-           source,
+          (normallyDistributedThinkTimeEClass, 
+           source, 
            new String[] {
              "mustBeValidThinkTimeValues", "\n            mean >= 0.0 and deviation >= 0.0 and deviation <= mean"
            });
