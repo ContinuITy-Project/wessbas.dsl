@@ -335,6 +335,7 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeBehaviorModelWithMarkovStatesForAllServices(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeInitialStateWhichIsIncludedInMarkovStatesList(behaviorModel, diagnostics, context);
         if (result || diagnostics != null) result &= validateBehaviorModel_mustBeBehaviorModelWithoutForeignTargetStates(behaviorModel, diagnostics, context);
+        if (result || diagnostics != null) result &= validateBehaviorModel_mustBeMarkovStatesWithUniqueServices(behaviorModel, diagnostics, context);
         return result;
     }
 
@@ -499,6 +500,39 @@ public class M4jdslValidator extends EObjectValidator {
     }
 
     /**
+     * The cached validation expression for the mustBeMarkovStatesWithUniqueServices constraint of '<em>Behavior Model</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected static final String BEHAVIOR_MODEL__MUST_BE_MARKOV_STATES_WITH_UNIQUE_SERVICES__EEXPRESSION = "\n" +
+        "            markovStates->forAll(s1,s2|\n" +
+        "                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n" +
+        "                    implies s1.service <> s2.service\n" +
+        "                )";
+
+    /**
+     * Validates the mustBeMarkovStatesWithUniqueServices constraint of '<em>Behavior Model</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateBehaviorModel_mustBeMarkovStatesWithUniqueServices(BehaviorModel behaviorModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return
+            validate
+                (M4jdslPackage.Literals.BEHAVIOR_MODEL,
+                 behaviorModel,
+                 diagnostics,
+                 context,
+                 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+                 "mustBeMarkovStatesWithUniqueServices",
+                 BEHAVIOR_MODEL__MUST_BE_MARKOV_STATES_WITH_UNIQUE_SERVICES__EEXPRESSION,
+                 Diagnostic.ERROR,
+                 DIAGNOSTIC_SOURCE,
+                 0);
+    }
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -598,7 +632,6 @@ public class M4jdslValidator extends EObjectValidator {
         if (result || diagnostics != null) result &= validate_EveryKeyUnique(markovState, diagnostics, context);
         if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(markovState, diagnostics, context);
         if (result || diagnostics != null) result &= validateMarkovState_mustBeValidProbabilitySum(markovState, diagnostics, context);
-        if (result || diagnostics != null) result &= validateMarkovState_mustBeMarkovStatesWithUniqueServices(markovState, diagnostics, context);
         if (result || diagnostics != null) result &= validateMarkovState_mustBeOutgoingTransitionsWithUniqueTargetStates(markovState, diagnostics, context);
         if (result || diagnostics != null) result &= validateMarkovState_mustBeOutgoingTransitionsCorrespondingToSessionLayer(markovState, diagnostics, context);
         return result;
@@ -630,40 +663,6 @@ public class M4jdslValidator extends EObjectValidator {
                  "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
                  "mustBeValidProbabilitySum",
                  MARKOV_STATE__MUST_BE_VALID_PROBABILITY_SUM__EEXPRESSION,
-                 Diagnostic.ERROR,
-                 DIAGNOSTIC_SOURCE,
-                 0);
-    }
-
-    /**
-     * The cached validation expression for the mustBeMarkovStatesWithUniqueServices constraint of '<em>Markov State</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected static final String MARKOV_STATE__MUST_BE_MARKOV_STATES_WITH_UNIQUE_SERVICES__EEXPRESSION = "\n" +
-        "            MarkovState.allInstances()->\n" +
-        "                forAll(s1,s2|\n" +
-        "                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n" +
-        "                    implies s1.service <> s2.service\n" +
-        "                )";
-
-    /**
-     * Validates the mustBeMarkovStatesWithUniqueServices constraint of '<em>Markov State</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean validateMarkovState_mustBeMarkovStatesWithUniqueServices(MarkovState markovState, DiagnosticChain diagnostics, Map<Object, Object> context) {
-        return
-            validate
-                (M4jdslPackage.Literals.MARKOV_STATE,
-                 markovState,
-                 diagnostics,
-                 context,
-                 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-                 "mustBeMarkovStatesWithUniqueServices",
-                 MARKOV_STATE__MUST_BE_MARKOV_STATES_WITH_UNIQUE_SERVICES__EEXPRESSION,
                  Diagnostic.ERROR,
                  DIAGNOSTIC_SOURCE,
                  0);

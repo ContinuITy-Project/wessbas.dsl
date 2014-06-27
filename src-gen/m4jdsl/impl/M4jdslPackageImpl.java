@@ -1574,7 +1574,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
           (behaviorModelEClass, 
            source, 
            new String[] {
-             "constraints", "mustBeUniqueNames mustBeUniqueFilenames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates"
+             "constraints", "mustBeUniqueNames mustBeUniqueFilenames mustBeBehaviorModelWithMarkovStatesForAllServices mustBeInitialStateWhichIsIncludedInMarkovStatesList mustBeBehaviorModelWithoutForeignTargetStates mustBeMarkovStatesWithUniqueServices"
            });			
         addAnnotation
           (transitionEClass, 
@@ -1586,7 +1586,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
           (markovStateEClass, 
            source, 
            new String[] {
-             "constraints", "mustBeValidProbabilitySum mustBeMarkovStatesWithUniqueServices mustBeOutgoingTransitionsWithUniqueTargetStates mustBeOutgoingTransitionsCorrespondingToSessionLayer"
+             "constraints", "mustBeValidProbabilitySum mustBeOutgoingTransitionsWithUniqueTargetStates mustBeOutgoingTransitionsCorrespondingToSessionLayer"
            });			
         addAnnotation
           (serviceEClass, 
@@ -1667,7 +1667,8 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
              "mustBeUniqueFilenames", "\n            BehaviorModel.allInstances()->forAll(b1,b2 |\n                (b1 <> b2 and not(b1.filename.oclIsUndefined() or b2.filename.oclIsUndefined()))\n                    implies b1.filename <> b2.filename)",
              "mustBeBehaviorModelWithMarkovStatesForAllServices", "\n            Service.allInstances()->\n                forAll(s|markovStates->exists(m|m.service = s))",
              "mustBeInitialStateWhichIsIncludedInMarkovStatesList", "\n            not initialState.oclIsUndefined() implies markovStates->includes(initialState)",
-             "mustBeBehaviorModelWithoutForeignTargetStates", "\n            markovStates->forAll(s| \n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (markovStates->includes(t.targetState)\n                    or t.targetState = exitState)))"
+             "mustBeBehaviorModelWithoutForeignTargetStates", "\n            markovStates->forAll(s| \n                s.outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies\n                    (markovStates->includes(t.targetState)\n                    or t.targetState = exitState)))",
+             "mustBeMarkovStatesWithUniqueServices", "\n            markovStates->forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                    implies s1.service <> s2.service\n                )"
            });			
         addAnnotation
           (transitionEClass, 
@@ -1681,7 +1682,6 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
            source, 
            new String[] {
              "mustBeValidProbabilitySum", "\n            outgoingTransitions.probability->exists(p | p > 0) implies\n            outgoingTransitions.probability->sum() = 1.0",
-             "mustBeMarkovStatesWithUniqueServices", "\n            MarkovState.allInstances()->\n                forAll(s1,s2|\n                (s1 <> s2 and not(s1.service.oclIsUndefined() or s2.service.oclIsUndefined()))\n                    implies s1.service <> s2.service\n                )",
              "mustBeOutgoingTransitionsWithUniqueTargetStates", "\n            outgoingTransitions->\n                forAll(t1,t2|\n                (t1 <> t2 and not(t1.targetState.oclIsUndefined() or t2.targetState.oclIsUndefined()))\n                     implies t1.targetState <> t2.targetState\n                )",
              "mustBeOutgoingTransitionsCorrespondingToSessionLayer", "\n            not service.oclIsUndefined() implies \n            ApplicationState.allInstances()->exists(as|service = as.service and\n                outgoingTransitions->forAll(t|\n                    not t.targetState.oclIsUndefined() implies as.outgoingTransitions->exists(at|\n                        (at.targetState.oclIsTypeOf(ApplicationExitState) and\n                         t.targetState.oclIsTypeOf(BehaviorModelExitState)) or\n                       ((t.targetState.oclIsTypeOf(MarkovState) and\n                         at.targetState.oclIsTypeOf(ApplicationState) and\n                         at.targetState.oclAsType(ApplicationState).service =\n                         t.targetState.oclAsType(MarkovState).service)))))"
            });			
