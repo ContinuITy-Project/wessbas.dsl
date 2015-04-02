@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class JavaRequestImpl extends RequestImpl implements JavaRequest {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected JavaRequestImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.JAVA_REQUEST;
-    }
+		return M4jdslPackage.Literals.JAVA_REQUEST;
+	}
 
 } //JavaRequestImpl

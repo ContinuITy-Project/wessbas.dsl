@@ -27,137 +27,137 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class WorkloadIntensityImpl extends MinimalEObjectImpl.Container implements WorkloadIntensity {
     /**
-     * The default value of the '{@link #getFormula() <em>Formula</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getFormula() <em>Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFormula()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFormula()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String FORMULA_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getFormula() <em>Formula</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFormula() <em>Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFormula()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFormula()
+	 * @generated
+	 * @ordered
+	 */
     protected String formula = FORMULA_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected WorkloadIntensityImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.WORKLOAD_INTENSITY;
-    }
+		return M4jdslPackage.Literals.WORKLOAD_INTENSITY;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getFormula() {
-        return formula;
-    }
+		return formula;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setFormula(String newFormula) {
-        String oldFormula = formula;
-        formula = newFormula;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.WORKLOAD_INTENSITY__FORMULA, oldFormula, formula));
-    }
+		String oldFormula = formula;
+		formula = newFormula;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.WORKLOAD_INTENSITY__FORMULA, oldFormula, formula));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
-                return getFormula();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
+				return getFormula();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
-                setFormula((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
+				setFormula((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
-                setFormula(FORMULA_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
+				setFormula(FORMULA_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
-                return FORMULA_EDEFAULT == null ? formula != null : !FORMULA_EDEFAULT.equals(formula);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.WORKLOAD_INTENSITY__FORMULA:
+				return FORMULA_EDEFAULT == null ? formula != null : !FORMULA_EDEFAULT.equals(formula);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (formula: ");
-        result.append(formula);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (formula: ");
+		result.append(formula);
+		result.append(')');
+		return result.toString();
+	}
 
 } //WorkloadIntensityImpl

@@ -30,196 +30,196 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class RelativeFrequencyImpl extends MinimalEObjectImpl.Container implements RelativeFrequency {
     /**
-     * The cached value of the '{@link #getBehaviorModel() <em>Behavior Model</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBehaviorModel() <em>Behavior Model</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBehaviorModel()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBehaviorModel()
+	 * @generated
+	 * @ordered
+	 */
     protected BehaviorModel behaviorModel;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected static final double VALUE_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected double value = VALUE_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected RelativeFrequencyImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.RELATIVE_FREQUENCY;
-    }
+		return M4jdslPackage.Literals.RELATIVE_FREQUENCY;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public BehaviorModel getBehaviorModel() {
-        if (behaviorModel != null && behaviorModel.eIsProxy()) {
-            InternalEObject oldBehaviorModel = (InternalEObject)behaviorModel;
-            behaviorModel = (BehaviorModel)eResolveProxy(oldBehaviorModel);
-            if (behaviorModel != oldBehaviorModel) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL, oldBehaviorModel, behaviorModel));
-            }
-        }
-        return behaviorModel;
-    }
+		if (behaviorModel != null && behaviorModel.eIsProxy()) {
+			InternalEObject oldBehaviorModel = (InternalEObject)behaviorModel;
+			behaviorModel = (BehaviorModel)eResolveProxy(oldBehaviorModel);
+			if (behaviorModel != oldBehaviorModel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL, oldBehaviorModel, behaviorModel));
+			}
+		}
+		return behaviorModel;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public BehaviorModel basicGetBehaviorModel() {
-        return behaviorModel;
-    }
+		return behaviorModel;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBehaviorModel(BehaviorModel newBehaviorModel) {
-        BehaviorModel oldBehaviorModel = behaviorModel;
-        behaviorModel = newBehaviorModel;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL, oldBehaviorModel, behaviorModel));
-    }
+		BehaviorModel oldBehaviorModel = behaviorModel;
+		behaviorModel = newBehaviorModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL, oldBehaviorModel, behaviorModel));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public double getValue() {
-        return value;
-    }
+		return value;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setValue(double newValue) {
-        double oldValue = value;
-        value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.RELATIVE_FREQUENCY__VALUE, oldValue, value));
-    }
+		double oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.RELATIVE_FREQUENCY__VALUE, oldValue, value));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
-                if (resolve) return getBehaviorModel();
-                return basicGetBehaviorModel();
-            case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
-                return getValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
+				if (resolve) return getBehaviorModel();
+				return basicGetBehaviorModel();
+			case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
-                setBehaviorModel((BehaviorModel)newValue);
-                return;
-            case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
-                setValue((Double)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
+				setBehaviorModel((BehaviorModel)newValue);
+				return;
+			case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
+				setValue((Double)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
-                setBehaviorModel((BehaviorModel)null);
-                return;
-            case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
+				setBehaviorModel((BehaviorModel)null);
+				return;
+			case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
-                return behaviorModel != null;
-            case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
-                return value != VALUE_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.RELATIVE_FREQUENCY__BEHAVIOR_MODEL:
+				return behaviorModel != null;
+			case M4jdslPackage.RELATIVE_FREQUENCY__VALUE:
+				return value != VALUE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (value: ");
-        result.append(value);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
 
 } //RelativeFrequencyImpl

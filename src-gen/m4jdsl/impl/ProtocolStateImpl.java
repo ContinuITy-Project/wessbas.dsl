@@ -38,183 +38,183 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ProtocolStateImpl extends ProtocolLayerEFSMStateImpl implements ProtocolState {
     /**
-     * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRequest() <em>Request</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRequest()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRequest()
+	 * @generated
+	 * @ordered
+	 */
     protected Request request;
 
     /**
-     * The cached value of the '{@link #getOutgoingTransitions() <em>Outgoing Transitions</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutgoingTransitions() <em>Outgoing Transitions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOutgoingTransitions()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOutgoingTransitions()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ProtocolTransition> outgoingTransitions;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ProtocolStateImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.PROTOCOL_STATE;
-    }
+		return M4jdslPackage.Literals.PROTOCOL_STATE;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Request getRequest() {
-        return request;
-    }
+		return request;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRequest(Request newRequest, NotificationChain msgs) {
-        Request oldRequest = request;
-        request = newRequest;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_STATE__REQUEST, oldRequest, newRequest);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Request oldRequest = request;
+		request = newRequest;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_STATE__REQUEST, oldRequest, newRequest);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRequest(Request newRequest) {
-        if (newRequest != request) {
-            NotificationChain msgs = null;
-            if (request != null)
-                msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_STATE__REQUEST, null, msgs);
-            if (newRequest != null)
-                msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_STATE__REQUEST, null, msgs);
-            msgs = basicSetRequest(newRequest, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_STATE__REQUEST, newRequest, newRequest));
-    }
+		if (newRequest != request) {
+			NotificationChain msgs = null;
+			if (request != null)
+				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_STATE__REQUEST, null, msgs);
+			if (newRequest != null)
+				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_STATE__REQUEST, null, msgs);
+			msgs = basicSetRequest(newRequest, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_STATE__REQUEST, newRequest, newRequest));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ProtocolTransition> getOutgoingTransitions() {
-        if (outgoingTransitions == null) {
-            outgoingTransitions = new EObjectContainmentEList<ProtocolTransition>(ProtocolTransition.class, this, M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS);
-        }
-        return outgoingTransitions;
-    }
+		if (outgoingTransitions == null) {
+			outgoingTransitions = new EObjectContainmentEList<ProtocolTransition>(ProtocolTransition.class, this, M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS);
+		}
+		return outgoingTransitions;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_STATE__REQUEST:
-                return basicSetRequest(null, msgs);
-            case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
-                return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_STATE__REQUEST:
+				return basicSetRequest(null, msgs);
+			case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
+				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_STATE__REQUEST:
-                return getRequest();
-            case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
-                return getOutgoingTransitions();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_STATE__REQUEST:
+				return getRequest();
+			case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
+				return getOutgoingTransitions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_STATE__REQUEST:
-                setRequest((Request)newValue);
-                return;
-            case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
-                getOutgoingTransitions().clear();
-                getOutgoingTransitions().addAll((Collection<? extends ProtocolTransition>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_STATE__REQUEST:
+				setRequest((Request)newValue);
+				return;
+			case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
+				getOutgoingTransitions().clear();
+				getOutgoingTransitions().addAll((Collection<? extends ProtocolTransition>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_STATE__REQUEST:
-                setRequest((Request)null);
-                return;
-            case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
-                getOutgoingTransitions().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_STATE__REQUEST:
+				setRequest((Request)null);
+				return;
+			case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
+				getOutgoingTransitions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_STATE__REQUEST:
-                return request != null;
-            case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
-                return outgoingTransitions != null && !outgoingTransitions.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_STATE__REQUEST:
+				return request != null;
+			case M4jdslPackage.PROTOCOL_STATE__OUTGOING_TRANSITIONS:
+				return outgoingTransitions != null && !outgoingTransitions.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ProtocolStateImpl

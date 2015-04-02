@@ -25,71 +25,71 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ApplicationState extends SessionLayerEFSMState {
     /**
-     * Returns the value of the '<em><b>Service</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Service</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Service</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Service</em>' containment reference.
-     * @see #setService(Service)
-     * @see m4jdsl.M4jdslPackage#getApplicationState_Service()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Service</em>' containment reference.
+	 * @see #setService(Service)
+	 * @see m4jdsl.M4jdslPackage#getApplicationState_Service()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     Service getService();
 
     /**
-     * Sets the value of the '{@link m4jdsl.ApplicationState#getService <em>Service</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.ApplicationState#getService <em>Service</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Service</em>' containment reference.
-     * @see #getService()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Service</em>' containment reference.
+	 * @see #getService()
+	 * @generated
+	 */
     void setService(Service value);
 
     /**
-     * Returns the value of the '<em><b>Protocol Details</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Protocol Details</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Protocol Details</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Protocol Details</em>' containment reference.
-     * @see #setProtocolDetails(ProtocolLayerEFSM)
-     * @see m4jdsl.M4jdslPackage#getApplicationState_ProtocolDetails()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Protocol Details</em>' containment reference.
+	 * @see #setProtocolDetails(ProtocolLayerEFSM)
+	 * @see m4jdsl.M4jdslPackage#getApplicationState_ProtocolDetails()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     ProtocolLayerEFSM getProtocolDetails();
 
     /**
-     * Sets the value of the '{@link m4jdsl.ApplicationState#getProtocolDetails <em>Protocol Details</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.ApplicationState#getProtocolDetails <em>Protocol Details</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Protocol Details</em>' containment reference.
-     * @see #getProtocolDetails()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Protocol Details</em>' containment reference.
+	 * @see #getProtocolDetails()
+	 * @generated
+	 */
     void setProtocolDetails(ProtocolLayerEFSM value);
 
     /**
-     * Returns the value of the '<em><b>Outgoing Transitions</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.ApplicationTransition}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Outgoing Transitions</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.ApplicationTransition}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Outgoing Transitions</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Outgoing Transitions</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getApplicationState_OutgoingTransitions()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Outgoing Transitions</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getApplicationState_OutgoingTransitions()
+	 * @model containment="true"
+	 * @generated
+	 */
     EList<ApplicationTransition> getOutgoingTransitions();
 
 } // ApplicationState

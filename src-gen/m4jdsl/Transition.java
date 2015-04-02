@@ -25,81 +25,81 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Transition extends EObject {
     /**
-     * Returns the value of the '<em><b>Target State</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Target State</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Target State</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Target State</em>' reference.
-     * @see #setTargetState(BehaviorModelState)
-     * @see m4jdsl.M4jdslPackage#getTransition_TargetState()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Target State</em>' reference.
+	 * @see #setTargetState(BehaviorModelState)
+	 * @see m4jdsl.M4jdslPackage#getTransition_TargetState()
+	 * @model required="true"
+	 * @generated
+	 */
     BehaviorModelState getTargetState();
 
     /**
-     * Sets the value of the '{@link m4jdsl.Transition#getTargetState <em>Target State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.Transition#getTargetState <em>Target State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Target State</em>' reference.
-     * @see #getTargetState()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Target State</em>' reference.
+	 * @see #getTargetState()
+	 * @generated
+	 */
     void setTargetState(BehaviorModelState value);
 
     /**
-     * Returns the value of the '<em><b>Probability</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Probability</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Probability</em>' attribute.
-     * @see #setProbability(double)
-     * @see m4jdsl.M4jdslPackage#getTransition_Probability()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Probability</em>' attribute.
+	 * @see #setProbability(double)
+	 * @see m4jdsl.M4jdslPackage#getTransition_Probability()
+	 * @model required="true"
+	 * @generated
+	 */
     double getProbability();
 
     /**
-     * Sets the value of the '{@link m4jdsl.Transition#getProbability <em>Probability</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.Transition#getProbability <em>Probability</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Probability</em>' attribute.
-     * @see #getProbability()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Probability</em>' attribute.
+	 * @see #getProbability()
+	 * @generated
+	 */
     void setProbability(double value);
 
     /**
-     * Returns the value of the '<em><b>Think Time</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Think Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Think Time</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Think Time</em>' containment reference.
-     * @see #setThinkTime(ThinkTime)
-     * @see m4jdsl.M4jdslPackage#getTransition_ThinkTime()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Think Time</em>' containment reference.
+	 * @see #setThinkTime(ThinkTime)
+	 * @see m4jdsl.M4jdslPackage#getTransition_ThinkTime()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     ThinkTime getThinkTime();
 
     /**
-     * Sets the value of the '{@link m4jdsl.Transition#getThinkTime <em>Think Time</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.Transition#getThinkTime <em>Think Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Think Time</em>' containment reference.
-     * @see #getThinkTime()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Think Time</em>' containment reference.
+	 * @see #getThinkTime()
+	 * @generated
+	 */
     void setThinkTime(ThinkTime value);
 
 } // Transition

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link m4jdsl.SessionLayerEFSM#getApplicationStates <em>Application States</em>}</li>
  *   <li>{@link m4jdsl.SessionLayerEFSM#getInitialState <em>Initial State</em>}</li>
  *   <li>{@link m4jdsl.SessionLayerEFSM#getExitState <em>Exit State</em>}</li>
+ *   <li>{@link m4jdsl.SessionLayerEFSM#getGuardActionParameterList <em>Guard Action Parameter List</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,71 +28,97 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SessionLayerEFSM extends EObject {
     /**
-     * Returns the value of the '<em><b>Application States</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.ApplicationState}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Application States</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.ApplicationState}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Application States</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Application States</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_ApplicationStates()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Application States</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_ApplicationStates()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     EList<ApplicationState> getApplicationStates();
 
     /**
-     * Returns the value of the '<em><b>Initial State</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Initial State</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Initial State</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Initial State</em>' reference.
-     * @see #setInitialState(ApplicationState)
-     * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_InitialState()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Initial State</em>' reference.
+	 * @see #setInitialState(ApplicationState)
+	 * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_InitialState()
+	 * @model required="true"
+	 * @generated
+	 */
     ApplicationState getInitialState();
 
     /**
-     * Sets the value of the '{@link m4jdsl.SessionLayerEFSM#getInitialState <em>Initial State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.SessionLayerEFSM#getInitialState <em>Initial State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Initial State</em>' reference.
-     * @see #getInitialState()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Initial State</em>' reference.
+	 * @see #getInitialState()
+	 * @generated
+	 */
     void setInitialState(ApplicationState value);
 
     /**
-     * Returns the value of the '<em><b>Exit State</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exit State</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Exit State</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Exit State</em>' containment reference.
-     * @see #setExitState(ApplicationExitState)
-     * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_ExitState()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Exit State</em>' containment reference.
+	 * @see #setExitState(ApplicationExitState)
+	 * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_ExitState()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     ApplicationExitState getExitState();
 
     /**
-     * Sets the value of the '{@link m4jdsl.SessionLayerEFSM#getExitState <em>Exit State</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.SessionLayerEFSM#getExitState <em>Exit State</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Exit State</em>' containment reference.
-     * @see #getExitState()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Exit State</em>' containment reference.
+	 * @see #getExitState()
+	 * @generated
+	 */
     void setExitState(ApplicationExitState value);
+
+				/**
+	 * Returns the value of the '<em><b>Guard Action Parameter List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Guard Action Parameter List</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Guard Action Parameter List</em>' containment reference.
+	 * @see #setGuardActionParameterList(GuardActionParameterList)
+	 * @see m4jdsl.M4jdslPackage#getSessionLayerEFSM_GuardActionParameterList()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	GuardActionParameterList getGuardActionParameterList();
+
+				/**
+	 * Sets the value of the '{@link m4jdsl.SessionLayerEFSM#getGuardActionParameterList <em>Guard Action Parameter List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guard Action Parameter List</em>' containment reference.
+	 * @see #getGuardActionParameterList()
+	 * @generated
+	 */
+	void setGuardActionParameterList(GuardActionParameterList value);
 
 } // SessionLayerEFSM

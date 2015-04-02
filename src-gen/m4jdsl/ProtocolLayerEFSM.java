@@ -27,71 +27,71 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ProtocolLayerEFSM extends EObject {
     /**
-     * Returns the value of the '<em><b>Protocol States</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.ProtocolState}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Protocol States</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.ProtocolState}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Protocol States</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Protocol States</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_ProtocolStates()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Protocol States</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_ProtocolStates()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     EList<ProtocolState> getProtocolStates();
 
     /**
-     * Returns the value of the '<em><b>Initial State</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Initial State</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Initial State</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Initial State</em>' reference.
-     * @see #setInitialState(ProtocolState)
-     * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_InitialState()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Initial State</em>' reference.
+	 * @see #setInitialState(ProtocolState)
+	 * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_InitialState()
+	 * @model required="true"
+	 * @generated
+	 */
     ProtocolState getInitialState();
 
     /**
-     * Sets the value of the '{@link m4jdsl.ProtocolLayerEFSM#getInitialState <em>Initial State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.ProtocolLayerEFSM#getInitialState <em>Initial State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Initial State</em>' reference.
-     * @see #getInitialState()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Initial State</em>' reference.
+	 * @see #getInitialState()
+	 * @generated
+	 */
     void setInitialState(ProtocolState value);
 
     /**
-     * Returns the value of the '<em><b>Exit State</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exit State</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Exit State</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Exit State</em>' containment reference.
-     * @see #setExitState(ProtocolExitState)
-     * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_ExitState()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Exit State</em>' containment reference.
+	 * @see #setExitState(ProtocolExitState)
+	 * @see m4jdsl.M4jdslPackage#getProtocolLayerEFSM_ExitState()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     ProtocolExitState getExitState();
 
     /**
-     * Sets the value of the '{@link m4jdsl.ProtocolLayerEFSM#getExitState <em>Exit State</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.ProtocolLayerEFSM#getExitState <em>Exit State</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Exit State</em>' containment reference.
-     * @see #getExitState()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Exit State</em>' containment reference.
+	 * @see #getExitState()
+	 * @generated
+	 */
     void setExitState(ProtocolExitState value);
 
 } // ProtocolLayerEFSM

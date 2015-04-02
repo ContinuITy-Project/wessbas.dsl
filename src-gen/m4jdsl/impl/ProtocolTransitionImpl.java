@@ -31,249 +31,249 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ProtocolTransitionImpl extends MinimalEObjectImpl.Container implements ProtocolTransition {
     /**
-     * The default value of the '{@link #getGuard() <em>Guard</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getGuard() <em>Guard</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getGuard()
-     * @generated
-     * @ordered
-     */
+	 * @see #getGuard()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String GUARD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getGuard() <em>Guard</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getGuard()
-     * @generated
-     * @ordered
-     */
+	 * @see #getGuard()
+	 * @generated
+	 * @ordered
+	 */
     protected String guard = GUARD_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getTargetState() <em>Target State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTargetState() <em>Target State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTargetState()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTargetState()
+	 * @generated
+	 * @ordered
+	 */
     protected ProtocolLayerEFSMState targetState;
 
     /**
-     * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAction()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ACTION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAction()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
     protected String action = ACTION_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ProtocolTransitionImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.PROTOCOL_TRANSITION;
-    }
+		return M4jdslPackage.Literals.PROTOCOL_TRANSITION;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getGuard() {
-        return guard;
-    }
+		return guard;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setGuard(String newGuard) {
-        String oldGuard = guard;
-        guard = newGuard;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__GUARD, oldGuard, guard));
-    }
+		String oldGuard = guard;
+		guard = newGuard;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__GUARD, oldGuard, guard));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolLayerEFSMState getTargetState() {
-        if (targetState != null && targetState.eIsProxy()) {
-            InternalEObject oldTargetState = (InternalEObject)targetState;
-            targetState = (ProtocolLayerEFSMState)eResolveProxy(oldTargetState);
-            if (targetState != oldTargetState) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE, oldTargetState, targetState));
-            }
-        }
-        return targetState;
-    }
+		if (targetState != null && targetState.eIsProxy()) {
+			InternalEObject oldTargetState = (InternalEObject)targetState;
+			targetState = (ProtocolLayerEFSMState)eResolveProxy(oldTargetState);
+			if (targetState != oldTargetState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE, oldTargetState, targetState));
+			}
+		}
+		return targetState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolLayerEFSMState basicGetTargetState() {
-        return targetState;
-    }
+		return targetState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTargetState(ProtocolLayerEFSMState newTargetState) {
-        ProtocolLayerEFSMState oldTargetState = targetState;
-        targetState = newTargetState;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE, oldTargetState, targetState));
-    }
+		ProtocolLayerEFSMState oldTargetState = targetState;
+		targetState = newTargetState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE, oldTargetState, targetState));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getAction() {
-        return action;
-    }
+		return action;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAction(String newAction) {
-        String oldAction = action;
-        action = newAction;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__ACTION, oldAction, action));
-    }
+		String oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_TRANSITION__ACTION, oldAction, action));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
-                return getGuard();
-            case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
-                if (resolve) return getTargetState();
-                return basicGetTargetState();
-            case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
-                return getAction();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
+				return getGuard();
+			case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
+				if (resolve) return getTargetState();
+				return basicGetTargetState();
+			case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
+				return getAction();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
-                setGuard((String)newValue);
-                return;
-            case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
-                setTargetState((ProtocolLayerEFSMState)newValue);
-                return;
-            case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
-                setAction((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
+				setGuard((String)newValue);
+				return;
+			case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
+				setTargetState((ProtocolLayerEFSMState)newValue);
+				return;
+			case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
+				setAction((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
-                setGuard(GUARD_EDEFAULT);
-                return;
-            case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
-                setTargetState((ProtocolLayerEFSMState)null);
-                return;
-            case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
-                setAction(ACTION_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
+				setGuard(GUARD_EDEFAULT);
+				return;
+			case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
+				setTargetState((ProtocolLayerEFSMState)null);
+				return;
+			case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
+				setAction(ACTION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
-                return GUARD_EDEFAULT == null ? guard != null : !GUARD_EDEFAULT.equals(guard);
-            case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
-                return targetState != null;
-            case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
-                return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_TRANSITION__GUARD:
+				return GUARD_EDEFAULT == null ? guard != null : !GUARD_EDEFAULT.equals(guard);
+			case M4jdslPackage.PROTOCOL_TRANSITION__TARGET_STATE:
+				return targetState != null;
+			case M4jdslPackage.PROTOCOL_TRANSITION__ACTION:
+				return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (guard: ");
-        result.append(guard);
-        result.append(", action: ");
-        result.append(action);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (guard: ");
+		result.append(guard);
+		result.append(", action: ");
+		result.append(action);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ProtocolTransitionImpl

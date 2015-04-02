@@ -30,147 +30,147 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ApplicationModelImpl extends MinimalEObjectImpl.Container implements ApplicationModel {
     /**
-     * The cached value of the '{@link #getSessionLayerEFSM() <em>Session Layer EFSM</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSessionLayerEFSM() <em>Session Layer EFSM</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSessionLayerEFSM()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSessionLayerEFSM()
+	 * @generated
+	 * @ordered
+	 */
     protected SessionLayerEFSM sessionLayerEFSM;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ApplicationModelImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.APPLICATION_MODEL;
-    }
+		return M4jdslPackage.Literals.APPLICATION_MODEL;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SessionLayerEFSM getSessionLayerEFSM() {
-        return sessionLayerEFSM;
-    }
+		return sessionLayerEFSM;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSessionLayerEFSM(SessionLayerEFSM newSessionLayerEFSM, NotificationChain msgs) {
-        SessionLayerEFSM oldSessionLayerEFSM = sessionLayerEFSM;
-        sessionLayerEFSM = newSessionLayerEFSM;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, oldSessionLayerEFSM, newSessionLayerEFSM);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		SessionLayerEFSM oldSessionLayerEFSM = sessionLayerEFSM;
+		sessionLayerEFSM = newSessionLayerEFSM;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, oldSessionLayerEFSM, newSessionLayerEFSM);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSessionLayerEFSM(SessionLayerEFSM newSessionLayerEFSM) {
-        if (newSessionLayerEFSM != sessionLayerEFSM) {
-            NotificationChain msgs = null;
-            if (sessionLayerEFSM != null)
-                msgs = ((InternalEObject)sessionLayerEFSM).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, null, msgs);
-            if (newSessionLayerEFSM != null)
-                msgs = ((InternalEObject)newSessionLayerEFSM).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, null, msgs);
-            msgs = basicSetSessionLayerEFSM(newSessionLayerEFSM, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, newSessionLayerEFSM, newSessionLayerEFSM));
-    }
+		if (newSessionLayerEFSM != sessionLayerEFSM) {
+			NotificationChain msgs = null;
+			if (sessionLayerEFSM != null)
+				msgs = ((InternalEObject)sessionLayerEFSM).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, null, msgs);
+			if (newSessionLayerEFSM != null)
+				msgs = ((InternalEObject)newSessionLayerEFSM).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, null, msgs);
+			msgs = basicSetSessionLayerEFSM(newSessionLayerEFSM, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM, newSessionLayerEFSM, newSessionLayerEFSM));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
-                return basicSetSessionLayerEFSM(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
+				return basicSetSessionLayerEFSM(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
-                return getSessionLayerEFSM();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
+				return getSessionLayerEFSM();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
-                setSessionLayerEFSM((SessionLayerEFSM)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
+				setSessionLayerEFSM((SessionLayerEFSM)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
-                setSessionLayerEFSM((SessionLayerEFSM)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
+				setSessionLayerEFSM((SessionLayerEFSM)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
-                return sessionLayerEFSM != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_MODEL__SESSION_LAYER_EFSM:
+				return sessionLayerEFSM != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ApplicationModelImpl

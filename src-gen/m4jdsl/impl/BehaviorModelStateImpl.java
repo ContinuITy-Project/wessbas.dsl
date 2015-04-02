@@ -27,137 +27,137 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class BehaviorModelStateImpl extends MinimalEObjectImpl.Container implements BehaviorModelState {
     /**
-     * The default value of the '{@link #getEId() <em>EId</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEId() <em>EId</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEId()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String EID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getEId() <em>EId</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEId() <em>EId</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEId()
+	 * @generated
+	 * @ordered
+	 */
     protected String eId = EID_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BehaviorModelStateImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.BEHAVIOR_MODEL_STATE;
-    }
+		return M4jdslPackage.Literals.BEHAVIOR_MODEL_STATE;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getEId() {
-        return eId;
-    }
+		return eId;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setEId(String newEId) {
-        String oldEId = eId;
-        eId = newEId;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL_STATE__EID, oldEId, eId));
-    }
+		String oldEId = eId;
+		eId = newEId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL_STATE__EID, oldEId, eId));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
-                return getEId();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
+				return getEId();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
-                setEId((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
+				setEId((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
-                setEId(EID_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
+				setEId(EID_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
-                return EID_EDEFAULT == null ? eId != null : !EID_EDEFAULT.equals(eId);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL_STATE__EID:
+				return EID_EDEFAULT == null ? eId != null : !EID_EDEFAULT.equals(eId);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (eId: ");
-        result.append(eId);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (eId: ");
+		result.append(eId);
+		result.append(')');
+		return result.toString();
+	}
 
 } //BehaviorModelStateImpl

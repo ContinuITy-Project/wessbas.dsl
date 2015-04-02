@@ -35,118 +35,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class BehaviorMixImpl extends MinimalEObjectImpl.Container implements BehaviorMix {
     /**
-     * The cached value of the '{@link #getRelativeFrequencies() <em>Relative Frequencies</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRelativeFrequencies() <em>Relative Frequencies</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRelativeFrequencies()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRelativeFrequencies()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<RelativeFrequency> relativeFrequencies;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BehaviorMixImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.BEHAVIOR_MIX;
-    }
+		return M4jdslPackage.Literals.BEHAVIOR_MIX;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<RelativeFrequency> getRelativeFrequencies() {
-        if (relativeFrequencies == null) {
-            relativeFrequencies = new EObjectContainmentEList<RelativeFrequency>(RelativeFrequency.class, this, M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES);
-        }
-        return relativeFrequencies;
-    }
+		if (relativeFrequencies == null) {
+			relativeFrequencies = new EObjectContainmentEList<RelativeFrequency>(RelativeFrequency.class, this, M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES);
+		}
+		return relativeFrequencies;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
-                return ((InternalEList<?>)getRelativeFrequencies()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
+				return ((InternalEList<?>)getRelativeFrequencies()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
-                return getRelativeFrequencies();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
+				return getRelativeFrequencies();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
-                getRelativeFrequencies().clear();
-                getRelativeFrequencies().addAll((Collection<? extends RelativeFrequency>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
+				getRelativeFrequencies().clear();
+				getRelativeFrequencies().addAll((Collection<? extends RelativeFrequency>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
-                getRelativeFrequencies().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
+				getRelativeFrequencies().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
-                return relativeFrequencies != null && !relativeFrequencies.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MIX__RELATIVE_FREQUENCIES:
+				return relativeFrequencies != null && !relativeFrequencies.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //BehaviorMixImpl

@@ -40,242 +40,242 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ProtocolLayerEFSMImpl extends MinimalEObjectImpl.Container implements ProtocolLayerEFSM {
     /**
-     * The cached value of the '{@link #getProtocolStates() <em>Protocol States</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProtocolStates() <em>Protocol States</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProtocolStates()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProtocolStates()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ProtocolState> protocolStates;
 
     /**
-     * The cached value of the '{@link #getInitialState() <em>Initial State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInitialState() <em>Initial State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getInitialState()
-     * @generated
-     * @ordered
-     */
+	 * @see #getInitialState()
+	 * @generated
+	 * @ordered
+	 */
     protected ProtocolState initialState;
 
     /**
-     * The cached value of the '{@link #getExitState() <em>Exit State</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExitState() <em>Exit State</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getExitState()
-     * @generated
-     * @ordered
-     */
+	 * @see #getExitState()
+	 * @generated
+	 * @ordered
+	 */
     protected ProtocolExitState exitState;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ProtocolLayerEFSMImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.PROTOCOL_LAYER_EFSM;
-    }
+		return M4jdslPackage.Literals.PROTOCOL_LAYER_EFSM;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ProtocolState> getProtocolStates() {
-        if (protocolStates == null) {
-            protocolStates = new EObjectContainmentEList<ProtocolState>(ProtocolState.class, this, M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES);
-        }
-        return protocolStates;
-    }
+		if (protocolStates == null) {
+			protocolStates = new EObjectContainmentEList<ProtocolState>(ProtocolState.class, this, M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES);
+		}
+		return protocolStates;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolState getInitialState() {
-        if (initialState != null && initialState.eIsProxy()) {
-            InternalEObject oldInitialState = (InternalEObject)initialState;
-            initialState = (ProtocolState)eResolveProxy(oldInitialState);
-            if (initialState != oldInitialState) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE, oldInitialState, initialState));
-            }
-        }
-        return initialState;
-    }
+		if (initialState != null && initialState.eIsProxy()) {
+			InternalEObject oldInitialState = (InternalEObject)initialState;
+			initialState = (ProtocolState)eResolveProxy(oldInitialState);
+			if (initialState != oldInitialState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE, oldInitialState, initialState));
+			}
+		}
+		return initialState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolState basicGetInitialState() {
-        return initialState;
-    }
+		return initialState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setInitialState(ProtocolState newInitialState) {
-        ProtocolState oldInitialState = initialState;
-        initialState = newInitialState;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE, oldInitialState, initialState));
-    }
+		ProtocolState oldInitialState = initialState;
+		initialState = newInitialState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE, oldInitialState, initialState));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolExitState getExitState() {
-        return exitState;
-    }
+		return exitState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetExitState(ProtocolExitState newExitState, NotificationChain msgs) {
-        ProtocolExitState oldExitState = exitState;
-        exitState = newExitState;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, oldExitState, newExitState);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ProtocolExitState oldExitState = exitState;
+		exitState = newExitState;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, oldExitState, newExitState);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setExitState(ProtocolExitState newExitState) {
-        if (newExitState != exitState) {
-            NotificationChain msgs = null;
-            if (exitState != null)
-                msgs = ((InternalEObject)exitState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, null, msgs);
-            if (newExitState != null)
-                msgs = ((InternalEObject)newExitState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, null, msgs);
-            msgs = basicSetExitState(newExitState, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, newExitState, newExitState));
-    }
+		if (newExitState != exitState) {
+			NotificationChain msgs = null;
+			if (exitState != null)
+				msgs = ((InternalEObject)exitState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, null, msgs);
+			if (newExitState != null)
+				msgs = ((InternalEObject)newExitState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, null, msgs);
+			msgs = basicSetExitState(newExitState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE, newExitState, newExitState));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
-                return ((InternalEList<?>)getProtocolStates()).basicRemove(otherEnd, msgs);
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
-                return basicSetExitState(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
+				return ((InternalEList<?>)getProtocolStates()).basicRemove(otherEnd, msgs);
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
+				return basicSetExitState(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
-                return getProtocolStates();
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
-                if (resolve) return getInitialState();
-                return basicGetInitialState();
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
-                return getExitState();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
+				return getProtocolStates();
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
+				if (resolve) return getInitialState();
+				return basicGetInitialState();
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
+				return getExitState();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
-                getProtocolStates().clear();
-                getProtocolStates().addAll((Collection<? extends ProtocolState>)newValue);
-                return;
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
-                setInitialState((ProtocolState)newValue);
-                return;
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
-                setExitState((ProtocolExitState)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
+				getProtocolStates().clear();
+				getProtocolStates().addAll((Collection<? extends ProtocolState>)newValue);
+				return;
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
+				setInitialState((ProtocolState)newValue);
+				return;
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
+				setExitState((ProtocolExitState)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
-                getProtocolStates().clear();
-                return;
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
-                setInitialState((ProtocolState)null);
-                return;
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
-                setExitState((ProtocolExitState)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
+				getProtocolStates().clear();
+				return;
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
+				setInitialState((ProtocolState)null);
+				return;
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
+				setExitState((ProtocolExitState)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
-                return protocolStates != null && !protocolStates.isEmpty();
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
-                return initialState != null;
-            case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
-                return exitState != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__PROTOCOL_STATES:
+				return protocolStates != null && !protocolStates.isEmpty();
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__INITIAL_STATE:
+				return initialState != null;
+			case M4jdslPackage.PROTOCOL_LAYER_EFSM__EXIT_STATE:
+				return exitState != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ProtocolLayerEFSMImpl
