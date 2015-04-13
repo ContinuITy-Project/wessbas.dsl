@@ -1286,6 +1286,24 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGuardActionParameter_SourceName() {
+		return (EAttribute)guardActionParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGuardActionParameter_TargetName() {
+		return (EAttribute)guardActionParameterEClass.getEStructuralFeatures().get(3);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGuard() {
 		return guardEClass;
 	}
@@ -1513,6 +1531,8 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		guardActionParameterEClass = createEClass(GUARD_ACTION_PARAMETER);
 		createEAttribute(guardActionParameterEClass, GUARD_ACTION_PARAMETER__GUARD_ACTION_PARAMETER_NAME);
 		createEAttribute(guardActionParameterEClass, GUARD_ACTION_PARAMETER__PARAMETER_TYPE);
+		createEAttribute(guardActionParameterEClass, GUARD_ACTION_PARAMETER__SOURCE_NAME);
+		createEAttribute(guardActionParameterEClass, GUARD_ACTION_PARAMETER__TARGET_NAME);
 
 		guardEClass = createEClass(GUARD);
 		createEReference(guardEClass, GUARD__GUARD_PARAMETER);
@@ -1694,6 +1714,8 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEClass(guardActionParameterEClass, GuardActionParameter.class, "GuardActionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGuardActionParameter_GuardActionParameterName(), ecorePackage.getEString(), "guardActionParameterName", null, 1, 1, GuardActionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGuardActionParameter_ParameterType(), this.getGuardActionParameterType(), "parameterType", "BOOLEAN", 1, 1, GuardActionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuardActionParameter_SourceName(), ecorePackage.getEString(), "sourceName", null, 1, 1, GuardActionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuardActionParameter_TargetName(), ecorePackage.getEString(), "targetName", null, 0, 1, GuardActionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuard_GuardParameter(), this.getGuardActionParameter(), null, "guardParameter", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

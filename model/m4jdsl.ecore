@@ -259,6 +259,9 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterType" lowerBound="1"
         eType="#//GuardActionParameterType" defaultValueLiteral="BOOLEAN"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GuardActionParameterType">
     <eLiterals name="INTEGER" literal="INTEGER"/>

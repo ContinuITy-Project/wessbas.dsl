@@ -1733,13 +1733,31 @@ public interface M4jdslPackage extends EPackage {
 	int GUARD_ACTION_PARAMETER__PARAMETER_TYPE = 1;
 
 				/**
+	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARD_ACTION_PARAMETER__SOURCE_NAME = 2;
+
+				/**
+	 * The feature id for the '<em><b>Target Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARD_ACTION_PARAMETER__TARGET_NAME = 3;
+
+				/**
 	 * The number of structural features of the '<em>Guard Action Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_ACTION_PARAMETER_FEATURE_COUNT = 2;
+	int GUARD_ACTION_PARAMETER_FEATURE_COUNT = 4;
 
 				/**
 	 * The number of operations of the '<em>Guard Action Parameter</em>' class.
@@ -2835,6 +2853,28 @@ public interface M4jdslPackage extends EPackage {
 	EAttribute getGuardActionParameter_ParameterType();
 
 				/**
+	 * Returns the meta object for the attribute '{@link m4jdsl.GuardActionParameter#getSourceName <em>Source Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Name</em>'.
+	 * @see m4jdsl.GuardActionParameter#getSourceName()
+	 * @see #getGuardActionParameter()
+	 * @generated
+	 */
+	EAttribute getGuardActionParameter_SourceName();
+
+				/**
+	 * Returns the meta object for the attribute '{@link m4jdsl.GuardActionParameter#getTargetName <em>Target Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Name</em>'.
+	 * @see m4jdsl.GuardActionParameter#getTargetName()
+	 * @see #getGuardActionParameter()
+	 * @generated
+	 */
+	EAttribute getGuardActionParameter_TargetName();
+
+				/**
 	 * Returns the meta object for class '{@link m4jdsl.Guard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3731,6 +3771,22 @@ public interface M4jdslPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GUARD_ACTION_PARAMETER__PARAMETER_TYPE = eINSTANCE.getGuardActionParameter_ParameterType();
+
+								/**
+		 * The meta object literal for the '<em><b>Source Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARD_ACTION_PARAMETER__SOURCE_NAME = eINSTANCE.getGuardActionParameter_SourceName();
+
+								/**
+		 * The meta object literal for the '<em><b>Target Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARD_ACTION_PARAMETER__TARGET_NAME = eINSTANCE.getGuardActionParameter_TargetName();
 
 								/**
 		 * The meta object literal for the '{@link m4jdsl.impl.GuardImpl <em>Guard</em>}' class.

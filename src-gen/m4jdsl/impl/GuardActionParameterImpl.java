@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link m4jdsl.impl.GuardActionParameterImpl#getGuardActionParameterName <em>Guard Action Parameter Name</em>}</li>
  *   <li>{@link m4jdsl.impl.GuardActionParameterImpl#getParameterType <em>Parameter Type</em>}</li>
+ *   <li>{@link m4jdsl.impl.GuardActionParameterImpl#getSourceName <em>Source Name</em>}</li>
+ *   <li>{@link m4jdsl.impl.GuardActionParameterImpl#getTargetName <em>Target Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +66,46 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected GuardActionParameterType parameterType = PARAMETER_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSourceName() <em>Source Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOURCE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSourceName() <em>Source Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sourceName = SOURCE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTargetName() <em>Target Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TARGET_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTargetName() <em>Target Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String targetName = TARGET_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +168,48 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD_ACTION_PARAMETER__PARAMETER_TYPE, oldParameterType, parameterType));
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSourceName() {
+		return sourceName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSourceName(String newSourceName) {
+		String oldSourceName = sourceName;
+		sourceName = newSourceName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD_ACTION_PARAMETER__SOURCE_NAME, oldSourceName, sourceName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTargetName() {
+		return targetName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetName(String newTargetName) {
+		String oldTargetName = targetName;
+		targetName = newTargetName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD_ACTION_PARAMETER__TARGET_NAME, oldTargetName, targetName));
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -152,6 +236,10 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 				return getGuardActionParameterName();
 			case M4jdslPackage.GUARD_ACTION_PARAMETER__PARAMETER_TYPE:
 				return getParameterType();
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__SOURCE_NAME:
+				return getSourceName();
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__TARGET_NAME:
+				return getTargetName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +257,12 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case M4jdslPackage.GUARD_ACTION_PARAMETER__PARAMETER_TYPE:
 				setParameterType((GuardActionParameterType)newValue);
+				return;
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__SOURCE_NAME:
+				setSourceName((String)newValue);
+				return;
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__TARGET_NAME:
+				setTargetName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,6 +282,12 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 			case M4jdslPackage.GUARD_ACTION_PARAMETER__PARAMETER_TYPE:
 				setParameterType(PARAMETER_TYPE_EDEFAULT);
 				return;
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__SOURCE_NAME:
+				setSourceName(SOURCE_NAME_EDEFAULT);
+				return;
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__TARGET_NAME:
+				setTargetName(TARGET_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +304,10 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 				return GUARD_ACTION_PARAMETER_NAME_EDEFAULT == null ? guardActionParameterName != null : !GUARD_ACTION_PARAMETER_NAME_EDEFAULT.equals(guardActionParameterName);
 			case M4jdslPackage.GUARD_ACTION_PARAMETER__PARAMETER_TYPE:
 				return parameterType != PARAMETER_TYPE_EDEFAULT;
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__SOURCE_NAME:
+				return SOURCE_NAME_EDEFAULT == null ? sourceName != null : !SOURCE_NAME_EDEFAULT.equals(sourceName);
+			case M4jdslPackage.GUARD_ACTION_PARAMETER__TARGET_NAME:
+				return TARGET_NAME_EDEFAULT == null ? targetName != null : !TARGET_NAME_EDEFAULT.equals(targetName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,6 +326,10 @@ public class GuardActionParameterImpl extends MinimalEObjectImpl.Container imple
 		result.append(guardActionParameterName);
 		result.append(", parameterType: ");
 		result.append(parameterType);
+		result.append(", sourceName: ");
+		result.append(sourceName);
+		result.append(", targetName: ");
+		result.append(targetName);
 		result.append(')');
 		return result.toString();
 	}
