@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BehaviorMix extends EObject {
     /**
-     * Returns the value of the '<em><b>Relative Frequencies</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.RelativeFrequency}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Relative Frequencies</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.RelativeFrequency}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Relative Frequencies</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Relative Frequencies</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getBehaviorMix_RelativeFrequencies()
-     * @model containment="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Relative Frequencies</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getBehaviorMix_RelativeFrequencies()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
     EList<RelativeFrequency> getRelativeFrequencies();
 
 } // BehaviorMix

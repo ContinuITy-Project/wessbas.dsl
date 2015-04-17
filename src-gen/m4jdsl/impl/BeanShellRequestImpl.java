@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class BeanShellRequestImpl extends RequestImpl implements BeanShellRequest {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BeanShellRequestImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.BEAN_SHELL_REQUEST;
-    }
+		return M4jdslPackage.Literals.BEAN_SHELL_REQUEST;
+	}
 
 } //BeanShellRequestImpl

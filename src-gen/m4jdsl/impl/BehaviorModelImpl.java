@@ -42,362 +42,362 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class BehaviorModelImpl extends MinimalEObjectImpl.Container implements BehaviorModel {
     /**
-     * The cached value of the '{@link #getMarkovStates() <em>Markov States</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMarkovStates() <em>Markov States</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getMarkovStates()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMarkovStates()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<MarkovState> markovStates;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFilename()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String FILENAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFilename()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
     protected String filename = FILENAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getExitState() <em>Exit State</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExitState() <em>Exit State</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getExitState()
-     * @generated
-     * @ordered
-     */
+	 * @see #getExitState()
+	 * @generated
+	 * @ordered
+	 */
     protected BehaviorModelExitState exitState;
 
     /**
-     * The cached value of the '{@link #getInitialState() <em>Initial State</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInitialState() <em>Initial State</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getInitialState()
-     * @generated
-     * @ordered
-     */
+	 * @see #getInitialState()
+	 * @generated
+	 * @ordered
+	 */
     protected MarkovState initialState;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BehaviorModelImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.BEHAVIOR_MODEL;
-    }
+		return M4jdslPackage.Literals.BEHAVIOR_MODEL;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<MarkovState> getMarkovStates() {
-        if (markovStates == null) {
-            markovStates = new EObjectContainmentEList<MarkovState>(MarkovState.class, this, M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES);
-        }
-        return markovStates;
-    }
+		if (markovStates == null) {
+			markovStates = new EObjectContainmentEList<MarkovState>(MarkovState.class, this, M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES);
+		}
+		return markovStates;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__NAME, oldName, name));
-    }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__NAME, oldName, name));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getFilename() {
-        return filename;
-    }
+		return filename;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setFilename(String newFilename) {
-        String oldFilename = filename;
-        filename = newFilename;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__FILENAME, oldFilename, filename));
-    }
+		String oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__FILENAME, oldFilename, filename));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public BehaviorModelExitState getExitState() {
-        return exitState;
-    }
+		return exitState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetExitState(BehaviorModelExitState newExitState, NotificationChain msgs) {
-        BehaviorModelExitState oldExitState = exitState;
-        exitState = newExitState;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, oldExitState, newExitState);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		BehaviorModelExitState oldExitState = exitState;
+		exitState = newExitState;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, oldExitState, newExitState);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setExitState(BehaviorModelExitState newExitState) {
-        if (newExitState != exitState) {
-            NotificationChain msgs = null;
-            if (exitState != null)
-                msgs = ((InternalEObject)exitState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, null, msgs);
-            if (newExitState != null)
-                msgs = ((InternalEObject)newExitState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, null, msgs);
-            msgs = basicSetExitState(newExitState, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, newExitState, newExitState));
-    }
+		if (newExitState != exitState) {
+			NotificationChain msgs = null;
+			if (exitState != null)
+				msgs = ((InternalEObject)exitState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, null, msgs);
+			if (newExitState != null)
+				msgs = ((InternalEObject)newExitState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, null, msgs);
+			msgs = basicSetExitState(newExitState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE, newExitState, newExitState));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public MarkovState getInitialState() {
-        if (initialState != null && initialState.eIsProxy()) {
-            InternalEObject oldInitialState = (InternalEObject)initialState;
-            initialState = (MarkovState)eResolveProxy(oldInitialState);
-            if (initialState != oldInitialState) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE, oldInitialState, initialState));
-            }
-        }
-        return initialState;
-    }
+		if (initialState != null && initialState.eIsProxy()) {
+			InternalEObject oldInitialState = (InternalEObject)initialState;
+			initialState = (MarkovState)eResolveProxy(oldInitialState);
+			if (initialState != oldInitialState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE, oldInitialState, initialState));
+			}
+		}
+		return initialState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public MarkovState basicGetInitialState() {
-        return initialState;
-    }
+		return initialState;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setInitialState(MarkovState newInitialState) {
-        MarkovState oldInitialState = initialState;
-        initialState = newInitialState;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE, oldInitialState, initialState));
-    }
+		MarkovState oldInitialState = initialState;
+		initialState = newInitialState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE, oldInitialState, initialState));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
-                return ((InternalEList<?>)getMarkovStates()).basicRemove(otherEnd, msgs);
-            case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
-                return basicSetExitState(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
+				return ((InternalEList<?>)getMarkovStates()).basicRemove(otherEnd, msgs);
+			case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
+				return basicSetExitState(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
-                return getMarkovStates();
-            case M4jdslPackage.BEHAVIOR_MODEL__NAME:
-                return getName();
-            case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
-                return getFilename();
-            case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
-                return getExitState();
-            case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
-                if (resolve) return getInitialState();
-                return basicGetInitialState();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
+				return getMarkovStates();
+			case M4jdslPackage.BEHAVIOR_MODEL__NAME:
+				return getName();
+			case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
+				return getFilename();
+			case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
+				return getExitState();
+			case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
+				if (resolve) return getInitialState();
+				return basicGetInitialState();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
-                getMarkovStates().clear();
-                getMarkovStates().addAll((Collection<? extends MarkovState>)newValue);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__NAME:
-                setName((String)newValue);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
-                setFilename((String)newValue);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
-                setExitState((BehaviorModelExitState)newValue);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
-                setInitialState((MarkovState)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
+				getMarkovStates().clear();
+				getMarkovStates().addAll((Collection<? extends MarkovState>)newValue);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__NAME:
+				setName((String)newValue);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
+				setFilename((String)newValue);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
+				setExitState((BehaviorModelExitState)newValue);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
+				setInitialState((MarkovState)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
-                getMarkovStates().clear();
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
-                setFilename(FILENAME_EDEFAULT);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
-                setExitState((BehaviorModelExitState)null);
-                return;
-            case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
-                setInitialState((MarkovState)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
+				getMarkovStates().clear();
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
+				setFilename(FILENAME_EDEFAULT);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
+				setExitState((BehaviorModelExitState)null);
+				return;
+			case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
+				setInitialState((MarkovState)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
-                return markovStates != null && !markovStates.isEmpty();
-            case M4jdslPackage.BEHAVIOR_MODEL__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
-                return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
-            case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
-                return exitState != null;
-            case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
-                return initialState != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.BEHAVIOR_MODEL__MARKOV_STATES:
+				return markovStates != null && !markovStates.isEmpty();
+			case M4jdslPackage.BEHAVIOR_MODEL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case M4jdslPackage.BEHAVIOR_MODEL__FILENAME:
+				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
+			case M4jdslPackage.BEHAVIOR_MODEL__EXIT_STATE:
+				return exitState != null;
+			case M4jdslPackage.BEHAVIOR_MODEL__INITIAL_STATE:
+				return initialState != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(", filename: ");
-        result.append(filename);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", filename: ");
+		result.append(filename);
+		result.append(')');
+		return result.toString();
+	}
 
 } //BehaviorModelImpl

@@ -40,248 +40,248 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ApplicationStateImpl extends SessionLayerEFSMStateImpl implements ApplicationState {
     /**
-     * The cached value of the '{@link #getService() <em>Service</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getService() <em>Service</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getService()
-     * @generated
-     * @ordered
-     */
+	 * @see #getService()
+	 * @generated
+	 * @ordered
+	 */
     protected Service service;
 
     /**
-     * The cached value of the '{@link #getProtocolDetails() <em>Protocol Details</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProtocolDetails() <em>Protocol Details</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProtocolDetails()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProtocolDetails()
+	 * @generated
+	 * @ordered
+	 */
     protected ProtocolLayerEFSM protocolDetails;
 
     /**
-     * The cached value of the '{@link #getOutgoingTransitions() <em>Outgoing Transitions</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutgoingTransitions() <em>Outgoing Transitions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOutgoingTransitions()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOutgoingTransitions()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ApplicationTransition> outgoingTransitions;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ApplicationStateImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.APPLICATION_STATE;
-    }
+		return M4jdslPackage.Literals.APPLICATION_STATE;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Service getService() {
-        return service;
-    }
+		return service;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetService(Service newService, NotificationChain msgs) {
-        Service oldService = service;
-        service = newService;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__SERVICE, oldService, newService);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Service oldService = service;
+		service = newService;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__SERVICE, oldService, newService);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setService(Service newService) {
-        if (newService != service) {
-            NotificationChain msgs = null;
-            if (service != null)
-                msgs = ((InternalEObject)service).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__SERVICE, null, msgs);
-            if (newService != null)
-                msgs = ((InternalEObject)newService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__SERVICE, null, msgs);
-            msgs = basicSetService(newService, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__SERVICE, newService, newService));
-    }
+		if (newService != service) {
+			NotificationChain msgs = null;
+			if (service != null)
+				msgs = ((InternalEObject)service).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__SERVICE, null, msgs);
+			if (newService != null)
+				msgs = ((InternalEObject)newService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__SERVICE, null, msgs);
+			msgs = basicSetService(newService, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__SERVICE, newService, newService));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ProtocolLayerEFSM getProtocolDetails() {
-        return protocolDetails;
-    }
+		return protocolDetails;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetProtocolDetails(ProtocolLayerEFSM newProtocolDetails, NotificationChain msgs) {
-        ProtocolLayerEFSM oldProtocolDetails = protocolDetails;
-        protocolDetails = newProtocolDetails;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, oldProtocolDetails, newProtocolDetails);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ProtocolLayerEFSM oldProtocolDetails = protocolDetails;
+		protocolDetails = newProtocolDetails;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, oldProtocolDetails, newProtocolDetails);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setProtocolDetails(ProtocolLayerEFSM newProtocolDetails) {
-        if (newProtocolDetails != protocolDetails) {
-            NotificationChain msgs = null;
-            if (protocolDetails != null)
-                msgs = ((InternalEObject)protocolDetails).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, null, msgs);
-            if (newProtocolDetails != null)
-                msgs = ((InternalEObject)newProtocolDetails).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, null, msgs);
-            msgs = basicSetProtocolDetails(newProtocolDetails, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, newProtocolDetails, newProtocolDetails));
-    }
+		if (newProtocolDetails != protocolDetails) {
+			NotificationChain msgs = null;
+			if (protocolDetails != null)
+				msgs = ((InternalEObject)protocolDetails).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, null, msgs);
+			if (newProtocolDetails != null)
+				msgs = ((InternalEObject)newProtocolDetails).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, null, msgs);
+			msgs = basicSetProtocolDetails(newProtocolDetails, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS, newProtocolDetails, newProtocolDetails));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ApplicationTransition> getOutgoingTransitions() {
-        if (outgoingTransitions == null) {
-            outgoingTransitions = new EObjectContainmentEList<ApplicationTransition>(ApplicationTransition.class, this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS);
-        }
-        return outgoingTransitions;
-    }
+		if (outgoingTransitions == null) {
+			outgoingTransitions = new EObjectContainmentEList<ApplicationTransition>(ApplicationTransition.class, this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS);
+		}
+		return outgoingTransitions;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_STATE__SERVICE:
-                return basicSetService(null, msgs);
-            case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
-                return basicSetProtocolDetails(null, msgs);
-            case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
-                return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__SERVICE:
+				return basicSetService(null, msgs);
+			case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
+				return basicSetProtocolDetails(null, msgs);
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_STATE__SERVICE:
-                return getService();
-            case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
-                return getProtocolDetails();
-            case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
-                return getOutgoingTransitions();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__SERVICE:
+				return getService();
+			case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
+				return getProtocolDetails();
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				return getOutgoingTransitions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_STATE__SERVICE:
-                setService((Service)newValue);
-                return;
-            case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
-                setProtocolDetails((ProtocolLayerEFSM)newValue);
-                return;
-            case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
-                getOutgoingTransitions().clear();
-                getOutgoingTransitions().addAll((Collection<? extends ApplicationTransition>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__SERVICE:
+				setService((Service)newValue);
+				return;
+			case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
+				setProtocolDetails((ProtocolLayerEFSM)newValue);
+				return;
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				getOutgoingTransitions().clear();
+				getOutgoingTransitions().addAll((Collection<? extends ApplicationTransition>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_STATE__SERVICE:
-                setService((Service)null);
-                return;
-            case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
-                setProtocolDetails((ProtocolLayerEFSM)null);
-                return;
-            case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
-                getOutgoingTransitions().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__SERVICE:
+				setService((Service)null);
+				return;
+			case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
+				setProtocolDetails((ProtocolLayerEFSM)null);
+				return;
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				getOutgoingTransitions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.APPLICATION_STATE__SERVICE:
-                return service != null;
-            case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
-                return protocolDetails != null;
-            case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
-                return outgoingTransitions != null && !outgoingTransitions.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__SERVICE:
+				return service != null;
+			case M4jdslPackage.APPLICATION_STATE__PROTOCOL_DETAILS:
+				return protocolDetails != null;
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				return outgoingTransitions != null && !outgoingTransitions.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ApplicationStateImpl

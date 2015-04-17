@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class HTTPRequestImpl extends RequestImpl implements HTTPRequest {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected HTTPRequestImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.HTTP_REQUEST;
-    }
+		return M4jdslPackage.Literals.HTTP_REQUEST;
+	}
 
 } //HTTPRequestImpl

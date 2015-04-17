@@ -22,29 +22,29 @@ package m4jdsl;
  */
 public interface ConstantWorkloadIntensity extends WorkloadIntensity {
     /**
-     * Returns the value of the '<em><b>Number Of Sessions</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Number Of Sessions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Number Of Sessions</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Number Of Sessions</em>' attribute.
-     * @see #setNumberOfSessions(int)
-     * @see m4jdsl.M4jdslPackage#getConstantWorkloadIntensity_NumberOfSessions()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Number Of Sessions</em>' attribute.
+	 * @see #setNumberOfSessions(int)
+	 * @see m4jdsl.M4jdslPackage#getConstantWorkloadIntensity_NumberOfSessions()
+	 * @model required="true"
+	 * @generated
+	 */
     int getNumberOfSessions();
 
     /**
-     * Sets the value of the '{@link m4jdsl.ConstantWorkloadIntensity#getNumberOfSessions <em>Number Of Sessions</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.ConstantWorkloadIntensity#getNumberOfSessions <em>Number Of Sessions</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Number Of Sessions</em>' attribute.
-     * @see #getNumberOfSessions()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Number Of Sessions</em>' attribute.
+	 * @see #getNumberOfSessions()
+	 * @generated
+	 */
     void setNumberOfSessions(int value);
 
 } // ConstantWorkloadIntensity

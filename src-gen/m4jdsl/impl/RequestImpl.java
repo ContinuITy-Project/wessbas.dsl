@@ -42,255 +42,255 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class RequestImpl extends MinimalEObjectImpl.Container implements Request {
     /**
-     * The default value of the '{@link #getEId() <em>EId</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEId() <em>EId</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEId()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String EID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getEId() <em>EId</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEId() <em>EId</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEId()
+	 * @generated
+	 * @ordered
+	 */
     protected String eId = EID_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getAssertions() <em>Assertions</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAssertions() <em>Assertions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAssertions()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAssertions()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Assertion> assertions;
 
     /**
-     * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProperties()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Property> properties;
 
     /**
-     * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getParameters()
-     * @generated
-     * @ordered
-     */
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Parameter> parameters;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected RequestImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.REQUEST;
-    }
+		return M4jdslPackage.Literals.REQUEST;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getEId() {
-        return eId;
-    }
+		return eId;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setEId(String newEId) {
-        String oldEId = eId;
-        eId = newEId;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.REQUEST__EID, oldEId, eId));
-    }
+		String oldEId = eId;
+		eId = newEId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.REQUEST__EID, oldEId, eId));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Assertion> getAssertions() {
-        if (assertions == null) {
-            assertions = new EObjectContainmentEList<Assertion>(Assertion.class, this, M4jdslPackage.REQUEST__ASSERTIONS);
-        }
-        return assertions;
-    }
+		if (assertions == null) {
+			assertions = new EObjectContainmentEList<Assertion>(Assertion.class, this, M4jdslPackage.REQUEST__ASSERTIONS);
+		}
+		return assertions;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Property> getProperties() {
-        if (properties == null) {
-            properties = new EObjectContainmentEList<Property>(Property.class, this, M4jdslPackage.REQUEST__PROPERTIES);
-        }
-        return properties;
-    }
+		if (properties == null) {
+			properties = new EObjectContainmentEList<Property>(Property.class, this, M4jdslPackage.REQUEST__PROPERTIES);
+		}
+		return properties;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Parameter> getParameters() {
-        if (parameters == null) {
-            parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, M4jdslPackage.REQUEST__PARAMETERS);
-        }
-        return parameters;
-    }
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, M4jdslPackage.REQUEST__PARAMETERS);
+		}
+		return parameters;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case M4jdslPackage.REQUEST__ASSERTIONS:
-                return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
-            case M4jdslPackage.REQUEST__PROPERTIES:
-                return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-            case M4jdslPackage.REQUEST__PARAMETERS:
-                return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case M4jdslPackage.REQUEST__ASSERTIONS:
+				return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
+			case M4jdslPackage.REQUEST__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+			case M4jdslPackage.REQUEST__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.REQUEST__EID:
-                return getEId();
-            case M4jdslPackage.REQUEST__ASSERTIONS:
-                return getAssertions();
-            case M4jdslPackage.REQUEST__PROPERTIES:
-                return getProperties();
-            case M4jdslPackage.REQUEST__PARAMETERS:
-                return getParameters();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.REQUEST__EID:
+				return getEId();
+			case M4jdslPackage.REQUEST__ASSERTIONS:
+				return getAssertions();
+			case M4jdslPackage.REQUEST__PROPERTIES:
+				return getProperties();
+			case M4jdslPackage.REQUEST__PARAMETERS:
+				return getParameters();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.REQUEST__EID:
-                setEId((String)newValue);
-                return;
-            case M4jdslPackage.REQUEST__ASSERTIONS:
-                getAssertions().clear();
-                getAssertions().addAll((Collection<? extends Assertion>)newValue);
-                return;
-            case M4jdslPackage.REQUEST__PROPERTIES:
-                getProperties().clear();
-                getProperties().addAll((Collection<? extends Property>)newValue);
-                return;
-            case M4jdslPackage.REQUEST__PARAMETERS:
-                getParameters().clear();
-                getParameters().addAll((Collection<? extends Parameter>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.REQUEST__EID:
+				setEId((String)newValue);
+				return;
+			case M4jdslPackage.REQUEST__ASSERTIONS:
+				getAssertions().clear();
+				getAssertions().addAll((Collection<? extends Assertion>)newValue);
+				return;
+			case M4jdslPackage.REQUEST__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Property>)newValue);
+				return;
+			case M4jdslPackage.REQUEST__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.REQUEST__EID:
-                setEId(EID_EDEFAULT);
-                return;
-            case M4jdslPackage.REQUEST__ASSERTIONS:
-                getAssertions().clear();
-                return;
-            case M4jdslPackage.REQUEST__PROPERTIES:
-                getProperties().clear();
-                return;
-            case M4jdslPackage.REQUEST__PARAMETERS:
-                getParameters().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.REQUEST__EID:
+				setEId(EID_EDEFAULT);
+				return;
+			case M4jdslPackage.REQUEST__ASSERTIONS:
+				getAssertions().clear();
+				return;
+			case M4jdslPackage.REQUEST__PROPERTIES:
+				getProperties().clear();
+				return;
+			case M4jdslPackage.REQUEST__PARAMETERS:
+				getParameters().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.REQUEST__EID:
-                return EID_EDEFAULT == null ? eId != null : !EID_EDEFAULT.equals(eId);
-            case M4jdslPackage.REQUEST__ASSERTIONS:
-                return assertions != null && !assertions.isEmpty();
-            case M4jdslPackage.REQUEST__PROPERTIES:
-                return properties != null && !properties.isEmpty();
-            case M4jdslPackage.REQUEST__PARAMETERS:
-                return parameters != null && !parameters.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.REQUEST__EID:
+				return EID_EDEFAULT == null ? eId != null : !EID_EDEFAULT.equals(eId);
+			case M4jdslPackage.REQUEST__ASSERTIONS:
+				return assertions != null && !assertions.isEmpty();
+			case M4jdslPackage.REQUEST__PROPERTIES:
+				return properties != null && !properties.isEmpty();
+			case M4jdslPackage.REQUEST__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (eId: ");
-        result.append(eId);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (eId: ");
+		result.append(eId);
+		result.append(')');
+		return result.toString();
+	}
 
 } //RequestImpl

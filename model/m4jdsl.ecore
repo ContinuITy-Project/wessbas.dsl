@@ -194,6 +194,8 @@
         eType="#//ApplicationState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exitState" lowerBound="1"
         eType="#//ApplicationExitState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guardActionParameterList"
+        lowerBound="1" eType="#//GuardActionParameterList" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantWorkloadIntensity" eSuperTypes="#//WorkloadIntensity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -208,8 +210,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationTransition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
         eType="#//SessionLayerEFSMState"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" upperBound="-1"
+        eType="#//Guard" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormallyDistributedThinkTime" eSuperTypes="#//ThinkTime">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -249,5 +253,32 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProtocolLayerEFSMState" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GuardActionParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardActionParameterName"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterType" lowerBound="1"
+        eType="#//GuardActionParameterType" defaultValueLiteral="BOOLEAN"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GuardActionParameterType">
+    <eLiterals name="INTEGER" literal="INTEGER"/>
+    <eLiterals name="BOOLEAN" value="1" literal="BOOLEAN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Guard">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guardParameter" lowerBound="1"
+        eType="#//GuardActionParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionParameter" lowerBound="1"
+        eType="#//GuardActionParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GuardActionParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guardActionParameters"
+        upperBound="-1" eType="#//GuardActionParameter" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

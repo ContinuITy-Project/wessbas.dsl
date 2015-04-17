@@ -23,55 +23,55 @@ package m4jdsl;
  */
 public interface NormallyDistributedThinkTime extends ThinkTime {
     /**
-     * Returns the value of the '<em><b>Mean</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Mean</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Mean</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Mean</em>' attribute.
-     * @see #setMean(double)
-     * @see m4jdsl.M4jdslPackage#getNormallyDistributedThinkTime_Mean()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Mean</em>' attribute.
+	 * @see #setMean(double)
+	 * @see m4jdsl.M4jdslPackage#getNormallyDistributedThinkTime_Mean()
+	 * @model required="true"
+	 * @generated
+	 */
     double getMean();
 
     /**
-     * Sets the value of the '{@link m4jdsl.NormallyDistributedThinkTime#getMean <em>Mean</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.NormallyDistributedThinkTime#getMean <em>Mean</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Mean</em>' attribute.
-     * @see #getMean()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Mean</em>' attribute.
+	 * @see #getMean()
+	 * @generated
+	 */
     void setMean(double value);
 
     /**
-     * Returns the value of the '<em><b>Deviation</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Deviation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Deviation</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Deviation</em>' attribute.
-     * @see #setDeviation(double)
-     * @see m4jdsl.M4jdslPackage#getNormallyDistributedThinkTime_Deviation()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Deviation</em>' attribute.
+	 * @see #setDeviation(double)
+	 * @see m4jdsl.M4jdslPackage#getNormallyDistributedThinkTime_Deviation()
+	 * @model required="true"
+	 * @generated
+	 */
     double getDeviation();
 
     /**
-     * Sets the value of the '{@link m4jdsl.NormallyDistributedThinkTime#getDeviation <em>Deviation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.NormallyDistributedThinkTime#getDeviation <em>Deviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Deviation</em>' attribute.
-     * @see #getDeviation()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Deviation</em>' attribute.
+	 * @see #getDeviation()
+	 * @generated
+	 */
     void setDeviation(double value);
 
 } // NormallyDistributedThinkTime

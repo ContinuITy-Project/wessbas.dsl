@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class JUnitRequestImpl extends RequestImpl implements JUnitRequest {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected JUnitRequestImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.JUNIT_REQUEST;
-    }
+		return M4jdslPackage.Literals.JUNIT_REQUEST;
+	}
 
 } //JUnitRequestImpl

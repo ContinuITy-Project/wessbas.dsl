@@ -29,77 +29,77 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Request extends EObject {
     /**
-     * Returns the value of the '<em><b>EId</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>EId</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>EId</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>EId</em>' attribute.
-     * @see #setEId(String)
-     * @see m4jdsl.M4jdslPackage#getRequest_EId()
-     * @model id="true" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>EId</em>' attribute.
+	 * @see #setEId(String)
+	 * @see m4jdsl.M4jdslPackage#getRequest_EId()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
     String getEId();
 
     /**
-     * Sets the value of the '{@link m4jdsl.Request#getEId <em>EId</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.Request#getEId <em>EId</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>EId</em>' attribute.
-     * @see #getEId()
-     * @generated
-     */
+	 * @param value the new value of the '<em>EId</em>' attribute.
+	 * @see #getEId()
+	 * @generated
+	 */
     void setEId(String value);
 
     /**
-     * Returns the value of the '<em><b>Assertions</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.Assertion}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Assertions</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.Assertion}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Assertions</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Assertions</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getRequest_Assertions()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Assertions</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getRequest_Assertions()
+	 * @model containment="true"
+	 * @generated
+	 */
     EList<Assertion> getAssertions();
 
     /**
-     * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.Property}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.Property}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Properties</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getRequest_Properties()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Properties</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getRequest_Properties()
+	 * @model containment="true"
+	 * @generated
+	 */
     EList<Property> getProperties();
 
     /**
-     * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-     * The list contents are of type {@link m4jdsl.Parameter}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link m4jdsl.Parameter}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Parameters</em>' containment reference list.
-     * @see m4jdsl.M4jdslPackage#getRequest_Parameters()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see m4jdsl.M4jdslPackage#getRequest_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
     EList<Parameter> getParameters();
 
 } // Request

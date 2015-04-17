@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class ApplicationExitStateImpl extends SessionLayerEFSMStateImpl implements ApplicationExitState {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ApplicationExitStateImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.APPLICATION_EXIT_STATE;
-    }
+		return M4jdslPackage.Literals.APPLICATION_EXIT_STATE;
+	}
 
 } //ApplicationExitStateImpl

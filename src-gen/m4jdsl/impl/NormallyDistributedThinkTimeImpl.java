@@ -27,190 +27,190 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class NormallyDistributedThinkTimeImpl extends ThinkTimeImpl implements NormallyDistributedThinkTime {
     /**
-     * The default value of the '{@link #getMean() <em>Mean</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMean() <em>Mean</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getMean()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMean()
+	 * @generated
+	 * @ordered
+	 */
     protected static final double MEAN_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getMean() <em>Mean</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMean() <em>Mean</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getMean()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMean()
+	 * @generated
+	 * @ordered
+	 */
     protected double mean = MEAN_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getDeviation() <em>Deviation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDeviation() <em>Deviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDeviation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDeviation()
+	 * @generated
+	 * @ordered
+	 */
     protected static final double DEVIATION_EDEFAULT = 0.0;
 
     /**
-     * The cached value of the '{@link #getDeviation() <em>Deviation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDeviation() <em>Deviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDeviation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDeviation()
+	 * @generated
+	 * @ordered
+	 */
     protected double deviation = DEVIATION_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected NormallyDistributedThinkTimeImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.NORMALLY_DISTRIBUTED_THINK_TIME;
-    }
+		return M4jdslPackage.Literals.NORMALLY_DISTRIBUTED_THINK_TIME;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public double getMean() {
-        return mean;
-    }
+		return mean;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setMean(double newMean) {
-        double oldMean = mean;
-        mean = newMean;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN, oldMean, mean));
-    }
+		double oldMean = mean;
+		mean = newMean;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN, oldMean, mean));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public double getDeviation() {
-        return deviation;
-    }
+		return deviation;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDeviation(double newDeviation) {
-        double oldDeviation = deviation;
-        deviation = newDeviation;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION, oldDeviation, deviation));
-    }
+		double oldDeviation = deviation;
+		deviation = newDeviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION, oldDeviation, deviation));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
-                return getMean();
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
-                return getDeviation();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
+				return getMean();
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
+				return getDeviation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
-                setMean((Double)newValue);
-                return;
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
-                setDeviation((Double)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
+				setMean((Double)newValue);
+				return;
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
+				setDeviation((Double)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
-                setMean(MEAN_EDEFAULT);
-                return;
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
-                setDeviation(DEVIATION_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
+				setMean(MEAN_EDEFAULT);
+				return;
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
+				setDeviation(DEVIATION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
-                return mean != MEAN_EDEFAULT;
-            case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
-                return deviation != DEVIATION_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__MEAN:
+				return mean != MEAN_EDEFAULT;
+			case M4jdslPackage.NORMALLY_DISTRIBUTED_THINK_TIME__DEVIATION:
+				return deviation != DEVIATION_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (mean: ");
-        result.append(mean);
-        result.append(", deviation: ");
-        result.append(deviation);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (mean: ");
+		result.append(mean);
+		result.append(", deviation: ");
+		result.append(deviation);
+		result.append(')');
+		return result.toString();
+	}
 
 } //NormallyDistributedThinkTimeImpl

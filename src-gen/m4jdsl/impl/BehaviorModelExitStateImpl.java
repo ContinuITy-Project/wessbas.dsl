@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class BehaviorModelExitStateImpl extends BehaviorModelStateImpl implements BehaviorModelExitState {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BehaviorModelExitStateImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return M4jdslPackage.Literals.BEHAVIOR_MODEL_EXIT_STATE;
-    }
+		return M4jdslPackage.Literals.BEHAVIOR_MODEL_EXIT_STATE;
+	}
 
 } //BehaviorModelExitStateImpl

@@ -22,29 +22,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface WorkloadIntensity extends EObject {
     /**
-     * Returns the value of the '<em><b>Formula</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Formula</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Formula</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Formula</em>' attribute.
-     * @see #setFormula(String)
-     * @see m4jdsl.M4jdslPackage#getWorkloadIntensity_Formula()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Formula</em>' attribute.
+	 * @see #setFormula(String)
+	 * @see m4jdsl.M4jdslPackage#getWorkloadIntensity_Formula()
+	 * @model required="true"
+	 * @generated
+	 */
     String getFormula();
 
     /**
-     * Sets the value of the '{@link m4jdsl.WorkloadIntensity#getFormula <em>Formula</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link m4jdsl.WorkloadIntensity#getFormula <em>Formula</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Formula</em>' attribute.
-     * @see #getFormula()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Formula</em>' attribute.
+	 * @see #getFormula()
+	 * @generated
+	 */
     void setFormula(String value);
 
 } // WorkloadIntensity
