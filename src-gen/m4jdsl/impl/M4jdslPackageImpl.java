@@ -1036,6 +1036,15 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
     /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplicationTransition_ApplicationState() {
+		return (EReference)applicationTransitionEClass.getEStructuralFeatures().get(3);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1322,7 +1331,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuard_Condition() {
+	public EAttribute getGuard_Negate() {
 		return (EAttribute)guardEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1342,15 +1351,6 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 	 */
 	public EReference getAction_ActionParameter() {
 		return (EReference)actionEClass.getEStructuralFeatures().get(0);
-	}
-
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAction_Condition() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
 	}
 
 				/**
@@ -1495,6 +1495,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		createEReference(applicationTransitionEClass, APPLICATION_TRANSITION__TARGET_STATE);
 		createEReference(applicationTransitionEClass, APPLICATION_TRANSITION__GUARD);
 		createEReference(applicationTransitionEClass, APPLICATION_TRANSITION__ACTION);
+		createEReference(applicationTransitionEClass, APPLICATION_TRANSITION__APPLICATION_STATE);
 
 		normallyDistributedThinkTimeEClass = createEClass(NORMALLY_DISTRIBUTED_THINK_TIME);
 		createEAttribute(normallyDistributedThinkTimeEClass, NORMALLY_DISTRIBUTED_THINK_TIME__MEAN);
@@ -1536,11 +1537,10 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
 		guardEClass = createEClass(GUARD);
 		createEReference(guardEClass, GUARD__GUARD_PARAMETER);
-		createEAttribute(guardEClass, GUARD__CONDITION);
+		createEAttribute(guardEClass, GUARD__NEGATE);
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__ACTION_PARAMETER);
-		createEAttribute(actionEClass, ACTION__CONDITION);
 
 		guardActionParameterListEClass = createEClass(GUARD_ACTION_PARAMETER_LIST);
 		createEReference(guardActionParameterListEClass, GUARD_ACTION_PARAMETER_LIST__GUARD_ACTION_PARAMETERS);
@@ -1633,7 +1633,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEClass(applicationStateEClass, ApplicationState.class, "ApplicationState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplicationState_Service(), this.getService(), null, "service", null, 1, 1, ApplicationState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationState_ProtocolDetails(), this.getProtocolLayerEFSM(), null, "protocolDetails", null, 1, 1, ApplicationState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getApplicationState_OutgoingTransitions(), this.getApplicationTransition(), null, "outgoingTransitions", null, 0, -1, ApplicationState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationState_OutgoingTransitions(), this.getApplicationTransition(), this.getApplicationTransition_ApplicationState(), "outgoingTransitions", null, 0, -1, ApplicationState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(httpRequestEClass, HTTPRequest.class, "HTTPRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1678,6 +1678,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEReference(getApplicationTransition_TargetState(), this.getSessionLayerEFSMState(), null, "targetState", null, 1, 1, ApplicationTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationTransition_Guard(), this.getGuard(), null, "guard", null, 0, -1, ApplicationTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplicationTransition_Action(), this.getAction(), null, "action", null, 0, -1, ApplicationTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplicationTransition_ApplicationState(), this.getApplicationState(), this.getApplicationState_OutgoingTransitions(), "applicationState", null, 0, 1, ApplicationTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(normallyDistributedThinkTimeEClass, NormallyDistributedThinkTime.class, "NormallyDistributedThinkTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNormallyDistributedThinkTime_Mean(), ecorePackage.getEDouble(), "mean", null, 1, 1, NormallyDistributedThinkTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1719,11 +1720,10 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuard_GuardParameter(), this.getGuardActionParameter(), null, "guardParameter", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGuard_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuard_Negate(), ecorePackage.getEBoolean(), "negate", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_ActionParameter(), this.getGuardActionParameter(), null, "actionParameter", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardActionParameterListEClass, GuardActionParameterList.class, "GuardActionParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuardActionParameterList_GuardActionParameters(), this.getGuardActionParameter(), null, "guardActionParameters", null, 0, -1, GuardActionParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

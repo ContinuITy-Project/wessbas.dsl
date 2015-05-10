@@ -121,7 +121,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="protocolDetails" lowerBound="1"
         eType="#//ProtocolLayerEFSM" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
-        eType="#//ApplicationTransition" containment="true"/>
+        eType="#//ApplicationTransition" containment="true" eOpposite="#//ApplicationTransition/applicationState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTTPRequest" eSuperTypes="#//Request"/>
   <eClassifiers xsi:type="ecore:EClass" name="JavaRequest" eSuperTypes="#//Request"/>
@@ -214,6 +214,8 @@
         eType="#//Guard" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
         eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationState" eType="#//ApplicationState"
+        eOpposite="#//ApplicationState/outgoingTransitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormallyDistributedThinkTime" eSuperTypes="#//ThinkTime">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -270,12 +272,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardParameter" lowerBound="1"
         eType="#//GuardActionParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionParameter" lowerBound="1"
         eType="#//GuardActionParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GuardActionParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardActionParameters"

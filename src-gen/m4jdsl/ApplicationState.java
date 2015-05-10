@@ -79,6 +79,7 @@ public interface ApplicationState extends SessionLayerEFSMState {
     /**
 	 * Returns the value of the '<em><b>Outgoing Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link m4jdsl.ApplicationTransition}.
+	 * It is bidirectional and its opposite is '{@link m4jdsl.ApplicationTransition#getApplicationState <em>Application State</em>}'.
 	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Outgoing Transitions</em>' containment reference list isn't clear,
@@ -87,7 +88,8 @@ public interface ApplicationState extends SessionLayerEFSMState {
      * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Transitions</em>' containment reference list.
 	 * @see m4jdsl.M4jdslPackage#getApplicationState_OutgoingTransitions()
-	 * @model containment="true"
+	 * @see m4jdsl.ApplicationTransition#getApplicationState
+	 * @model opposite="applicationState" containment="true"
 	 * @generated
 	 */
     EList<ApplicationTransition> getOutgoingTransitions();

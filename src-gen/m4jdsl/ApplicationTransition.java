@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link m4jdsl.ApplicationTransition#getTargetState <em>Target State</em>}</li>
  *   <li>{@link m4jdsl.ApplicationTransition#getGuard <em>Guard</em>}</li>
  *   <li>{@link m4jdsl.ApplicationTransition#getAction <em>Action</em>}</li>
+ *   <li>{@link m4jdsl.ApplicationTransition#getApplicationState <em>Application State</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,34 @@ public interface ApplicationTransition extends EObject {
     EList<Action> getAction();
 
     /**
+	 * Returns the value of the '<em><b>Application State</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link m4jdsl.ApplicationState#getOutgoingTransitions <em>Outgoing Transitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Application State</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Application State</em>' container reference.
+	 * @see #setApplicationState(ApplicationState)
+	 * @see m4jdsl.M4jdslPackage#getApplicationTransition_ApplicationState()
+	 * @see m4jdsl.ApplicationState#getOutgoingTransitions
+	 * @model opposite="outgoingTransitions" transient="false"
+	 * @generated
+	 */
+	ApplicationState getApplicationState();
+
+				/**
+	 * Sets the value of the '{@link m4jdsl.ApplicationTransition#getApplicationState <em>Application State</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Application State</em>' container reference.
+	 * @see #getApplicationState()
+	 * @generated
+	 */
+	void setApplicationState(ApplicationState value);
+
+				/**
 	 * Returns the value of the '<em><b>Guard</b></em>' containment reference list.
 	 * The list contents are of type {@link m4jdsl.Guard}.
 	 * <!-- begin-user-doc -->

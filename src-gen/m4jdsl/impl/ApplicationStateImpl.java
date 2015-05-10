@@ -3,24 +3,18 @@
 package m4jdsl.impl;
 
 import java.util.Collection;
-
 import m4jdsl.ApplicationState;
 import m4jdsl.ApplicationTransition;
 import m4jdsl.M4jdslPackage;
 import m4jdsl.ProtocolLayerEFSM;
 import m4jdsl.Service;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -181,12 +175,27 @@ public class ApplicationStateImpl extends SessionLayerEFSMStateImpl implements A
 	 */
     public EList<ApplicationTransition> getOutgoingTransitions() {
 		if (outgoingTransitions == null) {
-			outgoingTransitions = new EObjectContainmentEList<ApplicationTransition>(ApplicationTransition.class, this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS);
+			outgoingTransitions = new EObjectContainmentWithInverseEList<ApplicationTransition>(ApplicationTransition.class, this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS, M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE);
 		}
 		return outgoingTransitions;
 	}
 
     /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+				/**
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated

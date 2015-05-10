@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link m4jdsl.Guard#getGuardParameter <em>Guard Parameter</em>}</li>
- *   <li>{@link m4jdsl.Guard#getCondition <em>Condition</em>}</li>
+ *   <li>{@link m4jdsl.Guard#isNegate <em>Negate</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface Guard extends EObject {
 	void setGuardParameter(GuardActionParameter value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition</b></em>' attribute.
+	 * Returns the value of the '<em><b>Negate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Condition</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Negate</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition</em>' attribute.
-	 * @see #setCondition(String)
-	 * @see m4jdsl.M4jdslPackage#getGuard_Condition()
+	 * @return the value of the '<em>Negate</em>' attribute.
+	 * @see #setNegate(boolean)
+	 * @see m4jdsl.M4jdslPackage#getGuard_Negate()
 	 * @model
 	 * @generated
 	 */
-	String getCondition();
+	boolean isNegate();
 
 	/**
-	 * Sets the value of the '{@link m4jdsl.Guard#getCondition <em>Condition</em>}' attribute.
+	 * Sets the value of the '{@link m4jdsl.Guard#isNegate <em>Negate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition</em>' attribute.
-	 * @see #getCondition()
+	 * @param value the new value of the '<em>Negate</em>' attribute.
+	 * @see #isNegate()
 	 * @generated
 	 */
-	void setCondition(String value);
+	void setNegate(boolean value);
 
 } // Guard

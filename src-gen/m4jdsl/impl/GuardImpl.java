@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link m4jdsl.impl.GuardImpl#getGuardParameter <em>Guard Parameter</em>}</li>
- *   <li>{@link m4jdsl.impl.GuardImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link m4jdsl.impl.GuardImpl#isNegate <em>Negate</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,24 +37,23 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	protected GuardActionParameter guardParameter;
 
 	/**
-	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * The default value of the '{@link #isNegate() <em>Negate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #isNegate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONDITION_EDEFAULT = null;
-
+	protected static final boolean NEGATE_EDEFAULT = false;
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * The cached value of the '{@link #isNegate() <em>Negate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #isNegate()
 	 * @generated
 	 * @ordered
 	 */
-	protected String condition = CONDITION_EDEFAULT;
+	protected boolean negate = NEGATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,8 +117,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCondition() {
-		return condition;
+	public boolean isNegate() {
+		return negate;
 	}
 
 	/**
@@ -127,11 +126,11 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(String newCondition) {
-		String oldCondition = condition;
-		condition = newCondition;
+	public void setNegate(boolean newNegate) {
+		boolean oldNegate = negate;
+		negate = newNegate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD__CONDITION, oldCondition, condition));
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD__NEGATE, oldNegate, negate));
 	}
 
 	/**
@@ -145,8 +144,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 			case M4jdslPackage.GUARD__GUARD_PARAMETER:
 				if (resolve) return getGuardParameter();
 				return basicGetGuardParameter();
-			case M4jdslPackage.GUARD__CONDITION:
-				return getCondition();
+			case M4jdslPackage.GUARD__NEGATE:
+				return isNegate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,8 +161,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 			case M4jdslPackage.GUARD__GUARD_PARAMETER:
 				setGuardParameter((GuardActionParameter)newValue);
 				return;
-			case M4jdslPackage.GUARD__CONDITION:
-				setCondition((String)newValue);
+			case M4jdslPackage.GUARD__NEGATE:
+				setNegate((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,8 +179,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 			case M4jdslPackage.GUARD__GUARD_PARAMETER:
 				setGuardParameter((GuardActionParameter)null);
 				return;
-			case M4jdslPackage.GUARD__CONDITION:
-				setCondition(CONDITION_EDEFAULT);
+			case M4jdslPackage.GUARD__NEGATE:
+				setNegate(NEGATE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,8 +196,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 		switch (featureID) {
 			case M4jdslPackage.GUARD__GUARD_PARAMETER:
 				return guardParameter != null;
-			case M4jdslPackage.GUARD__CONDITION:
-				return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
+			case M4jdslPackage.GUARD__NEGATE:
+				return negate != NEGATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,8 +212,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (condition: ");
-		result.append(condition);
+		result.append(" (negate: ");
+		result.append(negate);
 		result.append(')');
 		return result.toString();
 	}

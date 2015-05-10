@@ -1372,13 +1372,22 @@ public interface M4jdslPackage extends EPackage {
     int APPLICATION_TRANSITION__ACTION = 2;
 
     /**
+	 * The feature id for the '<em><b>Application State</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_TRANSITION__APPLICATION_STATE = 3;
+
+				/**
 	 * The number of structural features of the '<em>Application Transition</em>' class.
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-    int APPLICATION_TRANSITION_FEATURE_COUNT = 3;
+    int APPLICATION_TRANSITION_FEATURE_COUNT = 4;
 
     /**
 	 * The number of operations of the '<em>Application Transition</em>' class.
@@ -1788,13 +1797,13 @@ public interface M4jdslPackage extends EPackage {
 	int GUARD__GUARD_PARAMETER = 0;
 
 				/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * The feature id for the '<em><b>Negate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__CONDITION = 1;
+	int GUARD__NEGATE = 1;
 
 				/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -1834,22 +1843,13 @@ public interface M4jdslPackage extends EPackage {
 	int ACTION__ACTION_PARAMETER = 0;
 
 				/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__CONDITION = 1;
-
-				/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 2;
+	int ACTION_FEATURE_COUNT = 1;
 
 				/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -2590,6 +2590,17 @@ public interface M4jdslPackage extends EPackage {
     EReference getApplicationTransition_Action();
 
     /**
+	 * Returns the meta object for the container reference '{@link m4jdsl.ApplicationTransition#getApplicationState <em>Application State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Application State</em>'.
+	 * @see m4jdsl.ApplicationTransition#getApplicationState()
+	 * @see #getApplicationTransition()
+	 * @generated
+	 */
+	EReference getApplicationTransition_ApplicationState();
+
+				/**
 	 * Returns the meta object for the containment reference list '{@link m4jdsl.ApplicationTransition#getGuard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2896,15 +2907,15 @@ public interface M4jdslPackage extends EPackage {
 	EReference getGuard_GuardParameter();
 
 				/**
-	 * Returns the meta object for the attribute '{@link m4jdsl.Guard#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the attribute '{@link m4jdsl.Guard#isNegate <em>Negate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see m4jdsl.Guard#getCondition()
+	 * @return the meta object for the attribute '<em>Negate</em>'.
+	 * @see m4jdsl.Guard#isNegate()
 	 * @see #getGuard()
 	 * @generated
 	 */
-	EAttribute getGuard_Condition();
+	EAttribute getGuard_Negate();
 
 				/**
 	 * Returns the meta object for class '{@link m4jdsl.Action <em>Action</em>}'.
@@ -2926,17 +2937,6 @@ public interface M4jdslPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAction_ActionParameter();
-
-				/**
-	 * Returns the meta object for the attribute '{@link m4jdsl.Action#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see m4jdsl.Action#getCondition()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EAttribute getAction_Condition();
 
 				/**
 	 * Returns the meta object for class '{@link m4jdsl.GuardActionParameterList <em>Guard Action Parameter List</em>}'.
@@ -3549,6 +3549,14 @@ public interface M4jdslPackage extends EPackage {
         EReference APPLICATION_TRANSITION__ACTION = eINSTANCE.getApplicationTransition_Action();
 
         /**
+		 * The meta object literal for the '<em><b>Application State</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION_TRANSITION__APPLICATION_STATE = eINSTANCE.getApplicationTransition_ApplicationState();
+
+								/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -3807,12 +3815,12 @@ public interface M4jdslPackage extends EPackage {
 		EReference GUARD__GUARD_PARAMETER = eINSTANCE.getGuard_GuardParameter();
 
 								/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Negate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARD__CONDITION = eINSTANCE.getGuard_Condition();
+		EAttribute GUARD__NEGATE = eINSTANCE.getGuard_Negate();
 
 								/**
 		 * The meta object literal for the '{@link m4jdsl.impl.ActionImpl <em>Action</em>}' class.
@@ -3831,14 +3839,6 @@ public interface M4jdslPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTION__ACTION_PARAMETER = eINSTANCE.getAction_ActionParameter();
-
-								/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTION__CONDITION = eINSTANCE.getAction_Condition();
 
 								/**
 		 * The meta object literal for the '{@link m4jdsl.impl.GuardActionParameterListImpl <em>Guard Action Parameter List</em>}' class.

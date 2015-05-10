@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link m4jdsl.impl.ActionImpl#getActionParameter <em>Action Parameter</em>}</li>
- *   <li>{@link m4jdsl.impl.ActionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,26 +34,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected GuardActionParameter actionParameter;
-
-	/**
-	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONDITION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected String condition = CONDITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,35 +97,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCondition() {
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCondition(String newCondition) {
-		String oldCondition = condition;
-		condition = newCondition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.ACTION__CONDITION, oldCondition, condition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case M4jdslPackage.ACTION__ACTION_PARAMETER:
 				if (resolve) return getActionParameter();
 				return basicGetActionParameter();
-			case M4jdslPackage.ACTION__CONDITION:
-				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,9 +117,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case M4jdslPackage.ACTION__ACTION_PARAMETER:
 				setActionParameter((GuardActionParameter)newValue);
-				return;
-			case M4jdslPackage.ACTION__CONDITION:
-				setCondition((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,9 +133,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case M4jdslPackage.ACTION__ACTION_PARAMETER:
 				setActionParameter((GuardActionParameter)null);
 				return;
-			case M4jdslPackage.ACTION__CONDITION:
-				setCondition(CONDITION_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,26 +147,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case M4jdslPackage.ACTION__ACTION_PARAMETER:
 				return actionParameter != null;
-			case M4jdslPackage.ACTION__CONDITION:
-				return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (condition: ");
-		result.append(condition);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ActionImpl

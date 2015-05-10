@@ -4,6 +4,7 @@ package m4jdsl.impl;
 
 import java.util.Collection;
 import m4jdsl.Action;
+import m4jdsl.ApplicationState;
 import m4jdsl.ApplicationTransition;
 import m4jdsl.Guard;
 import m4jdsl.M4jdslPackage;
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link m4jdsl.impl.ApplicationTransitionImpl#getTargetState <em>Target State</em>}</li>
  *   <li>{@link m4jdsl.impl.ApplicationTransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link m4jdsl.impl.ApplicationTransitionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link m4jdsl.impl.ApplicationTransitionImpl#getApplicationState <em>Application State</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,6 +141,63 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ApplicationState getApplicationState() {
+		if (eContainerFeatureID() != M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE) return null;
+		return (ApplicationState)eInternalContainer();
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetApplicationState(ApplicationState newApplicationState, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newApplicationState, M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE, msgs);
+		return msgs;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApplicationState(ApplicationState newApplicationState) {
+		if (newApplicationState != eInternalContainer() || (eContainerFeatureID() != M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE && newApplicationState != null)) {
+			if (EcoreUtil.isAncestor(this, newApplicationState))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newApplicationState != null)
+				msgs = ((InternalEObject)newApplicationState).eInverseAdd(this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS, ApplicationState.class, msgs);
+			msgs = basicSetApplicationState(newApplicationState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE, newApplicationState, newApplicationState));
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetApplicationState((ApplicationState)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,8 +205,24 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 				return ((InternalEList<?>)getGuard()).basicRemove(otherEnd, msgs);
 			case M4jdslPackage.APPLICATION_TRANSITION__ACTION:
 				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				return basicSetApplicationState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				return eInternalContainer().eInverseRemove(this, M4jdslPackage.APPLICATION_STATE__OUTGOING_TRANSITIONS, ApplicationState.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 				/**
@@ -176,6 +252,8 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 				return getGuard();
 			case M4jdslPackage.APPLICATION_TRANSITION__ACTION:
 				return getAction();
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				return getApplicationState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,6 +278,9 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 				getAction().clear();
 				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				setApplicationState((ApplicationState)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,6 +302,9 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 			case M4jdslPackage.APPLICATION_TRANSITION__ACTION:
 				getAction().clear();
 				return;
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				setApplicationState((ApplicationState)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,6 +323,8 @@ public class ApplicationTransitionImpl extends MinimalEObjectImpl.Container impl
 				return guard != null && !guard.isEmpty();
 			case M4jdslPackage.APPLICATION_TRANSITION__ACTION:
 				return action != null && !action.isEmpty();
+			case M4jdslPackage.APPLICATION_TRANSITION__APPLICATION_STATE:
+				return getApplicationState() != null;
 		}
 		return super.eIsSet(featureID);
 	}
