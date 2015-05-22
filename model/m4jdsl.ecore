@@ -235,6 +235,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterType" eType="#//ParameterType"
+        defaultValueLiteral="INDEPENDENT"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assertion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternToTest" lowerBound="1"
@@ -281,5 +283,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="GuardActionParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardActionParameters"
         upperBound="-1" eType="#//GuardActionParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParameterType">
+    <eLiterals name="GENERATED"/>
+    <eLiterals name="NON_GENERATED" value="1" literal="NON_GENERATED"/>
+    <eLiterals name="INDEPENDENT" value="2"/>
+    <eLiterals name="DEPENDENT" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -5,6 +5,7 @@ package m4jdsl.impl;
 import m4jdsl.M4jdslPackage;
 import m4jdsl.Parameter;
 
+import m4jdsl.ParameterType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link m4jdsl.impl.ParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link m4jdsl.impl.ParameterImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link m4jdsl.impl.ParameterImpl#getParameterType <em>Parameter Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +70,26 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
     protected String value = VALUE_EDEFAULT;
 
     /**
+	 * The default value of the '{@link #getParameterType() <em>Parameter Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameterType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ParameterType PARAMETER_TYPE_EDEFAULT = ParameterType.INDEPENDENT;
+
+				/**
+	 * The cached value of the '{@link #getParameterType() <em>Parameter Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameterType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ParameterType parameterType = PARAMETER_TYPE_EDEFAULT;
+
+				/**
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
@@ -130,6 +152,27 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 
     /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterType getParameterType() {
+		return parameterType;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParameterType(ParameterType newParameterType) {
+		ParameterType oldParameterType = parameterType;
+		parameterType = newParameterType == null ? PARAMETER_TYPE_EDEFAULT : newParameterType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.PARAMETER__PARAMETER_TYPE, oldParameterType, parameterType));
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -140,6 +183,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return getName();
 			case M4jdslPackage.PARAMETER__VALUE:
 				return getValue();
+			case M4jdslPackage.PARAMETER__PARAMETER_TYPE:
+				return getParameterType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +202,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case M4jdslPackage.PARAMETER__VALUE:
 				setValue((String)newValue);
+				return;
+			case M4jdslPackage.PARAMETER__PARAMETER_TYPE:
+				setParameterType((ParameterType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +224,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case M4jdslPackage.PARAMETER__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case M4jdslPackage.PARAMETER__PARAMETER_TYPE:
+				setParameterType(PARAMETER_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +243,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case M4jdslPackage.PARAMETER__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case M4jdslPackage.PARAMETER__PARAMETER_TYPE:
+				return parameterType != PARAMETER_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +263,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		result.append(name);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", parameterType: ");
+		result.append(parameterType);
 		result.append(')');
 		return result.toString();
 	}

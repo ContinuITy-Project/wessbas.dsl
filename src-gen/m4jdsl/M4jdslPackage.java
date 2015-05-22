@@ -1547,13 +1547,22 @@ public interface M4jdslPackage extends EPackage {
     int PARAMETER__VALUE = 1;
 
     /**
+	 * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__PARAMETER_TYPE = 2;
+
+				/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-    int PARAMETER_FEATURE_COUNT = 2;
+    int PARAMETER_FEATURE_COUNT = 3;
 
     /**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -1906,6 +1915,16 @@ public interface M4jdslPackage extends EPackage {
 	 * @generated
 	 */
 	int GUARD_ACTION_PARAMETER_TYPE = 37;
+
+				/**
+	 * The meta object id for the '{@link m4jdsl.ParameterType <em>Parameter Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see m4jdsl.ParameterType
+	 * @see m4jdsl.impl.M4jdslPackageImpl#getParameterType()
+	 * @generated
+	 */
+	int PARAMETER_TYPE = 38;
 
 				/**
 	 * Returns the meta object for class '{@link m4jdsl.WorkloadIntensity <em>Workload Intensity</em>}'.
@@ -2708,6 +2727,17 @@ public interface M4jdslPackage extends EPackage {
     EAttribute getParameter_Value();
 
     /**
+	 * Returns the meta object for the attribute '{@link m4jdsl.Parameter#getParameterType <em>Parameter Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameter Type</em>'.
+	 * @see m4jdsl.Parameter#getParameterType()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_ParameterType();
+
+				/**
 	 * Returns the meta object for class '{@link m4jdsl.Assertion <em>Assertion</em>}'.
 	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2968,6 +2998,16 @@ public interface M4jdslPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getGuardActionParameterType();
+
+				/**
+	 * Returns the meta object for enum '{@link m4jdsl.ParameterType <em>Parameter Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Parameter Type</em>'.
+	 * @see m4jdsl.ParameterType
+	 * @generated
+	 */
+	EEnum getParameterType();
 
 				/**
 	 * Returns the factory that creates the instances of the model.
@@ -3643,6 +3683,14 @@ public interface M4jdslPackage extends EPackage {
         EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
         /**
+		 * The meta object literal for the '<em><b>Parameter Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__PARAMETER_TYPE = eINSTANCE.getParameter_ParameterType();
+
+								/**
 		 * The meta object literal for the '{@link m4jdsl.impl.AssertionImpl <em>Assertion</em>}' class.
 		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -3867,6 +3915,16 @@ public interface M4jdslPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum GUARD_ACTION_PARAMETER_TYPE = eINSTANCE.getGuardActionParameterType();
+
+								/**
+		 * The meta object literal for the '{@link m4jdsl.ParameterType <em>Parameter Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see m4jdsl.ParameterType
+		 * @see m4jdsl.impl.M4jdslPackageImpl#getParameterType()
+		 * @generated
+		 */
+		EEnum PARAMETER_TYPE = eINSTANCE.getParameterType();
 
     }
 

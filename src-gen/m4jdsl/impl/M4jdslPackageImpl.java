@@ -26,6 +26,7 @@ import m4jdsl.M4jdslPackage;
 import m4jdsl.MarkovState;
 import m4jdsl.NormallyDistributedThinkTime;
 import m4jdsl.Parameter;
+import m4jdsl.ParameterType;
 import m4jdsl.Property;
 import m4jdsl.ProtocolExitState;
 import m4jdsl.ProtocolLayerEFSM;
@@ -324,6 +325,13 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 	 * @generated
 	 */
 	private EEnum guardActionParameterTypeEEnum = null;
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum parameterTypeEEnum = null;
 
 				/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1145,6 +1153,15 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
     /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_ParameterType() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1382,6 +1399,15 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
 				/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getParameterType() {
+		return parameterTypeEEnum;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1508,6 +1534,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
 		createEAttribute(parameterEClass, PARAMETER__VALUE);
+		createEAttribute(parameterEClass, PARAMETER__PARAMETER_TYPE);
 
 		assertionEClass = createEClass(ASSERTION);
 		createEAttribute(assertionEClass, ASSERTION__PATTERN_TO_TEST);
@@ -1547,6 +1574,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 
 		// Create enums
 		guardActionParameterTypeEEnum = createEEnum(GUARD_ACTION_PARAMETER_TYPE);
+		parameterTypeEEnum = createEEnum(PARAMETER_TYPE);
 	}
 
     /**
@@ -1691,6 +1719,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_ParameterType(), this.getParameterType(), "parameterType", "INDEPENDENT", 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assertionEClass, Assertion.class, "Assertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssertion_PatternToTest(), ecorePackage.getEString(), "patternToTest", null, 1, 1, Assertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1732,6 +1761,12 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEEnum(guardActionParameterTypeEEnum, GuardActionParameterType.class, "GuardActionParameterType");
 		addEEnumLiteral(guardActionParameterTypeEEnum, GuardActionParameterType.INTEGER);
 		addEEnumLiteral(guardActionParameterTypeEEnum, GuardActionParameterType.BOOLEAN);
+
+		initEEnum(parameterTypeEEnum, ParameterType.class, "ParameterType");
+		addEEnumLiteral(parameterTypeEEnum, ParameterType.GENERATED);
+		addEEnumLiteral(parameterTypeEEnum, ParameterType.NON_GENERATED);
+		addEEnumLiteral(parameterTypeEEnum, ParameterType.INDEPENDENT);
+		addEEnumLiteral(parameterTypeEEnum, ParameterType.DEPENDENT);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -13,6 +13,12 @@
       <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/INTEGER"/>
       <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/BOOLEAN"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="m4jdsl.ecore#//ParameterType">
+      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/GENERATED"/>
+      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/NON_GENERATED"/>
+      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/INDEPENDENT"/>
+      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/DEPENDENT"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="m4jdsl.ecore#//WorkloadIntensity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//WorkloadIntensity/formula"/>
     </genClasses>
@@ -107,6 +113,7 @@
     <genClasses ecoreClass="m4jdsl.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/parameterType"/>
     </genClasses>
     <genClasses ecoreClass="m4jdsl.ecore#//Assertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Assertion/patternToTest"/>

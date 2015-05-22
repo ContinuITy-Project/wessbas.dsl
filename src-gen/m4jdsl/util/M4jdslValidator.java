@@ -162,6 +162,8 @@ public class M4jdslValidator extends EObjectValidator {
 				return validateGuardActionParameterList((GuardActionParameterList)value, diagnostics, context);
 			case M4jdslPackage.GUARD_ACTION_PARAMETER_TYPE:
 				return validateGuardActionParameterType((GuardActionParameterType)value, diagnostics, context);
+			case M4jdslPackage.PARAMETER_TYPE:
+				return validateParameterType((ParameterType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1578,6 +1580,15 @@ public class M4jdslValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGuardActionParameterType(GuardActionParameterType guardActionParameterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterType(ParameterType parameterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

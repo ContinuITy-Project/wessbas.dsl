@@ -103,6 +103,8 @@ public class M4jdslFactoryImpl extends EFactoryImpl implements M4jdslFactory {
 		switch (eDataType.getClassifierID()) {
 			case M4jdslPackage.GUARD_ACTION_PARAMETER_TYPE:
 				return createGuardActionParameterTypeFromString(eDataType, initialValue);
+			case M4jdslPackage.PARAMETER_TYPE:
+				return createParameterTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -118,6 +120,8 @@ public class M4jdslFactoryImpl extends EFactoryImpl implements M4jdslFactory {
 		switch (eDataType.getClassifierID()) {
 			case M4jdslPackage.GUARD_ACTION_PARAMETER_TYPE:
 				return convertGuardActionParameterTypeToString(eDataType, instanceValue);
+			case M4jdslPackage.PARAMETER_TYPE:
+				return convertParameterTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -450,6 +454,26 @@ public class M4jdslFactoryImpl extends EFactoryImpl implements M4jdslFactory {
 	 * @generated
 	 */
 	public String convertGuardActionParameterTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterType createParameterTypeFromString(EDataType eDataType, String initialValue) {
+		ParameterType result = ParameterType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertParameterTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
