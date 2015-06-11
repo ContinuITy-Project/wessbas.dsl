@@ -275,6 +275,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardParameter" lowerBound="1"
         eType="#//GuardActionParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diffMinimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionParameter" lowerBound="1"

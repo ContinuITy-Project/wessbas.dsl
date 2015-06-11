@@ -1815,13 +1815,22 @@ public interface M4jdslPackage extends EPackage {
 	int GUARD__NEGATE = 1;
 
 				/**
+	 * The feature id for the '<em><b>Diff Minimum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARD__DIFF_MINIMUM = 2;
+
+				/**
 	 * The number of structural features of the '<em>Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_FEATURE_COUNT = 2;
+	int GUARD_FEATURE_COUNT = 3;
 
 				/**
 	 * The number of operations of the '<em>Guard</em>' class.
@@ -2948,6 +2957,17 @@ public interface M4jdslPackage extends EPackage {
 	EAttribute getGuard_Negate();
 
 				/**
+	 * Returns the meta object for the attribute '{@link m4jdsl.Guard#getDiffMinimum <em>Diff Minimum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Diff Minimum</em>'.
+	 * @see m4jdsl.Guard#getDiffMinimum()
+	 * @see #getGuard()
+	 * @generated
+	 */
+	EAttribute getGuard_DiffMinimum();
+
+				/**
 	 * Returns the meta object for class '{@link m4jdsl.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3869,6 +3889,14 @@ public interface M4jdslPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GUARD__NEGATE = eINSTANCE.getGuard_Negate();
+
+								/**
+		 * The meta object literal for the '<em><b>Diff Minimum</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARD__DIFF_MINIMUM = eINSTANCE.getGuard_DiffMinimum();
 
 								/**
 		 * The meta object literal for the '{@link m4jdsl.impl.ActionImpl <em>Action</em>}' class.

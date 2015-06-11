@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link m4jdsl.Guard#getGuardParameter <em>Guard Parameter</em>}</li>
  *   <li>{@link m4jdsl.Guard#isNegate <em>Negate</em>}</li>
+ *   <li>{@link m4jdsl.Guard#getDiffMinimum <em>Diff Minimum</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface Guard extends EObject {
 	 * @generated
 	 */
 	void setNegate(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Diff Minimum</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Diff Minimum</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Diff Minimum</em>' attribute.
+	 * @see #setDiffMinimum(int)
+	 * @see m4jdsl.M4jdslPackage#getGuard_DiffMinimum()
+	 * @model
+	 * @generated
+	 */
+	int getDiffMinimum();
+
+	/**
+	 * Sets the value of the '{@link m4jdsl.Guard#getDiffMinimum <em>Diff Minimum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Diff Minimum</em>' attribute.
+	 * @see #getDiffMinimum()
+	 * @generated
+	 */
+	void setDiffMinimum(int value);
 
 } // Guard

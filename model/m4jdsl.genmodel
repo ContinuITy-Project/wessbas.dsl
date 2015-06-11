@@ -140,6 +140,7 @@
     <genClasses ecoreClass="m4jdsl.ecore#//Guard">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Guard/guardParameter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/negate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/diffMinimum"/>
     </genClasses>
     <genClasses ecoreClass="m4jdsl.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Action/actionParameter"/>

@@ -1357,6 +1357,15 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGuard_DiffMinimum() {
+		return (EAttribute)guardEClass.getEStructuralFeatures().get(2);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -1565,6 +1574,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		guardEClass = createEClass(GUARD);
 		createEReference(guardEClass, GUARD__GUARD_PARAMETER);
 		createEAttribute(guardEClass, GUARD__NEGATE);
+		createEAttribute(guardEClass, GUARD__DIFF_MINIMUM);
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__ACTION_PARAMETER);
@@ -1750,6 +1760,7 @@ public class M4jdslPackageImpl extends EPackageImpl implements M4jdslPackage {
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuard_GuardParameter(), this.getGuardActionParameter(), null, "guardParameter", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGuard_Negate(), ecorePackage.getEBoolean(), "negate", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuard_DiffMinimum(), ecorePackage.getEInt(), "diffMinimum", null, 0, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_ActionParameter(), this.getGuardActionParameter(), null, "actionParameter", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

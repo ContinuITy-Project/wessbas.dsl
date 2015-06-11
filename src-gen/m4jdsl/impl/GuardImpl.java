@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link m4jdsl.impl.GuardImpl#getGuardParameter <em>Guard Parameter</em>}</li>
  *   <li>{@link m4jdsl.impl.GuardImpl#isNegate <em>Negate</em>}</li>
+ *   <li>{@link m4jdsl.impl.GuardImpl#getDiffMinimum <em>Diff Minimum</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +55,26 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * @ordered
 	 */
 	protected boolean negate = NEGATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDiffMinimum() <em>Diff Minimum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiffMinimum()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int DIFF_MINIMUM_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getDiffMinimum() <em>Diff Minimum</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiffMinimum()
+	 * @generated
+	 * @ordered
+	 */
+	protected int diffMinimum = DIFF_MINIMUM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +159,27 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getDiffMinimum() {
+		return diffMinimum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDiffMinimum(int newDiffMinimum) {
+		int oldDiffMinimum = diffMinimum;
+		diffMinimum = newDiffMinimum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, M4jdslPackage.GUARD__DIFF_MINIMUM, oldDiffMinimum, diffMinimum));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -146,6 +188,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 				return basicGetGuardParameter();
 			case M4jdslPackage.GUARD__NEGATE:
 				return isNegate();
+			case M4jdslPackage.GUARD__DIFF_MINIMUM:
+				return getDiffMinimum();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,6 +207,9 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 				return;
 			case M4jdslPackage.GUARD__NEGATE:
 				setNegate((Boolean)newValue);
+				return;
+			case M4jdslPackage.GUARD__DIFF_MINIMUM:
+				setDiffMinimum((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,6 +229,9 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 			case M4jdslPackage.GUARD__NEGATE:
 				setNegate(NEGATE_EDEFAULT);
 				return;
+			case M4jdslPackage.GUARD__DIFF_MINIMUM:
+				setDiffMinimum(DIFF_MINIMUM_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,6 +248,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 				return guardParameter != null;
 			case M4jdslPackage.GUARD__NEGATE:
 				return negate != NEGATE_EDEFAULT;
+			case M4jdslPackage.GUARD__DIFF_MINIMUM:
+				return diffMinimum != DIFF_MINIMUM_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,6 +266,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (negate: ");
 		result.append(negate);
+		result.append(", diffMinimum: ");
+		result.append(diffMinimum);
 		result.append(')');
 		return result.toString();
 	}
