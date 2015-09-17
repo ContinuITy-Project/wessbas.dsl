@@ -1,152 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.markov4jmeter.m4jdsl/src-gen" editDirectory="/net.sf.markov4jmeter.m4jdsl.edit/src-gen"
-    editorDirectory="/net.sf.markov4jmeter.m4jdsl.editor/src-gen" modelPluginID="net.sf.markov4jmeter.m4jdsl"
-    templateDirectory="" redirection="" modelName="M4jdsl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="/net.sf.markov4jmeter.m4jdsl.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" editPluginID="net.sf.markov4jmeter.m4jdsl.edit"
-    editorPluginID="net.sf.markov4jmeter.m4jdsl.editor" testsPluginID="net.sf.markov4jmeter.m4jdsl.tests"
-    operationReflection="true" importOrganizing="true">
-  <foreignModel>m4jdsl.ecore</foreignModel>
-  <genPackages prefix="M4jdsl" disposableProviderFactory="true" ecorePackage="m4jdsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="m4jdsl.ecore#//GuardActionParameterType">
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/INTEGER"/>
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/BOOLEAN"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="m4jdsl.ecore#//ParameterType">
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/GENERATED"/>
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/NON_GENERATED"/>
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/INDEPENDENT"/>
-      <genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/DEPENDENT"/>
-    </genEnums>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//WorkloadIntensity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//WorkloadIntensity/formula"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//WorkloadModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/workloadIntensity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/applicationModel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/behaviorMix"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/behaviorModels"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ApplicationModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationModel/sessionLayerEFSM"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//BehaviorMix">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorMix/relativeFrequencies"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//RelativeFrequency">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//RelativeFrequency/behaviorModel"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//RelativeFrequency/value"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//BehaviorModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/markovStates"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModel/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModel/filename"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/exitState"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/initialState"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Transition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Transition/targetState"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Transition/probability"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Transition/thinkTime"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//MarkovState">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//MarkovState/outgoingTransitions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//MarkovState/service"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Service">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Service/name"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ApplicationState">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/service"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/protocolDetails"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/outgoingTransitions"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//HTTPRequest"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//JavaRequest"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//BeanShellRequest"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//JUnitRequest"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//SOAPRequest"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//Request">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Request/eId"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/assertions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/properties"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/parameters"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ProtocolState">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolState/request"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolState/outgoingTransitions"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ProtocolTransition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolTransition/guard"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolTransition/targetState"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolTransition/action"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ProtocolLayerEFSM">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/protocolStates"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/initialState"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/exitState"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//SessionLayerEFSM">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/applicationStates"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/initialState"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/exitState"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/guardActionParameterList"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ConstantWorkloadIntensity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ConstantWorkloadIntensity/numberOfSessions"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ApplicationTransition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/targetState"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/guard"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/action"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/applicationState"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//NormallyDistributedThinkTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//NormallyDistributedThinkTime/mean"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//NormallyDistributedThinkTime/deviation"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Property/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/parameterType"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Assertion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Assertion/patternToTest"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//ThinkTime"/>
-    <genClasses ecoreClass="m4jdsl.ecore#//ApplicationExitState"/>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//SessionLayerEFSMState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//SessionLayerEFSMState/eId"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//BehaviorModelExitState"/>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//BehaviorModelState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModelState/eId"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//ProtocolExitState"/>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//ProtocolLayerEFSMState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolLayerEFSMState/eId"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="m4jdsl.ecore#//GuardActionParameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/guardActionParameterName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/parameterType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/sourceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/targetName"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Guard">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Guard/guardParameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/negate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/diffMinimum"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//Action">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//Action/actionParameter"/>
-    </genClasses>
-    <genClasses ecoreClass="m4jdsl.ecore#//GuardActionParameterList">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference m4jdsl.ecore#//GuardActionParameterList/guardActionParameters"/>
-    </genClasses>
-  </genPackages>
+<genmodel:GenModel xmi:version="2.0"
+	xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+	xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+	modelDirectory="/net.sf.markov4jmeter.m4jdsl/src-gen" editDirectory="/net.sf.markov4jmeter.m4jdsl.edit/src-gen"
+	editorDirectory="/net.sf.markov4jmeter.m4jdsl.editor/src-gen"
+	modelPluginID="net.sf.markov4jmeter.m4jdsl" templateDirectory=""
+	redirection="" modelName="M4jdsl"
+	rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+	testsDirectory="/net.sf.markov4jmeter.m4jdsl.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+	complianceLevel="7.0" copyrightFields="false"
+	editPluginID="net.sf.markov4jmeter.m4jdsl.edit" editorPluginID="net.sf.markov4jmeter.m4jdsl.editor"
+	testsPluginID="net.sf.markov4jmeter.m4jdsl.tests" operationReflection="true"
+	importOrganizing="true">
+	<foreignModel>m4jdsl.ecore</foreignModel>
+	<genPackages prefix="M4jdsl" disposableProviderFactory="true"
+		ecorePackage="m4jdsl.ecore#/">
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="m4jdsl.ecore#//GuardActionParameterType">
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/INTEGER" />
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//GuardActionParameterType/BOOLEAN" />
+		</genEnums>
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="m4jdsl.ecore#//ParameterType">
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/GENERATED" />
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/NON_GENERATED" />
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/INDEPENDENT" />
+			<genEnumLiterals ecoreEnumLiteral="m4jdsl.ecore#//ParameterType/DEPENDENT" />
+		</genEnums>
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//WorkloadIntensity">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//WorkloadIntensity/formula" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//WorkloadModel">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/workloadIntensity" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/applicationModel" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/behaviorMix" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//WorkloadModel/behaviorModels" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ApplicationModel">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationModel/sessionLayerEFSM" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//BehaviorMix">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorMix/relativeFrequencies" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//RelativeFrequency">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//RelativeFrequency/behaviorModel" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//RelativeFrequency/value" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//BehaviorModel">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/markovStates" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModel/name" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModel/filename" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/exitState" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//BehaviorModel/initialState" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Transition">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Transition/targetState" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Transition/probability" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Transition/thinkTime" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//MarkovState">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//MarkovState/outgoingTransitions" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//MarkovState/service" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Service">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Service/name" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ApplicationState">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/service" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/protocolDetails" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationState/outgoingTransitions" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//HTTPRequest" />
+		<genClasses ecoreClass="m4jdsl.ecore#//JavaRequest" />
+		<genClasses ecoreClass="m4jdsl.ecore#//BeanShellRequest" />
+		<genClasses ecoreClass="m4jdsl.ecore#//JUnitRequest" />
+		<genClasses ecoreClass="m4jdsl.ecore#//SOAPRequest" />
+		<genClasses ecoreClass="m4jdsl.ecore#//Request">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Request/eId" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/assertions" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/properties" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Request/parameters" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ProtocolState">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolState/request" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolState/outgoingTransitions" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ProtocolTransition">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolTransition/guard" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolTransition/targetState" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolTransition/action" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ProtocolLayerEFSM">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/protocolStates" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/initialState" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ProtocolLayerEFSM/exitState" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//SessionLayerEFSM">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/applicationStates" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/initialState" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/exitState" />
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//SessionLayerEFSM/guardActionParameterList" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ConstantWorkloadIntensity">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ConstantWorkloadIntensity/numberOfSessions" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ApplicationTransition">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/targetState" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/guard" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/action" />
+			<genFeatures property="None" notify="false" createChild="false"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//ApplicationTransition/applicationState" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//NormallyDistributedThinkTime">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//NormallyDistributedThinkTime/mean" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//NormallyDistributedThinkTime/deviation" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Property">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Property/key" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Property/value" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Parameter">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/name" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/value" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Parameter/parameterType" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Assertion">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Assertion/patternToTest" />
+		</genClasses>
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//ThinkTime" />
+		<genClasses ecoreClass="m4jdsl.ecore#//ApplicationExitState" />
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//SessionLayerEFSMState">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//SessionLayerEFSMState/eId" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//BehaviorModelExitState" />
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//BehaviorModelState">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//BehaviorModelState/eId" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//ProtocolExitState" />
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//ProtocolLayerEFSMState">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//ProtocolLayerEFSMState/eId" />
+		</genClasses>
+		<genClasses image="false" ecoreClass="m4jdsl.ecore#//GuardActionParameter">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/guardActionParameterName" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/parameterType" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/sourceName" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//GuardActionParameter/targetName" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Guard">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Guard/guardParameter" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/negate" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute m4jdsl.ecore#//Guard/diffMinimum" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//Action">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//Action/actionParameter" />
+		</genClasses>
+		<genClasses ecoreClass="m4jdsl.ecore#//GuardActionParameterList">
+			<genFeatures notify="false" createChild="false"
+				propertySortChoices="true"
+				ecoreFeature="ecore:EReference m4jdsl.ecore#//GuardActionParameterList/guardActionParameters" />
+		</genClasses>
+	</genPackages>
 </genmodel:GenModel>
