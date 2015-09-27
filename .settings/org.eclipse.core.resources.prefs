@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//model/m4jdsl.ecore=UTF-8
 encoding//model/m4jdsl.ecorediag=UTF-8
+encoding//src/test/java=Cp1252
+encoding/<project>=Cp1252
+encoding/src-gen=Cp1252
