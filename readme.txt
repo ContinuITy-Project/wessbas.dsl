@@ -5,9 +5,6 @@ INTRODUCTION
 This package represents the wessbas dsl. The wessbas dsl is a domain specific language for specifiying 
 workloads of session-based systems. The wessbas dsl is defined as an emf ecore model. 
 
-License:
-
-  MIT-license?
 
 SYSTEM REQUIREMENTS
 -------------------
@@ -23,4 +20,4 @@ ACADEMIC LITERATURE
 ------------------  
   
 Automatic extraction of probabilistic workload specifications for 
-load testing session-based application systems  (Hoorn, Vögele, Schulz, Hasselbring, Krcmar)
+load testing session-based application systems  (Hoorn, Voegele, Schulz, Hasselbring, Krcmar)
